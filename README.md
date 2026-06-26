@@ -50,3 +50,6 @@ watch-store-project/
 - **รหัสนักศึกษา**: [67115444]
 - สาขาวิชาวิทยาการคอมพิวเตอร์และนวัตกรรมซอฟต์แวร์ (Computer Science and Software Development Innovation)
 - มหาวิทยาลัยศรีปทุม (SPU SIT)
+
+<!-- Last updated: 2026-06-26 -->
+
