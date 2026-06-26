@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchMart - ร้านขายนาฬิกาหรูสไตล์พรีเมียม</title>
+    <meta name="description" content="สัมผัสประสบการณ์แห่งความประณีตด้วยนาฬิกาสไตล์คลาสสิก สปอร์ต และหรูหราที่คัดสรรมาอย่างพิถีพิถันที่ WatchMart">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="logo">Watch<span>Mart</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">หน้าหลัก</a></li>
+                <li><a href="#products">นาฬิกาของเรา</a></li>
+                <li><a href="markdown.html" target="_blank">เอกสารวิเคราะห์ระบบ</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="cart-icon" id="cart-toggle-btn" aria-label="Open Shopping Cart">
+                🛒
+                <span class="cart-count" id="cart-counter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Premium Chronometers</p>
+            <h1 class="hero-title">ศิลปะแห่งเวลา<br>สะท้อนตัวตนของคุณ <span>WatchMart</span></h1>
+            <p class="hero-description">สัมผัสประสบการณ์แห่งความเที่ยงตรงด้วยนาฬิกาพรีเมียมและนาฬิกาหรูที่โดดเด่นทั้งความงดงามทางวิศวกรรมและการออกแบบเหนือกาลเวลา</p>
+            <a href="#products" class="cta-btn">เลือกชมสินค้า</a>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-watch-glow"></div>
+            <!-- Main Hero Watch SVG Graphic -->
+            <svg class="hero-watch-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Watch Strap -->
+                <rect x="85" y="10" width="30" height="180" rx="5" fill="#3a2e2b" stroke="#251a17" stroke-width="1.5" />
+                <path d="M 85,30 L 115,30 M 85,170 L 115,170" stroke="#c5a880" stroke-width="1" stroke-dasharray="2,2"/>
+                <!-- Watch Case -->
+                <circle cx="100" cy="100" r="48" fill="#1e1e1e" stroke="#c5a880" stroke-width="4.5" />
+                <circle cx="100" cy="100" r="44" fill="url(#watch-face-grad)" />
+                <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(197, 168, 128, 0.2)" stroke-width="1"/>
+                <!-- Hour Markers -->
+                <line x1="100" y1="58" x2="100" y2="64" stroke="#c5a880" stroke-width="2.5" />
+                <line x1="100" y1="142" x2="100" y2="136" stroke="#c5a880" stroke-width="2" />
+                <line x1="58" y1="100" x2="64" y2="100" stroke="#c5a880" stroke-width="2" />
+                <line x1="142" y1="100" x2="136" y2="100" stroke="#c5a880" stroke-width="2" />
+                <!-- Center point -->
+                <circle cx="100" cy="100" r="4" fill="#c5a880" />
+                <!-- Hands -->
+                <line x1="100" y1="100" x2="100" y2="72" stroke="#f5f5f7" stroke-width="2" stroke-linecap="round" transform="rotate(45 100 100)" />
+                <line x1="100" y1="100" x2="125" y2="100" stroke="#f5f5f7" stroke-width="1.5" stroke-linecap="round" transform="rotate(130 100 100)" />
+                <line x1="100" y1="100" x2="90" y2="130" stroke="#d32f2f" stroke-width="0.8" stroke-linecap="round" transform="rotate(320 100 100)" />
+                <!-- Crown button -->
+                <rect x="148" y="93" width="5" height="14" rx="2" fill="#c5a880" />
+                <!-- Gradients -->
+                <defs>
+                    <radialGradient id="watch-face-grad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#1b263b" />
+                        <stop offset="100%" stop-color="#0b0c10" />
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Products Catalog Section -->
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <h2 class="section-title">คอลเลกชันสุดพิเศษของเรา</h2>
+            <p class="section-desc">สัมผัสดีไซน์ที่หรูหราจากชิ้นงานศิลปะบนข้อมือที่โดดเด่นไม่ซ้ำใคร</p>
+        </div>
+
+        <div class="product-filters">
+            <button class="filter-btn active" data-category="all">ทั้งหมด</button>
+            <button class="filter-btn" data-category="classic">Classic</button>
+            <button class="filter-btn" data-category="sport">Sport</button>
+            <button class="filter-btn" data-category="elegant">Elegant</button>
+        </div>
+
+        <div class="products-grid" id="products-list">
+            <!-- Product Item 1: Classic -->
+            <div class="product-card" data-category="classic">
+                <div class="product-img-holder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="85" y="10" width="30" height="180" rx="3" fill="#4e342e" />
+                        <circle cx="100" cy="100" r="45" fill="#121212" stroke="#c5a880" stroke-width="3" />
+                        <circle cx="100" cy="100" r="38" fill="#1a1a1a" />
+                        <!-- Hands -->
+                        <line x1="100" y1="100" x2="100" y2="76" stroke="#c5a880" stroke-width="2" transform="rotate(20 100 100)" />
+                        <line x1="100" y1="100" x2="120" y2="100" stroke="#c5a880" stroke-width="1.5" transform="rotate(100 100 100)" />
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Heritage</p>
+                    <h3 class="product-name">Chronos Classic 40</h3>
+                    <div class="product-footer">
+                        <span class="product-price">฿ 15,900</span>
+                        <button class="add-cart-btn" data-id="1" data-name="Chronos Classic 40" data-price="15900">＋</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Item 2: Sport -->
+            <div class="product-card" data-category="sport">
+                <div class="product-img-holder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="85" y="10" width="30" height="180" rx="3" fill="#263238" />
+                        <circle cx="100" cy="100" r="45" fill="#212121" stroke="#d32f2f" stroke-width="3.5" />
+                        <circle cx="100" cy="100" r="38" fill="#0d0d0d" />
+                        <rect x="98" y="66" width="4" height="6" fill="#d32f2f"/>
+                        <!-- Hands -->
+                        <line x1="100" y1="100" x2="100" y2="70" stroke="#f5f5f7" stroke-width="2" transform="rotate(70 100 100)" />
+                        <line x1="100" y1="100" x2="125" y2="100" stroke="#f5f5f7" stroke-width="1.5" transform="rotate(160 100 100)" />
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Veloce</p>
+                    <h3 class="product-name">Veloce Sport Chronograph</h3>
+                    <div class="product-footer">
+                        <span class="product-price">฿ 24,500</span>
+                        <button class="add-cart-btn" data-id="2" data-name="Veloce Sport Chronograph" data-price="24500">＋</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Item 3: Elegant -->
+            <div class="product-card" data-category="elegant">
+                <div class="product-img-holder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="85" y="10" width="30" height="180" rx="3" fill="#1c1d21" />
+                        <!-- Rose gold look -->
+                        <circle cx="100" cy="100" r="45" fill="#121212" stroke="#e0a96d" stroke-width="3" />
+                        <circle cx="100" cy="100" r="40" fill="#fcfcfc" />
+                        <!-- Hands -->
+                        <line x1="100" y1="100" x2="100" y2="75" stroke="#121212" stroke-width="2" transform="rotate(340 100 100)" />
+                        <line x1="100" y1="100" x2="118" y2="100" stroke="#121212" stroke-width="1.5" transform="rotate(80 100 100)" />
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Grandeur</p>
+                    <h3 class="product-name">Grandeur Rose Gold</h3>
+                    <div class="product-footer">
+                        <span class="product-price">฿ 89,000</span>
+                        <button class="add-cart-btn" data-id="3" data-name="Grandeur Rose Gold" data-price="89000">＋</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Item 4: Elegant -->
+            <div class="product-card" data-category="elegant">
+                <div class="product-img-holder">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="85" y="10" width="30" height="180" rx="3" fill="#2d3748" />
+                        <circle cx="100" cy="100" r="45" fill="#1a202c" stroke="#c5a880" stroke-width="2" />
+                        <circle cx="100" cy="100" r="40" fill="#2d3748" />
+                        <!-- Hands -->
+                        <line x1="100" y1="100" x2="100" y2="72" stroke="#c5a880" stroke-width="2" transform="rotate(15 100 100)" />
+                        <line x1="100" y1="100" x2="120" y2="100" stroke="#c5a880" stroke-width="1.5" transform="rotate(110 100 100)" />
+                    </svg>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Stella</p>
+                    <h3 class="product-name">Stella Midnight Blue</h3>
+                    <div class="product-footer">
+                        <span class="product-price">฿ 32,000</span>
+                        <button class="add-cart-btn" data-id="4" data-name="Stella Midnight Blue" data-price="32000">＋</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar Panel -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-sidebar">
+        <div class="cart-header">
+            <h2 class="cart-title">ตะกร้าสินค้า</h2>
+            <button class="cart-close-btn" id="cart-close-btn">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items-list">
+            <!-- Empty state default -->
+            <p style="text-align: center; color: var(--text-muted); margin-top: 3rem;">ยังไม่มีสินค้าในตะกร้า</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>ราคารวม:</span>
+                <span id="cart-total-price">฿ 0</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">สั่งซื้อสินค้าเลย</button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification" id="notification">
+        <span>✅</span>
+        <span id="notification-message">เพิ่มสินค้าลงในตะกร้าสำเร็จ</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 WatchMart Store. สงวนลิขสิทธิ์ทั้งหมดตามวิชา CSI204</p>
+        <p>พัฒนาการดีไซน์อย่างเหนือระดับด้วยระบบเว็บคุณภาพสูง</p>
+    </footer>
+
+    <!-- App Script -->
+    <script>
+        // DOM Elements
+        const cartToggleBtn = document.getElementById('cart-toggle-btn');
+        const cartCloseBtn = document.getElementById('cart-close-btn');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const productsGrid = document.getElementById('products-list');
+        const cartItemsList = document.getElementById('cart-items-list');
+        const cartCounter = document.getElementById('cart-counter');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const notification = document.getElementById('notification');
+        const notificationMsg = document.getElementById('notification-message');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        let cart = [];
+
+        // Toggle Cart Sidebar
+        function openCart() {
+            cartSidebar.classList.add('open');
+            cartOverlay.classList.add('open');
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('open');
+            cartOverlay.classList.remove('open');
+        }
+
+        cartToggleBtn.addEventListener('click', openCart);
+        cartCloseBtn.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+
+        // Filter Logic
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Toggle Active Button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+                const cards = productsGrid.querySelectorAll('.product-card');
+
+                cards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add to Cart Logic
+        document.querySelectorAll('.add-cart-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = btn.getAttribute('data-id');
+                const name = btn.getAttribute('data-name');
+                const price = parseFloat(btn.getAttribute('data-price'));
+
+                addToCart(id, name, price);
+            });
+        });
+
+        function addToCart(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+
+            updateCartUI();
+            showNotification(`เพิ่ม "${name}" ลงในตะกร้าสำเร็จ`);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            // Count total quantity
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCounter.innerText = totalCount;
+
+            // Total price
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotalPrice.innerText = `฿ ${totalPrice.toLocaleString()}`;
+
+            // Render list items
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = `<p style="text-align: center; color: var(--text-muted); margin-top: 3rem;">ยังไม่มีสินค้าในตะกร้า</p>`;
+                return;
+            }
+
+            cartItemsList.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-img">⌚</div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name} (x${item.quantity})</div>
+                        <div class="cart-item-price">฿ ${(item.price * item.quantity).toLocaleString()}</div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">&times;</button>
+                </div>
+            `).join('');
+        }
+
+        function showNotification(msg, isSuccess = true) {
+            notificationMsg.innerText = msg;
+            notification.style.backgroundColor = isSuccess ? '#2e7d32' : '#c62828';
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Checkout simulation
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showNotification('ตะกร้าสินค้าว่างเปล่า ไม่สามารถส่งยอดสั่งซื้อได้!', false);
+                return;
+            }
+
+            // Slide 10: payment process simulation
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            showNotification(`ส่งยอดสั่งซื้อ ฿${total.toLocaleString()} ไปยังระบบ และส่งการแจ้งเตือน LINE Notify เรียบร้อย!`);
+            
+            // Empty cart
+            cart = [];
+            updateCartUI();
+            setTimeout(closeCart, 1000);
+        });
+    </script>
+</body>
+</html>

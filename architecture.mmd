@@ -1,0 +1,64 @@
+graph TB
+    subgraph Client_Layer ["📱 Client Layer (Frontend)"]
+        A["💻 Web Browser (HTML/CSS/JS)"]
+        B["📱 Mobile Browser / Responsive UI"]
+    }
+
+    subgraph Gateway_Layer ["🔒 API Gateway & Orchestration"]
+        C["🌐 CDN (Content Delivery Network)"]
+        D["🔑 API Gateway (Routing / Authentication)"]
+    end
+
+    subgraph Backend_Layer ["⚙️ Backend Architecture (Microservices)"]
+        E["👤 User Service (Node.js/Express)"]
+        F["📦 Product Service (Node.js/Express)"]
+        G["🛒 Order Service (Node.js/Express)"]
+        H["💳 Payment Service (Node.js/Express)"]
+    end
+
+    subgraph Data_Layer ["💾 Database & Storage Layer"]
+        I["🗄️ Primary DB (PostgreSQL)"]
+        J["⚡ Cache Server (Redis)"]
+        K["🖼️ Asset Storage (Cloudinary / S3)"]
+    end
+
+    subgraph External_Services ["🌐 External Integration APIs"]
+        L["💬 LINE Notify API"]
+        M["💳 Payment Gateway (Omise / 2C2P)"]
+        N["📧 Email Service (SendGrid)"]
+    end
+
+    %% Client to Gateway Connections
+    A & B --> C
+    C --> D
+
+    %% Gateway to Microservices Connections
+    D --> E
+    D --> F
+    D --> G
+    D --> H
+
+    %% Services to Databases
+    E --> I
+    F --> I
+    F --> J
+    G --> I
+    H --> M
+
+    %% External APIs Trigger
+    G --> L
+    G --> N
+    H --> L
+
+    %% Style Customization
+    classDef client fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
+    classDef gateway fill:#ede7f6,stroke:#5e35b1,stroke-width:2px;
+    classDef backend fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+    classDef data fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+    classDef external fill:#ffebee,stroke:#c62828,stroke-width:2px;
+
+    class A,B client;
+    class C,D gateway;
+    class E,F,G,H backend;
+    class I,J,K data;
+    class L,M,N external;
