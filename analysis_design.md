@@ -571,7 +571,7 @@ graph TB
     end
 
     subgraph Database_Storage ["💾 ส่วนจัดเก็บข้อมูลและทรัพยากร (Database & Storage)"]
-        SQL_DB[("🗄️ SQL Database<br>(นาฬิกา, ผู้ใช้, พนักงาน)")]
+        SQL_DB[("🗄️ SQL Database<br>(เครื่องเสียง, ผู้ใช้, พนักงาน)")]
         Storage_Data[("📦 Storage Data<br>(ข้อมูล, รูปภาพสินค้า, Price Banding)")]
     end
 
