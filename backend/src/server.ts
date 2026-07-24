@@ -307,6 +307,7 @@ app.post('/api/orders/:id/submit-slip', async (req, res) => {
 
 app.post('/api/orders/:id/cancel', async (req, res) => {
   const orderId = req.params.id;
+  const { reason } = req.body || {};
   const orders = await db.getOrders();
   const idx = orders.findIndex(o => o.id === orderId);
 
@@ -318,7 +319,8 @@ app.post('/api/orders/:id/cancel', async (req, res) => {
     return res.status(400).json({ error: 'Order is already cancelled.' });
   }
 
-  await db.updateOrderStatus(orderId, 'cancelled');
+  const reasonText = reason || 'ลูกค้ายกเลิกคำสั่งซื้อผ่านระบบ';
+  await db.updateOrderStatus(orderId, 'cancelled', reasonText);
 
   // Return Stocks back
   const products = await db.getProducts();
@@ -330,8 +332,8 @@ app.post('/api/orders/:id/cancel', async (req, res) => {
     }
   }
 
-  await db.addLog(`[ORDER]: ลูกค้ายกเลิกคำสั่งซื้อ ${orderId} สินค้าถูกส่งกลับเข้าสต็อก`);
-  await db.addLog(`[LINE Notify API]: แจ้งเตือนข้อความเตือนไปแจ้ง Manager -> "คำสั่งซื้อ ${orderId} ถูกยกเลิกโดยผู้ใช้"`);
+  await db.addLog(`[ORDER]: ลูกค้ายกเลิกคำสั่งซื้อ ${orderId} เหตุผล: ${reasonText} — สินค้าถูกส่งกลับเข้าสต็อก`);
+  await db.addLog(`[LINE Notify API]: แจ้งเตือนข้อความเตือนไปแจ้ง Manager -> "คำสั่งซื้อ ${orderId} ถูกยกเลิกโดยผู้ใช้ (${reasonText})"`);
 
   return res.json({ success: true });
 });
@@ -373,7 +375,7 @@ app.post('/api/orders/:id/manager-approve', async (req, res) => {
 // Manager rejects payment slip → cancelled
 app.post('/api/orders/:id/manager-reject', async (req, res) => {
   const orderId = req.params.id;
-  const { note } = req.body;
+  const { note } = req.body || {};
   const orders = await db.getOrders();
   const idx = orders.findIndex(o => o.id === orderId);
   if (idx === -1) return res.status(404).json({ error: 'Order not found.' });
@@ -388,9 +390,10 @@ app.post('/api/orders/:id/manager-reject', async (req, res) => {
     if (prod) await db.updateProduct(item.id, { stock: prod.stock + item.quantity });
   }
 
-  await db.updateOrderStatus(orderId, 'cancelled');
-  await db.addLog(`[PAYMENT REVIEW]: Manager ปฏิเสธสลิป (ออเดอร์: ${orderId}) เหตุผล: ${note || 'ไม่ระบุ'} — คืนสต็อกสินค้าแล้ว`);
-  await db.addLog(`[Email Service]: แจ้งลูกค้า ${orders[idx].email} ว่าสลิปถูกปฏิเสธ เหตุผล: ${note || 'กรุณาส่งสลิปใหม่'}`);
+  const reasonText = note || 'สลิปการโอนเงินไม่ถูกต้อง หรือข้อมูลการโอนไม่ตรงกับยอดชำระ';
+  await db.updateOrderStatus(orderId, 'cancelled', reasonText);
+  await db.addLog(`[PAYMENT REVIEW]: Manager ปฏิเสธสลิป (ออเดอร์: ${orderId}) เหตุผล: ${reasonText} — คืนสต็อกสินค้าแล้ว`);
+  await db.addLog(`[Email Service]: แจ้งลูกค้า ${orders[idx].email} ว่าสลิปถูกปฏิเสธ เหตุผล: ${reasonText}`);
   return res.json({ success: true });
 });
 
@@ -654,6 +657,6 @@ db.initDb().catch(err => {
   console.warn('initDb failed, switching to Local JSON fallback:', err?.message || err);
 }).finally(() => {
   app.listen(PORT, () => {
-    console.log(`WatchMart backend server running on port ${PORT}`);
+    console.log(`AudioMart backend server running on port ${PORT}`);
   });
 });

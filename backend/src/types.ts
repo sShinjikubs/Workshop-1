@@ -24,6 +24,8 @@ export interface Product {
   color?: string;
   strokeColor?: string;
   isGoldFace?: boolean;
+  connectivity?: string;
+  batteryLife?: string;
   image?: string;
   imageBack?: string;
   rating?: number;
@@ -48,6 +50,7 @@ export interface Order {
   status: string;
   date: string;
   slip?: string | null;
+  cancelReason?: string;
 }
 
 export interface PendingWatch {

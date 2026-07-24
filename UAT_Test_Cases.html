@@ -2,115 +2,32 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>UAT Test Cases Report - WatchMart</title>
+<title>UAT Test Cases Report - AudioMart</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap');
-  
-  @page {
-    size: A4;
-    margin: 15mm;
-  }
-
+  @page { size: A4; margin: 15mm; }
   body {
     font-family: 'Sarabun', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
-    color: #1e293b;
-    background: #ffffff;
-    padding: 0;
-    margin: 0;
+    line-height: 1.5; color: #1e293b; background: #ffffff; padding: 0; margin: 0;
   }
-
-  h1 {
-    color: #0f172a;
-    font-size: 22px;
-    border-bottom: 3px solid #3b82f6;
-    padding-bottom: 8px;
-    margin-top: 0;
-  }
-
-  h2 {
-    color: #1e293b;
-    font-size: 17px;
-    border-bottom: 1.5px solid #cbd5e1;
-    padding-bottom: 5px;
-    margin-top: 24px;
-  }
-
-  h3 {
-    color: #334155;
-    font-size: 14px;
-    margin-top: 16px;
-  }
-
-  p, li {
-    font-size: 12px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 14px 0;
-    font-size: 11px;
-    page-break-inside: avoid;
-  }
-
-  th, td {
-    border: 1px solid #cbd5e1;
-    padding: 7px 9px;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  th {
-    background-color: #f1f5f9;
-    color: #0f172a;
-    font-weight: 700;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f8fafc;
-  }
-
-  code {
-    background-color: #f1f5f9;
-    color: #0f172a;
-    padding: 1px 5px;
-    border-radius: 4px;
-    font-family: 'Consolas', 'Courier New', monospace;
-    font-size: 11px;
-  }
-
-  .badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 10px;
-    text-align: center;
-  }
-
-  .badge.pass {
-    background-color: #dcfce7;
-    color: #15803d;
-    border: 1px solid #bbf7d0;
-  }
-
-  .badge.fail {
-    background-color: #fee2e2;
-    color: #b91c1c;
-    border: 1px solid #fecaca;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #e2e8f0;
-    margin: 20px 0;
-  }
+  h1 { color: #0f172a; font-size: 20px; border-bottom: 3px solid #0284c7; padding-bottom: 8px; margin-top: 0; }
+  h2 { color: #1e293b; font-size: 16px; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 5px; margin-top: 24px; }
+  h3 { color: #334155; font-size: 14px; margin-top: 16px; }
+  p, li { font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 11px; page-break-inside: avoid; }
+  th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background-color: #f1f5f9; color: #0f172a; font-weight: 700; }
+  tr:nth-child(even) { background-color: #f8fafc; }
+  code { background-color: #f1f5f9; color: #0f172a; padding: 1px 5px; border-radius: 4px; font-family: 'Consolas', 'Courier New', monospace; font-size: 11px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-weight: bold; font-size: 10px; text-align: center; }
+  .badge.pass { background-color: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+  .badge.fail { background-color: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+  hr { border: none; border-top: 1px solid #e2e8f0; margin: 20px 0; }
 </style>
 </head>
 <body>
 <h1>📋 เอกสารการออกแบบและการทดสอบ User Acceptance Testing (UAT)</h1>
-<h2>โครงการ: WatchMart - แพลตฟอร์มร้านขายนาฬิกาพรีเมียมออนไลน์</h2>
+<h2>โครงการ: AudioMart - แพลตฟอร์มร้านขายเครื่องเสียงและอุปกรณ์เสียงพรีเมียมออนไลน์</h2>
 <strong>วิชา:</strong> CSI204 ดิจิทัลแพลตฟอร์มสำหรับพัฒนาซอฟต์แวร์ (SPU SIT)  
 <strong>กลุ่มผู้จัดทำ:</strong>
 1. <strong>กฤษฎา ต้องไกรเลิศ</strong> (รหัสนักศึกษา: 67115444)
@@ -121,37 +38,40 @@
 
 <h2>📌 1. การวิเคราะห์ Persona และผู้ใช้งานหลัก (User Personas)</h2>
 
-การทดสอบ UAT ในโครงการ <strong>WatchMart</strong> แบ่งตามกลุ่มผู้ใช้งานจริงออกเป็น 3 บทบาทหลักดังนี้:
+การทดสอบ UAT ในโครงการ <strong>AudioMart</strong> แบ่งตามกลุ่มผู้ใช้งานจริงออกเป็น 3 บทบาทหลักดังนี้:
 
 ``<code>mermaid
 graph TD
-    User["👥 ผู้ใช้งานระบบ WatchMart"]
+    User["👥 ผู้ใช้งานระบบ AudioMart"]
     User --&gt; Customer["🛒 1. Customer (ลูกค้าทั่วไป)"]
     User --&gt; Staff["📦 2. Staff / Seller (พนักงานขายและจัดการสินค้า)"]
     User --&gt; Manager["👑 3. Manager / Admin (ผู้จัดการและผู้ดูแลระบบ)"]
 
-    Customer --&gt; C_Goal["ค้นหานาฬิกา, ใส่ตะกร้า, ชำระเงิน QR PromptPay, ติดตามคำสั่งซื้อ"]
+    Customer --&gt; C_Goal["ค้นหาลำโพง/หูฟัง, ใส่ตะกร้า, ชำระเงิน QR PromptPay, ติดตามคำสั่งซื้อ"]
     Staff --&gt; S_Goal["ตรวจสอบคำสั่งซื้อ, ตรวจสลิปชำระเงิน, อัปเดตสถานะจัดส่ง"]
     Manager --&gt; M_Goal["ดูรายงานสรุปยอดขาย (Dashboard), จัดการสินค้า CRUD, จัดการผู้ใช้"]
 </code>`<code>
 
-<h3>1.1 Customer Persona (คุณกิตติศักดิ์ - ลูกค้าผู้หลงใหลในนาฬิกา)</h3>
-<ul><li><strong>บทบาท:</strong> ผู้ใช้งานทั่วไปที่เข้ามาค้นหาและสั่งซื้อนาฬิกาพรีเมียมออนไลน์</li><li><strong>เป้าหมาย (Goals):</strong></li></ul>
-  * สามารถค้นหา กรองแบรนด์/หมวดหมู่นาฬิกาที่สนใจได้อย่างรวดเร็ว
-  * ดูรายละเอียดนาฬิกา (เช่น รูปหน้า/หลัง, สเปค, ราคา, รีวิว)
+<h3>1.1 Customer Persona (คุณกิตติศักดิ์ - ผู้หลงใหลในเสียงเพลงและเครื่องเสียงไฮเอนด์)</h3>
+* <strong>บทบาท:</strong> ผู้ใช้งานทั่วไปที่เข้ามาค้นหาและสั่งซื้อลำโพง บลูทูธ และหูฟังพรีเมียมออนไลน์
+* <strong>เป้าหมาย (Goals):</strong>
+  * ค้นหา กรองแบรนด์ (Marshall, Sony, Bose, Apple, JBL, B&amp;O) และประเภทสินค้าได้อย่างรวดเร็ว
+  * ดูรายละเอียดสินค้า (การเชื่อมต่อ Bluetooth, ระบบตัดเสียงรบกวน ANC, แบตเตอรี่, ราคา, รีวิว)
   * ดำเนินการสั่งซื้อ เพิ่มลงตะกร้า ชำระเงินผ่าน QR Code PromptPay พร้อมแนบสลิป
   * ติดตามสถานะคำสั่งซื้อและประวัติการสั่งซื้อย้อนหลังได้ในหน้า My Orders
 
 <h3>1.2 Staff / Seller Persona (คุณสมชาย - พนักงานฝ่ายจัดการคำสั่งซื้อและคลังสินค้า)</h3>
-<ul><li><strong>บทบาท:</strong> พนักงานดูแลหน้าร้านและการจัดส่ง</li><li><strong>เป้าหมาย (Goals):</strong></li></ul>
+* <strong>บทบาท:</strong> พนักงานดูแลหน้าร้านและการจัดส่ง
+* <strong>เป้าหมาย (Goals):</strong>
   * ตรวจสอบรายการสั่งซื้อใหม่ที่เข้ามาในระบบ
   * ตรวจสอบความถูกต้องของสลิปโอนเงิน (Slip Verification)
-  * อัปเดตสถานะการจัดส่ง (เช่น </code>Pending<code> ➔ </code>Paid<code> ➔ </code>Shipped<code> ➔ </code>Delivered<code>) พร้อมระบุเลข Tracking
+  * อัปเดตสถานะการจัดส่ง (</code>Pending<code> ➔ </code>Paid<code> ➔ </code>Shipped<code> ➔ </code>Delivered<code>) พร้อมระบุเลข Tracking
 
 <h3>1.3 Manager / Admin Persona (คุณวิชัย - ผู้จัดการร้านและผู้ดูแลระบบ)</h3>
-<ul><li><strong>บทบาท:</strong> ผู้บริหารและผู้ดูแลระบบหลักของ WatchMart</li><li><strong>เป้าหมาย (Goals):</strong></li></ul>
-  * ภาพรวมการดำเนินงานผ่าน Dashboard (ยอดขายรวม, จำนวนออเดอร์, สินค้าขายดี)
-  * จัดการข้อมูลสินค้าในระบบ (เพิ่มนาฬิกาใหม่, แก้ไขราคา/สต็อก, ลบสินค้า) (CRUD Products)
+* <strong>บทบาท:</strong> ผู้บริหารและผู้ดูแลระบบหลักของ AudioMart
+* <strong>เป้าหมาย (Goals):</strong>
+  * ดูภาพรวมการดำเนินงานผ่าน Dashboard (ยอดขายรวม, จำนวนออเดอร์, สินค้าขายดี)
+  * จัดการข้อมูลสินค้าเครื่องเสียงในระบบ (เพิ่มสินค้าใหม่, แก้ไขราคา/สต็อก, ลบสินค้า) (CRUD Products)
   * บริหารจัดการสิทธิ์และสิทธิการใช้งานของผู้ใช้และพนักงาน
 
 ---
@@ -160,7 +80,7 @@ graph TD
 
 <h3>2.1 กลุ่มที่ 1: Customer (ผู้ใช้งานทั่วไป / ลูกค้า)</h3>
 
-<table><thead><tr><th>Test Case ID</th><th>วัตถุประสงค์การทดสอบ</th><th>ข้อมูลนำเข้า (Input)</th><th>ขั้นตอนการทดสอบ (Test Steps)</th><th>ผลลัพธ์ที่คาดหวัง (Expected Result)</th></tr></thead><tbody><tr><td><strong>UAT-CUS-001</strong></td><td>ทดสอบการลงทะเบียนเข้าใช้งานผู้ใช้ใหม่ (Register)</td><td>Username: </code>testuser01<code>&lt;br&gt;Password: </code>Pass1234!<code>&lt;br&gt;Email: </code>test@watchmart.com<code>&lt;br&gt;Phone: </code>0812345678<code></td><td>1. เข้าหน้า Register&lt;br&gt;2. กรอกข้อมูลในฟอร์มให้ครบถ้วน&lt;br&gt;3. กดปุ่ม "สมัครสมาชิก"</td><td>ระบบบันทึกข้อมูลสำเร็จ แสดงข้อความต้อนรับ และเปลี่ยนหน้าไปยังหน้า Login หรือ Logged-in สภาวะปกติ</td></tr><tr><td><strong>UAT-CUS-002</strong></td><td>ทดสอบการค้นหาและกรองรายการนาฬิกา (Search &amp; Filter)</td><td>Keyword: </code>G-SHOCK<code>&lt;br&gt;Brand Filter: </code>G-SHOCK<code>&lt;br&gt;Category: </code>Analog-Digital<code></td><td>1. เข้าสู่หน้า Storefront&lt;br&gt;2. พิมพ์คำค้นหา "G-SHOCK"&lt;br&gt;3. เลือกตัวกรองแบรนด์และหมวดหมู่</td><td>รายการนาฬิกาแสดงเฉพาะรุ่นที่ตรงกับคำค้นหาและตัวกรองได้อย่างถูกต้อง</td></tr><tr><td><strong>UAT-CUS-003</strong></td><td>ทดสอบการดูรายละเอียดสินค้าและการเพิ่มสินค้าลงตะกร้า (Add to Cart)</td><td>Product ID: </code>GM-2100-1ADR<code>&lt;br&gt;Quantity: </code>1<code></td><td>1. คลิกเลือกนาฬิการุ่นที่ต้องการ&lt;br&gt;2. ตรวจสอบรายละเอียด รูปหน้า-หลัง&lt;br&gt;3. กดปุ่ม "เพิ่มลงตะกร้า"</td><td>สินค้าถูกเพิ่มเข้าตะกร้า จำนวนไอคอนตะกร้าเปลี่ยนเป็น 1 และคำนวณราคารวมถูกต้อง</td></tr><tr><td><strong>UAT-CUS-004</strong></td><td>ทดสอบการสั่งซื้อ ชำระเงิน PromptPay QR และแนบสลิป (Checkout &amp; Payment)</td><td>Full Name, Shipping Address&lt;br&gt;Payment Slip Image</td><td>1. เข้าหน้า Cart ➔ ดำเนินการ Checkout&lt;br&gt;2. กรอกที่อยู่จัดส่ง&lt;br&gt;3. สแกน QR Code เพื่อชำระเงิน&lt;br&gt;4. อัปโหลดสลิปโอนเงิน&lt;br&gt;5. กดปุ่ม "ยืนยันสั่งซื้อ"</td><td>สร้างคำสั่งซื้อสำเร็จ ระบบสร้าง Order ID แสดงหน้ายืนยันสั่งซื้อ และส่งการแจ้งเตือนไปยัง LINE Notify</td></tr><tr><td><strong>UAT-CUS-005</strong></td><td>ทดสอบการตรวจสอบประวัติและสถานะคำสั่งซื้อ (Order Tracking)</td><td>User: Logged in customer</td><td>1. เข้าสู่หน้า "My Orders / โปรไฟล์"&lt;br&gt;2. ตรวจสอบรายการคำสั่งซื้อล่าสุด</td><td>แสดงรายการออเดอร์ สถานะการชำระเงิน และสถานะจัดส่งตรงตามความเป็นจริง</td></tr></tbody></table>
+<table><thead><tr><th>Test Case ID</th><th>วัตถุประสงค์การทดสอบ</th><th>ข้อมูลนำเข้า (Input)</th><th>ขั้นตอนการทดสอบ (Test Steps)</th><th>ผลลัพธ์ที่คาดหวัง (Expected Result)</th></tr></thead><tbody><tr><td><strong>UAT-CUS-001</strong></td><td>ทดสอบการลงทะเบียนเข้าใช้งานผู้ใช้ใหม่ (Register)</td><td>Username: </code>testuser01<code>&lt;br&gt;Password: </code>Pass1234!<code>&lt;br&gt;Email: </code>test@audiomart.com<code>&lt;br&gt;Phone: </code>0812345678<code></td><td>1. เข้าหน้า Register&lt;br&gt;2. กรอกข้อมูลในฟอร์มให้ครบถ้วน&lt;br&gt;3. กดปุ่ม "สมัครสมาชิก"</td><td>ระบบบันทึกข้อมูลสำเร็จ แสดงข้อความต้อนรับ และเปลี่ยนหน้าไปยังหน้า Login หรือ Logged-in สภาวะปกติ</td></tr><tr><td><strong>UAT-CUS-002</strong></td><td>ทดสอบการค้นหาและกรองรายการเครื่องเสียง (Search &amp; Filter)</td><td>Keyword: </code>Marshall<code>&lt;br&gt;Brand Filter: </code>Marshall<code>&lt;br&gt;Category: </code>speaker<code></td><td>1. เข้าสู่หน้า Storefront&lt;br&gt;2. พิมพ์คำค้นหา "Marshall"&lt;br&gt;3. เลือกตัวกรองแบรนด์และหมวดหมู่</td><td>รายการลำโพงแสดงเฉพาะรุ่นที่ตรงกับคำค้นหาและตัวกรองได้อย่างถูกต้อง</td></tr><tr><td><strong>UAT-CUS-003</strong></td><td>ทดสอบการดูรายละเอียดสินค้าและการเพิ่มสินค้าลงตะกร้า (Add to Cart)</td><td>Product ID: </code>1<code> (Marshall Stanmore III)&lt;br&gt;Quantity: </code>1<code></td><td>1. คลิกเลือกหูฟัง/ลำโพงรุ่นที่ต้องการ&lt;br&gt;2. ตรวจสอบรายละเอียด สเปคสินค้า&lt;br&gt;3. กดปุ่ม "เพิ่มลงตะกร้า"</td><td>สินค้าถูกเพิ่มเข้าตะกร้า จำนวนไอคอนตะกร้าเปลี่ยนเป็น 1 และคำนวณราคารวมถูกต้อง</td></tr><tr><td><strong>UAT-CUS-004</strong></td><td>ทดสอบการสั่งซื้อ ชำระเงิน PromptPay QR และแนบสลิป (Checkout &amp; Payment)</td><td>Full Name, Shipping Address&lt;br&gt;Payment Slip Image</td><td>1. เข้าหน้า Cart ➔ ดำเนินการ Checkout&lt;br&gt;2. กรอกที่อยู่จัดส่ง&lt;br&gt;3. สแกน QR Code เพื่อชำระเงิน&lt;br&gt;4. อัปโหลดสลิปโอนเงิน&lt;br&gt;5. กดปุ่ม "ยืนยันสั่งซื้อ"</td><td>สร้างคำสั่งซื้อสำเร็จ ระบบสร้าง Order ID แสดงหน้ายืนยันสั่งซื้อ และส่งการแจ้งเตือนไปยัง LINE Notify</td></tr><tr><td><strong>UAT-CUS-005</strong></td><td>ทดสอบการตรวจสอบประวัติและสถานะคำสั่งซื้อ (Order Tracking)</td><td>User: Logged in customer</td><td>1. เข้าสู่หน้า "My Orders / โปรไฟล์"&lt;br&gt;2. ตรวจสอบรายการคำสั่งซื้อล่าสุด</td><td>แสดงรายการออเดอร์ สถานะการชำระเงิน และสถานะจัดส่งตรงตามความเป็นจริง</td></tr></tbody></table>
 
 ---
 
@@ -172,7 +92,7 @@ graph TD
 
 <h3>2.3 กลุ่มที่ 3: Manager / Admin (ผู้จัดการและผู้ดูแลระบบ)</h3>
 
-<table><thead><tr><th>Test Case ID</th><th>วัตถุประสงค์การทดสอบ</th><th>ข้อมูลนำเข้า (Input)</th><th>ขั้นตอนการทดสอบ (Test Steps)</th><th>ผลลัพธ์ที่คาดหวัง (Expected Result)</th></tr></thead><tbody><tr><td><strong>UAT-MNG-001</strong></td><td>ทดสอบการดู Dashboard สรุปภาพรวมยอดขาย</td><td>Date range, Overview metrics</td><td>1. เข้าสู่ระบบด้วยสิทธิ์ Admin/Manager&lt;br&gt;2. ไปยังหน้า Admin Dashboard</td><td>แสดงผลรวมยอดขาย (Total Revenue), จำนวน Order, จำนวนสินค้าในสต็อก และกราฟสรุปได้อย่างแม่นยำ</td></tr><tr><td><strong>UAT-MNG-002</strong></td><td>ทดสอบการเพิ่มรายการนาฬิกาใหม่เข้าสู่ระบบ (Create Product)</td><td>Name: </code>TAG Heuer Monaco<code>&lt;br&gt;Brand: </code>TAG Heuer<code>&lt;br&gt;Price: </code>245000<code>&lt;br&gt;Stock: </code>5<code>&lt;br&gt;Images: front/back files</td><td>1. เข้าหน้าจัดการสินค้า (Product Management)&lt;br&gt;2. กดปุ่ม "เพิ่มสินค้าใหม่"&lt;br&gt;3. กรอกรายละเอียด เลือกภาพสินค้า&lt;br&gt;4. กดบันทึก</td><td>สินค้าใหม่ถูกบันทึกลงฐานข้อมูล และปรากฏบนหน้า Storefront ให้ลูกค้าสั่งซื้อได้ทันที</td></tr><tr><td><strong>UAT-MNG-003</strong></td><td>ทดสอบการแก้ไขข้อมูลราคาและสต็อกสินค้า (Update Product)</td><td>Stock: Update from </code>5<code> to </code>8<code>&lt;br&gt;Price: Update from </code>245000<code> to </code>240000<code></td><td>1. เลือกสินค้าที่ต้องการแก้ไข&lt;br&gt;2. ปรับเปลี่ยนจำนวนสต็อกและราคา&lt;br&gt;3. กด "บันทึกการเปลี่ยนแปลง"</td><td>ข้อมูลในฐานข้อมูลและหน้าเว็บแสดงราคา/สต็อกใหม่ตรงกันทันที</td></tr><tr><td><strong>UAT-MNG-004</strong></td><td>ทดสอบการลบสินค้าออกจากระบบ (Delete Product)</td><td>Target Product ID</td><td>1. เลือกสินค้าที่ต้องการลบ&lt;br&gt;2. กดปุ่ม "ลบสินค้า"&lt;br&gt;3. ยืนยันการลบใน Pop-up Confirm</td><td>สินค้าถูกลบออกจากรายการสินค้า และไม่แสดงบน Storefront อีกต่อไป</td></tr></tbody></table>
+<table><thead><tr><th>Test Case ID</th><th>วัตถุประสงค์การทดสอบ</th><th>ข้อมูลนำเข้า (Input)</th><th>ขั้นตอนการทดสอบ (Test Steps)</th><th>ผลลัพธ์ที่คาดหวัง (Expected Result)</th></tr></thead><tbody><tr><td><strong>UAT-MNG-001</strong></td><td>ทดสอบการดู Dashboard สรุปภาพรวมยอดขาย</td><td>Date range, Overview metrics</td><td>1. เข้าสู่ระบบด้วยสิทธิ์ Admin/Manager&lt;br&gt;2. ไปยังหน้า Admin Dashboard</td><td>แสดงผลรวมยอดขาย (Total Revenue), จำนวน Order, จำนวนสินค้าในสต็อก และกราฟสรุปได้อย่างแม่นยำ</td></tr><tr><td><strong>UAT-MNG-002</strong></td><td>ทดสอบการเพิ่มรายการสินค้าใหม่เข้าสู่ระบบ (Create Product)</td><td>Name: </code>Bose SoundLink Flex<code>&lt;br&gt;Brand: </code>Bose<code>&lt;br&gt;Price: </code>6490<code>&lt;br&gt;Stock: </code>10<code></td><td>1. เข้าหน้าจัดการสินค้า (Product Management)&lt;br&gt;2. กดปุ่ม "เพิ่มสินค้าใหม่"&lt;br&gt;3. กรอกรายละเอียด เลือกภาพสินค้า&lt;br&gt;4. กดบันทึก</td><td>สินค้าใหม่ถูกบันทึกลงฐานข้อมูล และปรากฏบนหน้า Storefront ให้ลูกค้าสั่งซื้อได้ทันที</td></tr><tr><td><strong>UAT-MNG-003</strong></td><td>ทดสอบการแก้ไขข้อมูลราคาและสต็อกสินค้า (Update Product)</td><td>Stock: Update from </code>10<code> to </code>15<code>&lt;br&gt;Price: Update from </code>6490<code> to </code>5990<code></td><td>1. เลือกสินค้าที่ต้องการแก้ไข&lt;br&gt;2. ปรับเปลี่ยนจำนวนสต็อกและราคา&lt;br&gt;3. กด "บันทึกการเปลี่ยนแปลง"</td><td>ข้อมูลในฐานข้อมูลและหน้าเว็บแสดงราคา/สต็อกใหม่ตรงกันทันที</td></tr><tr><td><strong>UAT-MNG-004</strong></td><td>ทดสอบการลบสินค้าออกจากระบบ (Delete Product)</td><td>Target Product ID</td><td>1. เลือกสินค้าที่ต้องการลบ&lt;br&gt;2. กดปุ่ม "ลบสินค้า"&lt;br&gt;3. ยืนยันการลบใน Pop-up Confirm</td><td>สินค้าถูกลบออกจากรายการสินค้า และไม่แสดงบน Storefront อีกต่อไป</td></tr></tbody></table>
 
 ---
 
@@ -189,7 +109,7 @@ sequenceDiagram
     participant Backend as ⚙️ Backend API
     participant LINE as 💬 LINE Notify
 
-    Customer-&gt;&gt;Frontend: เลือกนาฬิกา G-SHOCK ใส่ตะกร้า
+    Customer-&gt;&gt;Frontend: เลือกซื้อลำโพง Marshall Stanmore III ใส่ตะกร้า
     Customer-&gt;&gt;Frontend: ไปหน้า Checkout กรอกที่อยู่จัดส่ง
     Customer-&gt;&gt;Frontend: ชำระเงินผ่าน PromptPay QR &amp; อัปโหลดสลิป
     Frontend-&gt;&gt;Backend: POST /api/orders (สร้างคำสั่งซื้อ)
@@ -226,13 +146,11 @@ sequenceDiagram
 
 <h3>4.2 ตารางสรุปผลการทดสอบรายกรณี (Detailed Test Results)</h3>
 
-<table><thead><tr><th>Test Case ID</th><th>รายการทดสอบ</th><th>ประเภทการทดสอบ</th><th>ผลการทดสอบ (Result)</th><th>หมายเหตุ / หลักฐานประกอบ</th></tr></thead><tbody><tr><td><strong>UAT-CUS-001</strong></td><td>Register ผู้ใช้ใหม่</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>สมาชิกใหม่ถูกเพิ่มใน DB และ Login ได้ปกติ</td></tr><tr><td><strong>UAT-CUS-002</strong></td><td>Search &amp; Filter นาฬิกา</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>ค้นหาแบรนด์ G-SHOCK / Rolex / TAG Heuer ได้แม่นยำ</td></tr><tr><td><strong>UAT-CUS-003</strong></td><td>Add to Cart &amp; คำนวณราคา</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>คำนวณราคารวมตามจำนวนสินค้าถูกต้อง</td></tr><tr><td><strong>UAT-CUS-004</strong></td><td>Checkout, QR PromptPay &amp; Upload Slip</td><td>Workflow Test</td><td><span class="badge pass">PASS</span></td><td>แสดง QR Code, อัปโหลดสลิปได้ และแจ้งเตือนเข้า LINE Notify</td></tr><tr><td><strong>UAT-CUS-005</strong></td><td>Track Order ใน My Orders</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>แสดงรายการสั่งซื้อและสถานะอัปเดตแบบ Real-time</td></tr><tr><td><strong>UAT-STF-001</strong></td><td>Staff Login</td><td>Security &amp; Functional</td><td><span class="badge pass">PASS</span></td><td>แยกการเข้าถึงหน้า Seller สำหรับพนักงานได้ถูกต้อง</td></tr><tr><td><strong>UAT-STF-002</strong></td><td>ตรวจสอบคำสั่งซื้อ &amp; สลิป</td><td>Business Process Test</td><td><span class="badge pass">PASS</span></td><td>พนักงานดูรูปภาพสลิปที่ลูกค้าแนบมาได้ชัดเจน</td></tr><tr><td><strong>UAT-STF-003</strong></td><td>อัปเดตสถานะจัดส่ง &amp; Tracking No.</td><td>Business Process Test</td><td><span class="badge pass">PASS</span></td><td>บันทึกเลขพัสดุสำเร็จ สถานะเปลี่ยนเป็น Shipped</td></tr><tr><td><strong>UAT-MNG-001</strong></td><td>ดูรายงานสรุปยอดขายบน Admin Dashboard</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>คำนวณยอดขายรวม ออเดอร์ทั้งหมด และจำนวนสต็อกถูกต้อง</td></tr><tr><td><strong>UAT-MNG-002</strong></td><td>เพิ่มสินค้าใหม่ (Create Product)</td><td>CRUD Test</td><td><span class="badge pass">PASS</span></td><td>เพิ่มนาฬิการุ่นใหม่ พร้อมรูปหน้า-หลัง สำเร็จ</td></tr><tr><td><strong>UAT-MNG-003</strong></td><td>แก้ไขราคา/สต็อกสินค้า (Update Product)</td><td>CRUD Test</td><td><span class="badge pass">PASS</span></td><td>เปลี่ยนแปลงราคาและจำนวนสต็อกมีผลทันที</td></tr><tr><td><strong>UAT-MNG-004</strong></td><td>ลบสินค้า (Delete Product)</td><td>CRUD Test</td><td><span class="badge pass">PASS</span></td><td>สินค้าถูกลบออกจากฐานข้อมูลและหน้าร้านสำเร็จ</td></tr></tbody></table>
+<table><thead><tr><th>Test Case ID</th><th>รายการทดสอบ</th><th>ประเภทการทดสอบ</th><th>ผลการทดสอบ (Result)</th><th>หมายเหตุ / หลักฐานประกอบ</th></tr></thead><tbody><tr><td><strong>UAT-CUS-001</strong></td><td>Register ผู้ใช้ใหม่</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>สมาชิกใหม่ถูกเพิ่มใน DB และ Login ได้ปกติ</td></tr><tr><td><strong>UAT-CUS-002</strong></td><td>Search &amp; Filter เครื่องเสียง</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>ค้นหาแบรนด์ Marshall / Sony / Bose ได้แม่นยำ</td></tr><tr><td><strong>UAT-CUS-003</strong></td><td>Add to Cart &amp; คำนวณราคา</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>คำนวณราคารวมตามจำนวนสินค้าถูกต้อง</td></tr><tr><td><strong>UAT-CUS-004</strong></td><td>Checkout, QR PromptPay &amp; Upload Slip</td><td>Workflow Test</td><td><span class="badge pass">PASS</span></td><td>แสดง QR Code, อัปโหลดสลิปได้ และแจ้งเตือนเข้า LINE Notify</td></tr><tr><td><strong>UAT-CUS-005</strong></td><td>Track Order ใน My Orders</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>แสดงรายการสั่งซื้อและสถานะอัปเดตแบบ Real-time</td></tr><tr><td><strong>UAT-STF-001</strong></td><td>Staff Login</td><td>Security &amp; Functional</td><td><span class="badge pass">PASS</span></td><td>แยกการเข้าถึงหน้า Seller สำหรับพนักงานได้ถูกต้อง</td></tr><tr><td><strong>UAT-STF-002</strong></td><td>ตรวจสอบคำสั่งซื้อ &amp; สลิป</td><td>Business Process Test</td><td><span class="badge pass">PASS</span></td><td>พนักงานดูรูปภาพสลิปที่ลูกค้าแนบมาได้ชัดเจน</td></tr><tr><td><strong>UAT-STF-003</strong></td><td>อัปเดตสถานะจัดส่ง &amp; Tracking No.</td><td>Business Process Test</td><td><span class="badge pass">PASS</span></td><td>บันทึกเลขพัสดุสำเร็จ สถานะเปลี่ยนเป็น Shipped</td></tr><tr><td><strong>UAT-MNG-001</strong></td><td>ดูรายงานสรุปยอดขายบน Admin Dashboard</td><td>Functional Test</td><td><span class="badge pass">PASS</span></td><td>คำนวณยอดขายรวม ออเดอร์ทั้งหมด และจำนวนสต็อกถูกต้อง</td></tr><tr><td><strong>UAT-MNG-002</strong></td><td>เพิ่มสินค้าใหม่ (Create Product)</td><td>CRUD Test</td><td><span class="badge pass">PASS</span></td><td>เพิ่มลำโพง/หูฟังรุ่นใหม่ พร้อมรูปภาพและสเปคสำเร็จ</td></tr><tr><td><strong>UAT-MNG-003</strong></td><td>แก้ไขราคา/สต็อกสินค้า (Update Product)</td><td>CRUD Test</td><td><span class="badge pass">PASS</span></td><td>เปลี่ยนแปลงราคาและจำนวนสต็อกมีผลทันที</td></tr><tr><td><strong>UAT-MNG-004</strong></td><td>ลบสินค้า (Delete Product)</td><td>CRUD Test</td><td><span class="badge pass">PASS</span></td><td>สินค้าถูกลบออกจากฐานข้อมูลและหน้าร้านสำเร็จ</td></tr></tbody></table>
 
 ---
 
 <h3>4.3 รายงานประเด็นที่พบและแนวทางแก้ไข (Issue Log &amp; Resolutions)</h3>
-
-ระหว่างการทดสอบในระยะเบต้า (Beta Testing) พบประเด็นปัญหาเล็กน้อยซึ่งผู้พัฒนาระบบได้ทำการปรับปรุงแก้ไขเรียบร้อยแล้ว ดังนี้:
 
 <table><thead><tr><th>Issue ID</th><th>รายละเอียดปัญหาที่พบ (Issue Summary)</th><th>ระดับความรุนแรง</th><th>แนวทางแก้ไข (Resolution / Fix Details)</th><th>สถานะปัจจุบัน</th></tr></thead><tbody><tr><td><strong>ISS-01</strong></td><td>รูปภาพสลิปชำระเงินขนาดใหญ่เกินไปทำให้โหลดหน้า Seller ช้า</td><td>Medium</td><td>เพิ่มระบบบีบอัดรูปภาพและจำกัดไฟล์อัปโหลดไม่เกิน 5MB ที่ฝั่ง Frontend และ Backend</td><td><span class="badge pass">PASS</span></td></tr><tr><td><strong>ISS-02</strong></td><td>เมื่อกดสั่งซื้อแล้วจำนวนสต็อกสินค้าในระบบไม่ตัดอัตโนมัติ</td><td>High</td><td>ปรับแต่ง Backend API ให้ทำการลดจำนวน </code>stock<code> ในตาราง </code>products` ทันทีเมื่อออเดอร์ถูกสร้าง</td><td><span class="badge pass">PASS</span></td></tr><tr><td><strong>ISS-03</strong></td><td>การแสดงผลบนหน้าจอมือถือ (Mobile Screen) ตะกร้าสินค้าทับซ้อนกับเมนู</td><td>Low</td><td>ปรับแก้ CSS Layout แบบ Responsive Grid และ Z-Index ให้แสดงผลรองรับ Mobile-First</td><td><span class="badge pass">PASS</span></td></tr></tbody></table>
 
@@ -240,7 +158,7 @@ sequenceDiagram
 
 <h2>📌 5. ข้อสรุปและการนำเสนอผลการทดสอบต่อผู้สอน (Conclusion &amp; Presentation)</h2>
 
-ผลการทดสอบ <strong>User Acceptance Testing (UAT)</strong> ของแพลตฟอร์ม <strong>WatchMart</strong> ครอบคลุมการทำงานครบทั้ง 3 บทบาทหลัก (<strong>Customer</strong>, <strong>Staff</strong>, <strong>Manager/Admin</strong>) ผลการทดสอบรวม 12 Test Cases ผ่านการทดสอบทั้งหมด 100% ระบบมีความพร้อมและสามารถรองรับกระบวนการทางธุรกิจ (Business Process) ตามความต้องการของโครงงานกลุ่มได้อย่างสมบูรณ์
+ผลการทดสอบ <strong>User Acceptance Testing (UAT)</strong> ของแพลตฟอร์ม <strong>AudioMart</strong> ครอบคลุมการทำงานครบทั้ง 3 บทบาทหลัก (<strong>Customer</strong>, <strong>Staff</strong>, <strong>Manager/Admin</strong>) ผลการทดสอบรวม 12 Test Cases ผ่านการทดสอบทั้งหมด 100% ระบบมีความพร้อมและสามารถรองรับกระบวนการทางธุรกิจ (Business Process) ตามความต้องการของโครงงานกลุ่มได้อย่างสมบูรณ์
 
 ---
 <em>เอกสารนี้จัดทำในรูปแบบ Markdown เพื่อใช้เป็นหลักฐานประกอบการส่งงานและการนำเสนอผลการทดสอบ UAT ต่อผู้สอนในวิชา CSI204</em>

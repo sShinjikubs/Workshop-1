@@ -386,7 +386,7 @@ export default function Checkout() {
                         012-3-45678-9
                       </div>
                       <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                        ชื่อบัญชี: บจก. วอทช์มาร์ท จำกัด (WatchMart Co., Ltd.)
+                        ชื่อบัญชี: บจก. ออดิโอ้ มาร์ท จำกัด (AudioMart Co., Ltd.)
                       </div>
                     </div>
                   </div>

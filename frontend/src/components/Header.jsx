@@ -535,11 +535,12 @@ export default function Header({ showCart, cartCount: cartCountProp, onCartClick
           {/* Brand Logos */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.4rem', borderLeft: '1px solid var(--glass-border)', paddingLeft: '1.4rem' }}>
             {[
-              { name: 'Rolex', logo: '/images/brands/Logo_da_Rolex.png', style: { borderRadius: '4px' } },
-              { name: 'SEIKO', logo: '/images/seiko-logo-png_seeklogo-124537.png', style: theme === 'dark' ? { filter: 'invert(1)' } : {} },
-              { name: 'LUMINOX', logo: '/images/brands/luminox-logo-png_seeklogo-86279.png', style: {} },
-              { name: 'TAG Heuer', logo: '/images/brands/tag-heuer-logo-png_seeklogo-481352.png', style: {} },
-              { name: 'G-SHOCK', isText: true, style: { fontWeight: '900', fontSize: '0.8rem', letterSpacing: '0.5px', color: 'var(--text-light)', fontFamily: 'Impact, sans-serif' } }
+              { name: 'Marshall', isText: true, style: { fontWeight: '900', fontSize: '0.9rem', fontStyle: 'italic', color: '#d4af37', fontFamily: 'serif' } },
+              { name: 'Sony', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', letterSpacing: '1px', color: '#38bdf8', fontFamily: 'sans-serif' } },
+              { name: 'Bose', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', letterSpacing: '1.5px', color: '#a855f7', fontFamily: 'sans-serif' } },
+              { name: 'Apple', isText: true, style: { fontWeight: '800', fontSize: '0.85rem', color: '#f43f5e', fontFamily: 'sans-serif' } },
+              { name: 'JBL', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', color: '#f97316', fontFamily: 'Impact, sans-serif' } },
+              { name: 'B&O', isText: true, style: { fontWeight: '800', fontSize: '0.85rem', color: '#10b981', fontFamily: 'sans-serif' } }
             ].map((b) => (
               <button
                 key={b.name}

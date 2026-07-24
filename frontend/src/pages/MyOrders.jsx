@@ -110,7 +110,15 @@ export default function MyOrders() {
   return (
     <div className="page-wrapper">
       {notification && (
-        <div className={`notification ${notification.ok ? '' : 'error'}`}>{notification.msg}</div>
+        <div 
+          className={`notification ${notification.ok ? '' : 'error'}`} 
+          onClick={() => setNotification(null)}
+          style={{ cursor: 'pointer', userSelect: 'none' }}
+          title="คลิกเพื่อปิด"
+        >
+          <span>{notification.msg}</span>
+          <span style={{ marginLeft: 'auto', fontWeight: 'bold', fontSize: '1rem', opacity: 0.8 }}>✕</span>
+        </div>
       )}
       <Header />
 
@@ -189,7 +197,7 @@ export default function MyOrders() {
                           {img ? (
                             <img src={img} alt={lang === 'en' && item.nameEn ? item.nameEn : item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                           ) : (
-                            <Icons.Watch style={{ width: '24px', height: '24px', color: 'rgba(255,255,255,0.2)' }} />
+                            <Icons.Tag style={{ width: '24px', height: '24px', color: 'rgba(255,255,255,0.2)' }} />
                           )}
                         </div>
                         <div style={{ flexGrow: 1 }}>
@@ -217,6 +225,28 @@ export default function MyOrders() {
                 <span>📍 <strong>{t('shippingAddress')}:</strong> {ord.address}</span>
                 <span>💳 <strong>{t('paymentMethod')}:</strong> {ord.payment?.toUpperCase()}</span>
               </div>
+
+              {/* Display Reason for Cancelled orders */}
+              {ord.status === 'cancelled' && (
+                <div style={{
+                  marginTop: '1.2rem',
+                  padding: '1rem 1.2rem',
+                  background: 'rgba(239, 68, 68, 0.08)',
+                  border: '1px solid rgba(239, 68, 68, 0.25)',
+                  borderRadius: '12px',
+                  color: '#f87171',
+                  fontSize: '0.88rem',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '0.6rem'
+                }}>
+                  <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>⚠️</span>
+                  <div>
+                    <strong style={{ color: '#ef4444', display: 'block', marginBottom: '0.2rem' }}>เหตุผลการยกเลิก / ปฏิเสธรายการ:</strong>
+                    <span>{ord.cancelReason || 'สลิปการโอนเงินไม่ถูกต้อง หรือคำสั่งซื้อถูกยกเลิก'}</span>
+                  </div>
+                </div>
+              )}
 
               {ord.status === 'pending_payment' && (
                 <div style={{ marginTop: '1.2rem', padding: '1.2rem', background: 'rgba(255,165,0,0.03)', borderRadius: '12px', border: '1px solid rgba(255,165,0,0.15)' }}>
@@ -257,7 +287,7 @@ export default function MyOrders() {
                                 012-3-45678-9
                               </div>
                               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                                ชื่อบัญชี: บจก. วอทช์มาร์ท จำกัด
+                                ชื่อบัญชี: บจก. ออดิโอ้ มาร์ท จำกัด (AudioMart Co., Ltd.)
                               </div>
                             </div>
                           </div>

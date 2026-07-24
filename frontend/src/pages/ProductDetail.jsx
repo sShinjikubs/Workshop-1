@@ -50,7 +50,7 @@ function StarRating({ rating, size = '1rem' }) {
   const rounded = Math.round(rating);
   return (
     <span style={{ fontSize: size, letterSpacing: '1px', color: 'var(--accent-gold)' }}>
-      {Array.from({ length: 5 }, (_, i) => (i < rounded ? '★' : '☆')).join('')}
+      {Array.from({ length: 5 }, (_, i) => (i < rounded && rounded > 0 ? '★' : '☆')).join('')}
     </span>
   );
 }
@@ -156,7 +156,7 @@ export default function ProductDetail() {
   // Calculate average rating
   const avgRating = reviews.length > 0 
     ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length 
-    : 5;
+    : (product?.rating || 0);
 
   if (!product) {
     return (
@@ -382,7 +382,7 @@ export default function ProductDetail() {
             <div className="pd-shop-info">
               <div className="pd-shop-row" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <Icons.Info style={{ color: 'var(--accent-gold)' }} />
-                <span><strong>WatchMart Official Store</strong> — Premium Watch Marketplace</span>
+                <span><strong>AudioMart Official Store</strong> — Premium Audio & Sound Marketplace</span>
               </div>
               <div className="pd-shop-row" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <Icons.Package style={{ color: 'var(--accent-gold)' }} />

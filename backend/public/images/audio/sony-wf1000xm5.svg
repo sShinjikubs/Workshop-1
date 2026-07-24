@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="800" height="600">
+    <defs>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#090d16"/>
+        <stop offset="100%" stop-color="#171e2e"/>
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <rect width="400" height="300" fill="url(#bgGrad)"/>
+    <g filter="url(#glow)">
+      <circle cx="140" cy="115" r="28" fill="#18181b" stroke="#38bdf8" stroke-width="4"/>
+      <rect x="133" y="135" width="14" height="45" rx="7" fill="#38bdf8"/>
+      <circle cx="260" cy="115" r="28" fill="#18181b" stroke="#38bdf8" stroke-width="4"/>
+      <rect x="253" y="135" width="14" height="45" rx="7" fill="#38bdf8"/>
+    </g>
+    <text x="200" y="240" text-anchor="middle" fill="#ffffff" font-family="Sarabun, sans-serif" font-weight="bold" font-size="18">Sony WF-1000XM5</text>
+    <text x="200" y="265" text-anchor="middle" fill="#38bdf8" font-family="Sarabun, sans-serif" font-size="13">Truly Wireless Noise Cancelling Earbuds</text>
+  </svg>

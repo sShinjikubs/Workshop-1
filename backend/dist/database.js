@@ -75,553 +75,99 @@ function writeJsonDb(data) {
 const defaultProducts = [
     {
         id: "1",
-        name: "Luminox ASIA LITE 0320.AS (XS.0321.BO.AS)",
-        nameEn: "Luminox ASIA LITE 0320.AS (XS.0321.BO.AS)",
-        brand: "Luminox",
-        category: "classic",
-        price: 9500,
-        stock: 15,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ ASIA LITE 0320.AS SERIES (หน้าปัด 44 mm) รุ่น XS.0321.BO.AS หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ ASIA LITE 0320.AS SERIES (หน้าปัด 44 mm) รุ่น XS.0321.BO.AS หลัง.webp"
+        name: "Marshall Stanmore III Bluetooth Speaker",
+        nameEn: "Marshall Stanmore III Bluetooth Speaker",
+        brand: "Marshall",
+        category: "speaker",
+        price: 17900,
+        stock: 12,
+        connectivity: "Bluetooth 5.2 / AUX / RCA",
+        batteryLife: "AC Powered",
+        image: "/images/audio/marshall-stanmore.svg"
     },
     {
         id: "2",
-        name: "Luminox Bear Grylls Survival 3720 (XB.3729.NGU)",
-        nameEn: "Luminox Bear Grylls Survival 3720 (XB.3729.NGU)",
-        brand: "Luminox",
-        category: "sport",
-        price: 17500,
-        stock: 8,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ BEAR GRYLLS SURVIVAL 3720 SEA SERIES รุ่น XB.3729.NGU หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ BEAR GRYLLS SURVIVAL 3720 SEA SERIES รุ่น XB.3729.NGU หลัง.webp"
+        name: "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+        nameEn: "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+        brand: "Sony",
+        category: "headphones",
+        price: 14990,
+        stock: 15,
+        connectivity: "Bluetooth 5.2 / 3.5mm",
+        batteryLife: "30 Hours",
+        image: "/images/audio/sony-wh1000xm5.svg"
     },
     {
         id: "3",
-        name: "Luminox Sea Lion G Collection (X2.2055.1)",
-        nameEn: "Luminox Sea Lion G Collection (X2.2055.1)",
-        brand: "Luminox",
-        category: "classic",
-        price: 8900,
-        stock: 20,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ G collection Sea Lion รุ่น X2.2055.1 หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ G collection Sea Lion รุ่น X2.2055.1 หลัง.webp"
+        name: "Bose QuietComfort Ultra Headphones",
+        nameEn: "Bose QuietComfort Ultra Headphones",
+        brand: "Bose",
+        category: "headphones",
+        price: 15900,
+        stock: 10,
+        connectivity: "Bluetooth 5.3",
+        batteryLife: "24 Hours",
+        image: "/images/audio/bose-quietcomfort.svg"
     },
     {
         id: "4",
-        name: "Luminox ICE-SAR 1080 Limited Edition (XL.1095)",
-        nameEn: "Luminox ICE-SAR 1080 Limited Edition (XL.1095)",
-        brand: "Luminox",
-        category: "elegant",
-        price: 21900,
-        stock: 5,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ ICE-SAR 1080 SERIES Limited Edition รุ่น XL.1095 หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ ICE-SAR 1080 SERIES Limited Edition รุ่น XL.1095 หลัง.webp"
+        name: "Apple AirPods Max (USB-C)",
+        nameEn: "Apple AirPods Max (USB-C)",
+        brand: "Apple",
+        category: "headphones",
+        price: 19900,
+        stock: 8,
+        connectivity: "Bluetooth 5.0 / Apple H1",
+        batteryLife: "20 Hours",
+        image: "/images/audio/apple-airpods-max.svg"
     },
     {
         id: "5",
-        name: "Luminox Leatherback Sea Turtle Giant (XS.0325.GP)",
-        nameEn: "Luminox Leatherback Sea Turtle Giant (XS.0325.GP)",
-        brand: "Luminox",
-        category: "sport",
-        price: 11200,
-        stock: 12,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ LEATHERBACK SEA TURTLE GIANT 0320 SERIES (หน้าปัด 44 mm) รุ่น XS.0325.GP หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ LEATHERBACK SEA TURTLE GIANT 0320 SERIES (หน้าปัด 44 mm) รุ่น XS.0325.GP หลัง.webp"
+        name: "JBL Charge 5 Portable Waterproof Speaker",
+        nameEn: "JBL Charge 5 Portable Waterproof Speaker",
+        brand: "JBL",
+        category: "speaker",
+        price: 6990,
+        stock: 20,
+        connectivity: "Bluetooth 5.1",
+        batteryLife: "20 Hours",
+        image: "/images/audio/jbl-charge5.svg"
     },
     {
         id: "6",
-        name: "Luminox Navy Seal 3500 (XS.3517.NM)",
-        nameEn: "Luminox Navy Seal 3500 (XS.3517.NM)",
-        brand: "Luminox",
-        category: "sport",
-        price: 14800,
-        stock: 10,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ NAVY SEAL 3500 SERIES รุ่น XS.3517.NM หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ NAVY SEAL 3500 SERIES รุ่น XS.3517.NM หลัง.webp"
+        name: "Bang & Olufsen Beosound A1 2nd Gen",
+        nameEn: "Bang & Olufsen Beosound A1 2nd Gen",
+        brand: "B&O",
+        category: "speaker",
+        price: 12900,
+        stock: 7,
+        connectivity: "Bluetooth 5.1",
+        batteryLife: "18 Hours",
+        image: "/images/audio/bo-beosound.svg"
     },
     {
         id: "7",
-        name: "Luminox Navy SEAL Foundation 3200 (XS.3228.NSF)",
-        nameEn: "Luminox Navy SEAL Foundation 3200 (XS.3228.NSF)",
-        brand: "Luminox",
-        category: "elegant",
-        price: 24500,
-        stock: 7,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ Navy SEAL Foundation 3200 SERIES รุ่น XS.3228.NSF หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ Navy SEAL Foundation 3200 SERIES รุ่น XS.3228.NSF หลัง.webp"
+        name: "Sony WF-1000XM5 True Wireless Earbuds",
+        nameEn: "Sony WF-1000XM5 True Wireless Earbuds",
+        brand: "Sony",
+        category: "earbuds",
+        price: 10990,
+        stock: 18,
+        connectivity: "Bluetooth 5.3",
+        batteryLife: "24 Hours (with Case)",
+        image: "/images/audio/sony-wf1000xm5.svg"
     },
     {
         id: "8",
-        name: "Luminox Pacific Diver 3120 (XS.3135)",
-        nameEn: "Luminox Pacific Diver 3120 (XS.3135)",
-        brand: "Luminox",
-        category: "elegant",
-        price: 22000,
-        stock: 9,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ PACIFIC DIVER 3120 SERIES รุ่น XS.3135 หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ PACIFIC DIVER 3120 SERIES รุ่น XS.3135 หลัง.webp"
-    },
-    {
-        id: "9",
-        name: "Luminox Pacific Diver Ripple 39mm (XS.3122M)",
-        nameEn: "Luminox Pacific Diver Ripple 39mm (XS.3122M)",
-        brand: "Luminox",
-        category: "elegant",
-        price: 23400,
-        stock: 6,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ PACIFIC DIVER RIPPLE 39MM 3120 SERIES รุ่น XS.3122M หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ PACIFIC DIVER RIPPLE 39MM 3120 SERIES รุ่น XS.3122M หลัง.webp"
-    },
-    {
-        id: "10",
-        name: "Luminox Red Bull AMPOL_26 Limited (XL.1970.ARB.N)",
-        nameEn: "Luminox Red Bull AMPOL_26 Limited (XL.1970.ARB.N)",
-        brand: "Luminox",
-        category: "elegant",
-        price: 29800,
-        stock: 3,
-        image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ Red Bull AMPOL_26 รุ่น XL.1970.ARB.N LIMITED EDITION หน้า.webp",
-        imageBack: "/images/LUMINOX/Luminox นาฬิกาข้อมือ Red Bull AMPOL_26 รุ่น XL.1970.ARB.N LIMITED EDITION หลัง.webp"
-    },
-    {
-        id: "11",
-        name: "Seiko Prospex Monster CMU 60th Anniversary",
-        nameEn: "Seiko Prospex Monster CMU 60th Anniversary",
-        brand: "Seiko",
-        category: "elegant",
-        price: 28500,
-        stock: 4,
-        image: "/images/SEIKO/SEIKO PROSPEX MONSTER CMU 60th Anniversary Limited Edition หน้า.webp",
-        imageBack: "/images/SEIKO/SEIKO PROSPEX MONSTER CMU 60th Anniversary Limited Edition หลัง.webp"
-    },
-    {
-        id: "12",
-        name: "Seiko 5 Sports X HUF Limited Edition (SRPM09K)",
-        nameEn: "Seiko 5 Sports X HUF Limited Edition (SRPM09K)",
-        brand: "Seiko",
-        category: "sport",
-        price: 13900,
+        name: "Marshall Emberton II Compact Speaker",
+        nameEn: "Marshall Emberton II Compact Speaker",
+        brand: "Marshall",
+        category: "speaker",
+        price: 7490,
         stock: 14,
-        image: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย 5 Sports X HUF Limited Edition รุ่น SRPM09K 39.4 มม. สีเขียว หน้า.webp",
-        imageBack: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย 5 Sports X HUF Limited Edition รุ่น SRPM09K 39.4 มม. สีเขียว หลัง.webp"
-    },
-    {
-        id: "13",
-        name: "Seiko Prospex Speedtimer Solar Tokyo25 (SSC955P)",
-        nameEn: "Seiko Prospex Speedtimer Solar Tokyo25 (SSC955P)",
-        brand: "Seiko",
-        category: "elegant",
-        price: 31500,
-        stock: 8,
-        image: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย Prospex Speedtimer Solar Chronograph World Athletics Championships Tokyo25 Limited Edition รุ่น SSC955P ขนาด 39 มม. สีม่วง หน้า.webp",
-        imageBack: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย Prospex Speedtimer Solar Chronograph World Athletics Championships Tokyo25 Limited Edition รุ่น SSC955P ขนาด 39 มม. สีม่วง หลัง.webp"
-    },
-    {
-        id: "14",
-        name: "Seiko 5 Sports Vintage Car Special (SRPL49K)",
-        nameEn: "Seiko 5 Sports Vintage Car Special (SRPL49K)",
-        brand: "Seiko",
-        category: "classic",
-        price: 14500,
-        stock: 11,
-        image: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย Seiko 5 Sports Vintage Car Special Edition รุ่น SRPL49K ขนาด 42.5 มม. สีเงิน หน้า.webp",
-        imageBack: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย Seiko 5 Sports Vintage Car Special Edition รุ่น SRPL49K ขนาด 42.5 มม. สีเงิน หลัง.webp"
-    },
-    {
-        id: "15",
-        name: "Seiko 5 Sports x Poorboy Limited Edition (SRPM17K)",
-        nameEn: "Seiko 5 Sports x Poorboy Limited Edition (SRPM17K)",
-        brand: "Seiko",
-        category: "sport",
-        price: 15200,
-        stock: 9,
-        image: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย Seiko 5 Sports x Poorboy Limited Edition รุ่น SRPM17K 42.5 มม. สีเขียว หน้า.webp",
-        imageBack: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชาย Seiko 5 Sports x Poorboy Limited Edition รุ่น SRPM17K 42.5 มม. สีเขียว หลัง.webp"
-    },
-    {
-        id: "16",
-        name: "Seiko Prospex Automatic Stainless Monster (SRPH75K)",
-        nameEn: "Seiko Prospex Automatic Stainless Monster (SRPH75K)",
-        brand: "Seiko",
-        category: "sport",
-        price: 19800,
-        stock: 6,
-        image: "/images/SEIKO/SEIKOนาฬิกาข้อมือผู้ชายอัตโนมัติ Prospex สแตนเลส รุ่น SRPH75K ขนาด 42.4 มม. หน้า.webp",
-        imageBack: "/images/SEIKO/SEIKO นาฬิกาข้อมือผู้ชายอัตโนมัติ Prospex สแตนเลส รุ่น SRPH75K ขนาด 42.4 มม. หลัง.webp"
-    },
-    {
-        id: "17",
-        name: "Seiko Astron GPS Solar 145th Anniversary (HAB004J)",
-        nameEn: "Seiko Astron GPS Solar 145th Anniversary (HAB004J)",
-        brand: "Seiko",
-        category: "elegant",
-        price: 115000,
-        stock: 2,
-        image: "/images/SEIKO/SEIKO นาฬืกาข้อมือผู้ชาย Astron GPS Solar 145th Anniversary Limited Edition รุ่น HAB004J 43.4 มม. สีเงิน หน้า.webp",
-        imageBack: "/images/SEIKO/SEIKO นาฬืกาข้อมือผู้ชาย Astron GPS Solar 145th Anniversary Limited Edition รุ่น HAB004J 43.4 มม. สีเงิน หลัง.webp"
-    },
-    {
-        id: "18",
-        name: "Seiko 5 Sports x POORBOY Limited Edition",
-        nameEn: "Seiko 5 Sports x POORBOY Limited Edition",
-        brand: "Seiko",
-        category: "sport",
-        price: 14800,
-        stock: 7,
-        image: "/images/SEIKO/Seiko 5 Sports x POORBOY Limited Edition หน้า.webp",
-        imageBack: "/images/SEIKO/Seiko 5 Sports x POORBOY Limited Edition หลัง.webp"
-    },
-    {
-        id: "19",
-        name: "Seiko Monster Red The Fang Custom & Modify",
-        nameEn: "Seiko Monster Red The Fang Custom & Modify",
-        brand: "Seiko",
-        category: "sport",
-        price: 18900,
-        stock: 5,
-        image: "/images/SEIKO/Seiko Custom & Modify Monster เขี้ยวแดง Red The Fang หน้า.webp",
-        imageBack: "/images/SEIKO/Seiko Custom & Modify Monster เขี้ยวแดง Red The Fang หลัง.webp"
-    },
-    {
-        id: "20",
-        name: "Seiko Prospex Divers 1965 Heritage Limited (HBC005J)",
-        nameEn: "Seiko Prospex Divers 1965 Heritage Limited (HBC005J)",
-        brand: "Seiko",
-        category: "elegant",
-        price: 49500,
-        stock: 3,
-        image: "/images/SEIKO/นาฬิกาข้อมือผู้ชาย Prospex Divers Watch 1965 Heritage Limited Edition 145th Anniversary รุ่น HBC005J ขนาด 40 มม. สีขาว หน้า.webp",
-        imageBack: "/images/SEIKO/นาฬิกาข้อมือผู้ชาย Prospex Divers Watch 1965 Heritage Limited Edition 145th Anniversary รุ่น HBC005J ขนาด 40 มม. สีขาว หลัง.webp"
-    },
-    {
-        id: "21",
-        name: "TAG Heuer Aquaracer Professional 500 Date Automatic, 42 mm, Titanium",
-        nameEn: "TAG Heuer Aquaracer Professional 500 Date Automatic, 42 mm, Titanium",
-        brand: "TAG Heuer",
-        category: "sport",
-        price: 135000,
-        stock: 5,
-        image: "/images/TAG Heuer/TAG Heuer Aquaracer Professional 500 Date Automatic, 42 mm, Titanium Front.avif",
-        imageBack: "/images/TAG Heuer/TAG Heuer Aquaracer Professional 500 Date Automatic, 42 mm, Titanium back.avif"
-    },
-    {
-        id: "22",
-        name: "TAG Heuer Formula 1 Chronograph",
-        nameEn: "TAG Heuer Formula 1 Chronograph",
-        brand: "TAG Heuer",
-        category: "sport",
-        price: 78000,
-        stock: 10,
-        image: "/images/TAG Heuer/TAG Heuer Formula 1 Chronograph  Front.avif",
-        imageBack: "/images/TAG Heuer/TAG Heuer Formula 1 Chronograph Bank.avif"
-    },
-    {
-        id: "23",
-        name: "TAG Heuer Formula 1 Chronograph Quartz, 43 mm, Steel",
-        nameEn: "TAG Heuer Formula 1 Chronograph Quartz, 43 mm, Steel",
-        brand: "TAG Heuer",
-        category: "sport",
-        price: 85000,
-        stock: 8,
-        image: "/images/TAG Heuer/TAG Heuer Formula 1 Chronograph Quartz, 43 mm, Steel Front.avif",
-        imageBack: "/images/TAG Heuer/TAG Heuer Formula 1 Chronograph Quartz, 43 mm, Steel Back.avif"
-    },
-    {
-        id: "24",
-        name: "TAG Heuer Formula 1 Chronograph x Red Bull Racing Quartz, 43 mm, Steel",
-        nameEn: "TAG Heuer Formula 1 Chronograph x Red Bull Racing Quartz, 43 mm, Steel",
-        brand: "TAG Heuer",
-        category: "sport",
-        price: 98000,
-        stock: 6,
-        image: "/images/TAG Heuer/TAG Heuer Formula 1 Chronograph x Red Bull Racing Quartz, 43 mm, Steel  Front.avif",
-        imageBack: "/images/TAG Heuer/TAG Heuer Formula 1 Chronograph x Red Bull Racing Quartz, 43 mm, Steel back.avif"
-    },
-    {
-        id: "25",
-        name: "TAG Heuer Formula 1 Date Automatic, 43 mm, Steel",
-        nameEn: "TAG Heuer Formula 1 Date Automatic, 43 mm, Steel",
-        brand: "TAG Heuer",
-        category: "classic",
-        price: 110000,
-        stock: 7,
-        image: "/images/TAG Heuer/TAG Heuer Formula 1 Date Automatic, 43 mm, Steel Front.avif",
-        imageBack: "/images/TAG Heuer/TAG Heuer Formula 1 Date Automatic, 43 mm, Steel Bacnk.avif"
-    },
-    {
-        id: "26",
-        name: "TAG Heuer Carrera Chronograph Automatic, 39 mm, Steel",
-        nameEn: "TAG Heuer Carrera Chronograph Automatic, 39 mm, Steel",
-        brand: "TAG Heuer",
-        category: "sport",
-        price: 195000,
-        stock: 4,
-        image: "/images/TAG Heuer/More/TAG Heuer Carrera Chronograph Automatic, 39 mm, Steel Front.avif",
-        imageBack: "/images/TAG Heuer/More/TAG Heuer Carrera Chronograph Automatic, 39 mm, Steel Back.avif"
-    },
-    {
-        id: "27",
-        name: "TAG Heuer Carrera Chronograph x Porsche Automatic, 44 mm, Steel",
-        nameEn: "TAG Heuer Carrera Chronograph x Porsche Automatic, 44 mm, Steel",
-        brand: "TAG Heuer",
-        category: "sport",
-        price: 285000,
-        stock: 3,
-        image: "/images/TAG Heuer/More/TAG Heuer Carrera Chronograph x Porsche Automatic, 44 mm, Steel Front.avif",
-        imageBack: "/images/TAG Heuer/More/TAG Heuer Carrera Chronograph x Porsche Automatic, 44 mm, Steel back.avif"
-    },
-    {
-        id: "28",
-        name: "TAG Heuer Carrera Date Automatic, 36 mm, Steel",
-        nameEn: "TAG Heuer Carrera Date Automatic, 36 mm, Steel",
-        brand: "TAG Heuer",
-        category: "classic",
-        price: 125000,
-        stock: 6,
-        image: "/images/TAG Heuer/More/TAG Heuer Carrera Date Automatic, 36 mm, Steel Front.avif",
-        imageBack: "/images/TAG Heuer/More/TAG Heuer Carrera Date Automatic, 36 mm, Steel back.avif"
-    },
-    {
-        id: "29",
-        name: "TAG Heuer Formula 1 Chronograph Automatic, 44 mm, Steel",
-        nameEn: "TAG Heuer Formula 1 Chronograph Automatic, 44 mm, Steel",
-        brand: "TAG Heuer",
-        category: "sport",
-        price: 95000,
-        stock: 5,
-        image: "/images/TAG Heuer/More/TAG Heuer Formula 1 Chronograph Automatic, 44 mm, Steel Front.avif",
-        imageBack: "/images/TAG Heuer/More/TAG Heuer Formula 1 Chronograph Automatic, 44 mm, Steel Back.avif"
-    },
-    {
-        id: "30",
-        name: "TAG Heuer Monaco Evergraph Automatic, 40 mm, Titanium",
-        nameEn: "TAG Heuer Monaco Evergraph Automatic, 40 mm, Titanium",
-        brand: "TAG Heuer",
-        category: "elegant",
-        price: 320000,
-        stock: 2,
-        image: "/images/TAG Heuer/More/TAG Heuer Monaco Evergraph Automatic, 40 mm, Titanium Front.avif",
-        imageBack: "/images/TAG Heuer/More/TAG Heuer Monaco Evergraph Automatic, 40 mm, Titanium back.avif"
-    },
-    {
-        id: "31",
-        name: "Rolex Submariner Date Vintage Matte Dial Yellow Patina Ref.16800",
-        nameEn: "Rolex Submariner Date Vintage Matte Dial Yellow Patina Ref.16800",
-        brand: "Rolex",
-        category: "sport",
-        price: 345000,
-        stock: 5,
-        image: "/images/Rolex/Rolex Submariner Date Vintage Matte Dial Yellow Patina Ref.16800 หน้า.png",
-        imageBack: "/images/Rolex/Rolex Submariner Date Vintage Matte Dial Yellow Patina Ref.16800 หลัง.png"
-    },
-    {
-        id: "32",
-        name: "Rolex 16233 Oyster Datejust Automatic Cal.3135 หลักเพชร",
-        nameEn: "Rolex 16233 Oyster Datejust Automatic Cal.3135 Diamond Dial",
-        brand: "Rolex",
-        category: "elegant",
-        price: 235000,
-        stock: 4,
-        image: "/images/Rolex/Rolex 16233 Oyster Datejust Automatic Cal.3135 หลักเพชร หน้า.png",
-        imageBack: "/images/Rolex/Rolex 16233 Oyster Datejust Automatic Cal.3135 หลักเพชร หลัง.png"
-    },
-    {
-        id: "33",
-        name: "ROLEX Datejust 68273 Year 1987 Automatic Date Unisex Size 31 mm. (Pre-owned)",
-        nameEn: "ROLEX Datejust 68273 Year 1987 Automatic Date Unisex Size 31 mm. (Pre-owned)",
-        brand: "Rolex",
-        category: "classic",
-        price: 198000,
-        stock: 3,
-        image: "/images/Rolex/ROLEX Datejust 68273 Year 1987 Automatic Date Unisex Size 31 mm. (Pre-owned) หน้า.webp",
-        imageBack: "/images/Rolex/ROLEX Datejust 68273 Year 1987 Automatic Date Unisex Size 31 mm. (Pre-owned) หลัง.webp"
-    },
-    {
-        id: "34",
-        name: "ROLEX GMT-Master II 16713 Year 1991 X Serie Automatic Date Size 40 mm. (Pre-owned)",
-        nameEn: "ROLEX GMT-Master II 16713 Year 1991 X Serie Automatic Date Size 40 mm. (Pre-owned)",
-        brand: "Rolex",
-        category: "sport",
-        price: 428000,
-        stock: 2,
-        image: "/images/Rolex/ROLEX GMT-Master II 16713 Year 1991 X Serie Automatic Date Size 40 mm. (Pre-owned) หน้า.webp",
-        imageBack: "/images/Rolex/ROLEX GMT-Master II 16713 Year 1991 X Serie Automatic Date Size 40 mm. (Pre-owned) หลัง.webp"
-    },
-    {
-        id: "35",
-        name: "Rolex Cosmograph Daytona Oyster, 40 มม., ทองคำ",
-        nameEn: "Rolex Cosmograph Daytona Oyster, 40 mm, Yellow Gold",
-        brand: "Rolex",
-        category: "sport",
-        price: 1350000,
-        stock: 3,
-        image: "/images/Rolex/Rolex Cosmograph Daytona Oyster, 40 มม., ทองคำ.png",
-        imageBack: "/images/Rolex/Rolex Cosmograph Daytona Oyster, 40 มม., ทองคำ.png"
-    },
-    {
-        id: "36",
-        name: "Rolex Cosmograph Daytona Oyster, 40 มม., ทองคำและเพชร",
-        nameEn: "Rolex Cosmograph Daytona Oyster, 40 mm, Yellow Gold and Diamonds",
-        brand: "Rolex",
-        category: "elegant",
-        price: 1650000,
-        stock: 1,
-        image: "/images/Rolex/Rolex Cosmograph Daytona Oyster, 40 มม., ทองคำและเพชร.png",
-        imageBack: "/images/Rolex/Rolex Cosmograph Daytona Oyster, 40 มม., ทองคำและเพชร.png"
-    },
-    {
-        id: "37",
-        name: "Rolex Cosmograph Daytona Oyster, 40 มม., แพลทินัม",
-        nameEn: "Rolex Cosmograph Daytona Oyster, 40 mm, Platinum",
-        brand: "Rolex",
-        category: "sport",
-        price: 2200000,
-        stock: 2,
-        image: "/images/Rolex/Rolex Cosmograph Daytona Oyster, 40 มม., แพลทินัม.png",
-        imageBack: "/images/Rolex/Rolex Cosmograph Daytona Oyster, 40 มม., แพลทินัม.png"
-    },
-    {
-        id: "38",
-        name: "Rolex Day-Date 40 Oyster, 40 มม., แพลทินัม",
-        nameEn: "Rolex Day-Date 40 Oyster, 40 mm, Platinum",
-        brand: "Rolex",
-        category: "elegant",
-        price: 1850000,
-        stock: 3,
-        image: "/images/Rolex/Rolex Day-Date 40 Oyster, 40 มม., แพลทินัม.png",
-        imageBack: "/images/Rolex/Rolex Day-Date 40 Oyster, 40 มม., แพลทินัม.png"
-    },
-    {
-        id: "39",
-        name: "Rolex Lady-Datejust Oyster, 28 มม., Oystersteel และทองคำ",
-        nameEn: "Rolex Lady-Datejust Oyster, 28 mm, Oystersteel andYellow Gold",
-        brand: "Rolex",
-        category: "classic",
-        price: 380000,
-        stock: 4,
-        image: "/images/Rolex/Rolex Lady-Datejust Oyster, 28 มม., Oystersteel และทองคำ.png",
-        imageBack: "/images/Rolex/Rolex Lady-Datejust Oyster, 28 มม., Oystersteel และทองคำ.png"
-    },
-    {
-        id: "40",
-        name: "Rolex Sky-Dweller Oyster, 42 มม., เอเวอร์โรสโกลด์",
-        nameEn: "Rolex Sky-Dweller Oyster, 42 mm, Everose Gold",
-        brand: "Rolex",
-        category: "elegant",
-        price: 1550000,
-        stock: 2,
-        image: "/images/Rolex/Rolex Sky-Dweller Oyster, 42 มม., เอเวอร์โรสโกลด์.png",
-        imageBack: "/images/Rolex/Rolex Sky-Dweller Oyster, 42 มม., เอเวอร์โรสโกลด์.png"
-    },
-    {
-        id: "41",
-        name: "CASIO G-SHOCK GBX-100NS-1DR ของแท้ ประกันศูนย์ CMG",
-        nameEn: "CASIO G-SHOCK GBX-100NS-1DR CMG Warranty",
-        brand: "G-SHOCK",
-        category: "sport",
-        price: 6500,
-        stock: 10,
-        image: "/images/G-SHOCK/CASIO G-SHOCK GBX-100NS-1DR ของแท้ ประกันศูนย์ CMG หน้า.webp",
-        imageBack: "/images/G-SHOCK/CASIO G-SHOCK GBX-100NS-1DR ของแท้ ประกันศูนย์ CMG หลัง.webp"
-    },
-    {
-        id: "42",
-        name: "CASIO G-SHOCK GST-B400D-1ADR (บลูทูธ,ทัชโซล่า)",
-        nameEn: "CASIO G-SHOCK GST-B400D-1ADR (Bluetooth, Tough Solar)",
-        brand: "G-SHOCK",
-        category: "elegant",
-        price: 12900,
-        stock: 5,
-        image: "/images/G-SHOCK/CASIO G-SHOCK GST-B400D-1ADR (บลูทูธ,ทัชโซล่า) ของแท้ ประกันศูนย์ CMG หน้า.webp",
-        imageBack: "/images/G-SHOCK/CASIO G-SHOCK GST-B400D-1ADR (บลูทูธ,ทัชโซล่า) ของแท้ ประกันศูนย์ CMG หลัง.webp"
-    },
-    {
-        id: "43",
-        name: "CASIO G-SHOCK GA-110EVA30-7A EVANGELION",
-        nameEn: "CASIO G-SHOCK GA-110EVA30-7A EVANGELION Limited Edition",
-        brand: "G-SHOCK",
-        category: "sport",
-        price: 8900,
-        stock: 3,
-        image: "/images/G-SHOCK/CASIO นาฬิกาข้อมือ G-SHOCK GA-110EVA30-7A EVANGELION ของแท้ประกันศูนย์ 1ปี หน้า.webp",
-        imageBack: "/images/G-SHOCK/CASIO นาฬิกาข้อมือ G-SHOCK GA-110EVA30-7A EVANGELION ของแท้ประกันศูนย์ 1ปี หลัง.png"
-    },
-    {
-        id: "44",
-        name: "CASIO G-SHOCK MID-TIER รุ่น GM-2100-1ADR สีเงิน",
-        nameEn: "CASIO G-SHOCK MID-TIER GM-2100-1ADR Silver",
-        brand: "G-SHOCK",
-        category: "classic",
-        price: 7900,
-        stock: 8,
-        image: "/images/G-SHOCK/CASIO นาฬิกาข้อมือผู้ชาย G-SHOCK MID-TIER รุ่น GM-2100-1ADR วัสดุเรซิ่น สีเงิน หน้า.webp",
-        imageBack: "/images/G-SHOCK/CASIO นาฬิกาข้อมือผู้ชาย G-SHOCK MID-TIER รุ่น GM-2100-1ADR วัสดุเรซิ่น สีเงิน หลัง.webp"
-    },
-    {
-        id: "45",
-        name: "GA-010-2A อะนาล็อก-ดิจิตอลมาตรฐาน ซีรีส์ GA-010 G-SHOCK",
-        nameEn: "G-SHOCK Standard Analog-Digital GA-010 Series GA-010-2A",
-        brand: "G-SHOCK",
-        category: "sport",
-        price: 4500,
-        stock: 12,
-        image: "/images/G-SHOCK/GA-010-2A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ GA-010  G-SHOCK  นาฬิกา  CASIO หน้า.png",
-        imageBack: "/images/G-SHOCK/GA-010-2A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ GA-010  G-SHOCK  นาฬิกา  CASIO หลัง.png"
-    },
-    {
-        id: "46",
-        name: "GA-2100FL-1A อะนาล็อก-ดิจิตอลมาตรฐาน ซีรีส์ 2100 G-SHOCK",
-        nameEn: "G-SHOCK Standard Analog-Digital 2100 Series GA-2100FL-1A",
-        brand: "G-SHOCK",
-        category: "classic",
-        price: 5200,
-        stock: 6,
-        image: "/images/G-SHOCK/GA-2100FL-1A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หน้า.png",
-        imageBack: "/images/G-SHOCK/GA-2100FL-1A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หลัง.png"
-    },
-    {
-        id: "47",
-        name: "GA-2100FL-8A อะนาล็อก-ดิจิตอลมาตรฐาน ซีรีส์ 2100 G-SHOCK",
-        nameEn: "G-SHOCK Standard Analog-Digital 2100 Series GA-2100FL-8A",
-        brand: "G-SHOCK",
-        category: "sport",
-        price: 5200,
-        stock: 7,
-        image: "/images/G-SHOCK/GA-2100FL-8A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หน้า.png",
-        imageBack: "/images/G-SHOCK/GA-2100FL-8A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หลัง.png"
-    },
-    {
-        id: "48",
-        name: "GA-B2100MF-1A อะนาล็อก-ดิจิตอลมาตรฐาน ซีรีส์ 2100 G-SHOCK",
-        nameEn: "G-SHOCK Standard Analog-Digital 2100 Series GA-B2100MF-1A",
-        brand: "G-SHOCK",
-        category: "sport",
-        price: 6900,
-        stock: 9,
-        image: "/images/G-SHOCK/GA-B2100MF-1A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หน้า.png",
-        imageBack: "/images/G-SHOCK/GA-B2100MF-1A  อะนาล็อก-ดิจิตอลมาตรฐาน  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หลัง.png"
-    },
-    {
-        id: "49",
-        name: "GM-B2100AD-2A FULL METAL ซีรีส์ 2100 G-SHOCK",
-        nameEn: "G-SHOCK Full Metal 2100 Series GM-B2100AD-2A Blue Dial",
-        brand: "G-SHOCK",
-        category: "elegant",
-        price: 22900,
-        stock: 4,
-        image: "/images/G-SHOCK/GM-B2100AD-2A  FULL METAL  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หน้า.png",
-        imageBack: "/images/G-SHOCK/GM-B2100AD-2A  FULL METAL  ซีรีส์ 2100  G-SHOCK  นาฬิกา  CASIO หลัง.png"
-    },
-    {
-        id: "50",
-        name: "CASIO G-SHOCK DW-6900U-1DR [FLASH SALE]",
-        nameEn: "CASIO G-SHOCK DW-6900U-1DR Classic Digital CMG Warranty",
-        brand: "G-SHOCK",
-        category: "sport",
-        price: 3200,
-        stock: 15,
-        image: "/images/G-SHOCK/{[FLASH SALE]} CASIO G-SHOCK DW-6900U-1DR ของแท้ ประกันศูนย์ CMG หน้า.png",
-        imageBack: "/images/G-SHOCK/{[FLASH SALE]} CASIO G-SHOCK DW-6900U-1DR ของแท้ ประกันศูนย์ CMG หลัง.webp"
+        connectivity: "Bluetooth 5.1",
+        batteryLife: "30+ Hours",
+        image: "/images/audio/marshall-emberton.svg"
     }
 ];
 const defaultBlacklist = [
@@ -1125,17 +671,21 @@ exports.db = {
         }
         await pool.query('INSERT INTO orders (id, user_id, items, total, email, address, payment, status, date, slip) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [o.id, o.userId, JSON.stringify(o.items), o.total, o.email, o.address, o.payment, o.status, o.date, o.slip]);
     },
-    updateOrderStatus: async (id, status) => {
+    updateOrderStatus: async (id, status, cancelReason) => {
         if (useFallback) {
             const data = readJsonDb();
             const idx = data.orders.findIndex(ord => ord.id === id);
             if (idx > -1) {
                 data.orders[idx].status = status;
+                if (cancelReason !== undefined) {
+                    data.orders[idx].cancelReason = cancelReason;
+                }
                 writeJsonDb(data);
             }
             return;
         }
-        await pool.query('UPDATE orders SET status = $1 WHERE id = $2', [status, id]);
+        await pool.query('ALTER TABLE orders ADD COLUMN IF NOT EXISTS cancel_reason TEXT');
+        await pool.query('UPDATE orders SET status = $1, cancel_reason = COALESCE($2, cancel_reason) WHERE id = $3', [status, cancelReason || null, id]);
     },
     updateOrderSlip: async (id, slip, status) => {
         if (useFallback) {

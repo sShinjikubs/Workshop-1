@@ -52,28 +52,25 @@ export default function Register() {
         className="login-left-side"
         style={{ backgroundColor: '#080a0f', position: 'relative', overflow: 'hidden' }}
       >
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.9, zIndex: 1 }}>
-          <img 
-            src="/images/Rolex/001.avif" 
-            alt="Rolex" 
-            style={{ width: '150%', height: '150%', objectFit: 'contain', animation: 'float-watch 6s ease-in-out infinite' }}
-          />
-        </div>
         <div className="login-left-overlay"></div>
         <div className="login-left-content">
           <div className="login-logo">
-            Watch<span>Mart</span>
+            Audio<span>Mart</span>
           </div>
         </div>
         <div className="login-slogan">
-          <h1>Join The Legacy</h1>
-          <p>Create your account and unlock access to the world's most prestigious timepieces.</p>
+          <h1>Join The Experience</h1>
+          <p>Create your account and unlock access to premium speakers, wireless headphones, and audiophile gear.</p>
           <div className="login-brands-tags">
-            <span>SEIKO</span>
+            <span>MARSHALL</span>
             <span>|</span>
-            <span>TAG HEUER</span>
+            <span>SONY</span>
             <span>|</span>
-            <span>LUMINOX</span>
+            <span>BOSE</span>
+            <span>|</span>
+            <span>APPLE</span>
+            <span>|</span>
+            <span>JBL</span>
           </div>
         </div>
       </div>

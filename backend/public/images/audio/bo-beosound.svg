@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="800" height="600">
+    <defs>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#090d16"/>
+        <stop offset="100%" stop-color="#171e2e"/>
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <rect width="400" height="300" fill="url(#bgGrad)"/>
+    <g filter="url(#glow)">
+      <rect x="90" y="70" width="220" height="120" rx="16" fill="#18181b" stroke="#059669" stroke-width="4"/>
+      <circle cx="150" cy="130" r="35" fill="#27272a" stroke="#10b981" stroke-width="4"/>
+      <circle cx="250" cy="130" r="22" fill="#27272a" stroke="#10b981" stroke-width="3"/>
+      <circle cx="150" cy="130" r="14" fill="#10b981"/>
+      <circle cx="250" cy="130" r="8" fill="#10b981"/>
+    </g>
+    <text x="200" y="240" text-anchor="middle" fill="#ffffff" font-family="Sarabun, sans-serif" font-weight="bold" font-size="18">B&O Beosound A1 2nd Gen</text>
+    <text x="200" y="265" text-anchor="middle" fill="#10b981" font-family="Sarabun, sans-serif" font-size="13">Luxury Portable Speaker • Premium Craft</text>
+  </svg>

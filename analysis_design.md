@@ -1,5 +1,5 @@
 # 📄 เอกสารการวิเคราะห์และออกแบบระบบ (System Analysis & Design)
-## โครงการ: WatchMart - แพลตฟอร์มร้านขายนาฬิกาพรีเมียมออนไลน์
+## โครงการ: AudioMart - แพลตฟอร์มร้านขายเครื่องเสียงและอุปกรณ์เสียงพรีเมียมออนไลน์
 **วิชา: CSI204 ดิจิทัลแพลตฟอร์มสำหรับพัฒนาซอฟต์แวร์ (SPU SIT)**
 **ผู้จัดทำ:**
 1. **กฤษฎา ต้องไกรเลิศ** (รหัสนักศึกษา: 67115444)
@@ -9,24 +9,24 @@
 ---
 
 ## 1. การวิเคราะห์ความต้องการของระบบ (System Requirements)
-แพลตฟอร์ม **WatchMart** พัฒนาขึ้นเพื่อรองรับพฤติกรรมการซื้อนาฬิกาผ่านทางออนไลน์ โดยระบบแบ่งความต้องการออกเป็น 2 ส่วนหลัก:
+แพลตฟอร์ม **AudioMart** พัฒนาขึ้นเพื่อรองรับพฤติกรรมการซื้อเครื่องเสียง ลำโพง และหูฟังพรีเมียมผ่านทางออนไลน์ โดยระบบแบ่งความต้องการออกเป็น 2 ส่วนหลัก:
 
 ### 1.1 ความต้องการเชิงฟังก์ชัน (Functional Requirements)
 - **ระบบสำหรับผู้ใช้ทั่วไป (Customer Front-end)**:
   - การลงทะเบียนและเข้าสู่ระบบ (Register / Login)
-  - การเลือกชมและค้นหานาฬิกาตามประเภท แบรนด์ หรือช่วงราคา (Product Browsing & Filtering)
+  - การเลือกชมและค้นหาลำโพง/หูฟังตามประเภท แบรนด์ หรือช่วงราคา (Product Browsing & Filtering)
   - ระบบตะกร้าสินค้า (Shopping Cart) เพิ่ม/ลดจำนวนสินค้า
   - ระบบสั่งซื้อสินค้าและการชำระเงิน (Checkout & Payment Integration)
   - การติดตามสถานะคำสั่งซื้อ (Order Tracking)
 - **ระบบแจ้งเตือนภายนอก (Integration Notification)**:
   - แจ้งเตือนยอดคำสั่งซื้อและการชำระเงินผ่าน LINE Notify
 - **ระบบสำหรับผู้ดูแลระบบ (Admin Dashboard)**:
-  - จัดการข้อมูลนาฬิกาและสต็อกสินค้า (CRUD Products)
+  - จัดการข้อมูลเครื่องเสียงและสต็อกสินค้า (CRUD Products)
   - ตรวจสอบรายการคำสั่งซื้อและการจัดการสถานะการจัดส่ง (Order Management)
 
 ### 1.2 ความต้องการที่มิใช่เชิงฟังก์ชัน (Non-Functional Requirements)
 - **Security**: การรักษาความปลอดภัยข้อมูลผู้ใช้ รหัสผ่านต้องถูกแฮชก่อนบันทึก (เช่น bcrypt) และใช้ Token-based Authentication (JWT)
-- **Performance**: โหลดหน้าเว็บได้รวดเร็ว (ต่ำกว่า 2 วินาที) โดยมีระบบ Cache สำหรับข้อมูลรายการนาฬิกาที่เข้าถึงบ่อย
+- **Performance**: โหลดหน้าเว็บได้รวดเร็ว (ต่ำกว่า 2 วินาที) โดยมีระบบ Cache สำหรับข้อมูลรายการสินค้าเครื่องเสียงที่เข้าถึงบ่อย
 - **Scalability**: ระบบสถาปัตยกรรมต้องแยกส่วนกัน (Microservices) เพื่อให้รองรับการขยายตัวเมื่อมีผู้ใช้งานพร้อมกันจำนวนมากในอนาคต
 - **Responsiveness**: หน้าเว็บแสดงผลได้ดีทั้งบนหน้าจอคอมพิวเตอร์ แท็บเล็ต และมือถือ (Mobile-First Design)
 
@@ -53,16 +53,16 @@ graph TB
     subgraph Backend_Layer ["⚙️ Backend Microservices"]
         AuthSvc["👤 Authentication Service"]
         VerifySvc["🛡️ Employee Verification & Blacklist check"]
-        InspectSvc["🔎 Watch Inspection & Catalog Service"]
+        InspectSvc["🔎 Audio Inspection & Catalog Service"]
         AuditSvc["📊 Price Compliance & Audit Service"]
         ChatSvc["💬 Live Support Chat Service"]
         PaySvc["💳 Easy Donate QR Payment Service"]
     end
  
     subgraph Data_Layer ["💾 Database & Storage Layer"]
-        SQL_DB[("🗄️ Primary SQL DB<br>(Users, Employees, Watches, Logs)")]
+        SQL_DB[("🗄️ Primary SQL DB<br>(Users, Employees, Products, Logs)")]
         Redis_DB[("⚡ Redis Cache<br>(Blacklist, Product Catalog)")]
-        Storage[("📦 File Storage<br>(Receipt Slips, Watch Themes)")]
+        Storage[("📦 File Storage<br>(Receipt Slips, Audio Themes)")]
     end
 
     subgraph External_Services ["🌐 External Integration APIs"]
@@ -123,7 +123,7 @@ graph TB
 - **Frontend Layer**: ดูแลเฉพาะการจัดแสดงผลอินเทอร์เฟซและการโต้ตอบของผู้ใช้งาน (HTML/CSS/JS)
 - **Backend Services**: มีการแบ่งแยกฟังก์ชันการทำงานย่อย (Services) ดังนี้:
   - `User Service`: จัดการข้อมูลผู้ใช้และการพิสูจน์ตัวตน
-  - `Product Service`: ดึงข้อมูลนาฬิกา ค้นหา และอัปเดตสต็อกสินค้า
+  - `Product Service`: ดึงข้อมูลเครื่องเสียง ค้นหา และอัปเดตสต็อกสินค้า
   - `Order Service`: จัดการตะกร้าสินค้า สร้างคำสั่งซื้อ และเปลี่ยนสถานะคำสั่งซื้อ
 
 ### 3.2 Single Responsibility Principle (SRP)
@@ -227,7 +227,7 @@ CREATE TABLE profiles (
 );
 ```
 
-### 4.3 ตาราง Products (รองรับการเก็บคะแนนและรูปภาพนาฬิกา)
+### 4.3 ตาราง Products (รองรับการเก็บคะแนนและรูปภาพสินค้าเครื่องเสียง)
 ```sql
 CREATE TABLE products (
     id VARCHAR(50) PRIMARY KEY,
@@ -275,7 +275,7 @@ CREATE TABLE reviews (
 ---
 
 ## 5. การวิเคราะห์และออกแบบระบบด้วย UML Diagram (UML Design)
-เพื่อแสดงโครงสร้าง ลำดับการทำงาน และความสัมพันธ์ของระบบ **WatchMart** ให้ชัดเจนยิ่งขึ้นตามแนวทางวิศวกรรมซอฟต์แวร์
+เพื่อแสดงโครงสร้าง ลำดับการทำงาน และความสัมพันธ์ของระบบ **AudioMart** ให้ชัดเจนยิ่งขึ้นตามแนวทางวิศวกรรมซอฟต์แวร์
 
 ### 5.1 Use Case Diagram (แผนภาพแสดงการทำงานของผู้ใช้)
 แผนภาพ Use Case แสดงขอบเขตของระบบ (System Boundary) และปฏิสัมพันธ์ระหว่างนักช้อป (User), พนักงาน/ผู้จัดการ (Manager) และผู้ดูแลระบบ (Admin)
@@ -286,11 +286,11 @@ graph TB
     ManagerActor["🛍️ ผู้จัดการ (Manager)"]
     AdminActor["👑 ผู้ดูแลระบบ (Admin)"]
 
-    subgraph WatchMart_System ["💼 ระบบ WatchMart Platform"]
+    subgraph AudioMart_System ["💼 ระบบ AudioMart Platform"]
         UC_Login["เข้าสู่ระบบ (Login)"]
 
         subgraph Customer_Actions ["🛒 Customer Use Cases"]
-            UC_Search["ค้นหาและกรองนาฬิกา (Search & Filter)"]
+            UC_Search["ค้นหาและกรองเครื่องเสียง (Search & Filter)"]
             UC_Cart["จัดการตะกร้าสินค้า (Manage Cart)"]
             UC_Checkout["สั่งซื้อสินค้า (Checkout)"]
             UC_UploadSlip["แนบสลิปชำระเงินภายหลัง 24 ชม. (Upload Slip)"]
@@ -300,7 +300,7 @@ graph TB
 
         subgraph Manager_Actions ["⚙️ Manager Use Cases"]
             UC_Verify["ยืนยันตัวตนพนักงาน (Employee Verify)"]
-            UC_AddWatch["ลงนาฬิกาเข้าคลัง (Add Watch to Stock)"]
+            UC_AddAudioProduct["ลงเครื่องเสียงเข้าคลัง (Add Audio Product to Stock)"]
             UC_VerifySlip["ตรวจสอบสลิปและอนุมัติขั้นแรก (Verify Slip)"]
         end
 
@@ -326,7 +326,7 @@ graph TB
     %% Manager Connections
     ManagerActor --> UC_Login
     ManagerActor --> UC_Verify
-    ManagerActor --> UC_AddWatch
+    ManagerActor --> UC_AddAudioProduct
     ManagerActor --> UC_VerifySlip
 
     %% Admin Connections
@@ -340,11 +340,11 @@ graph TB
 
     %% Include relation
     UC_Checkout -.->|"<<include>>"| UC_Login
-    UC_AddWatch -.->|"<<include>>"| UC_Verify
+    UC_AddAudioProduct -.->|"<<include>>"| UC_Verify
 ```
 
 ### 5.2 Class Diagram (แผนภาพคลาสโครงสร้างข้อมูล)
-แสดงความสัมพันธ์ของ Object/Entity ต่างๆ ในเชิงโครงสร้างข้อมูลเชิงวัตถุ (Object-Oriented Design) ของระบบ WatchMart
+แสดงความสัมพันธ์ของ Object/Entity ต่างๆ ในเชิงโครงสร้างข้อมูลเชิงวัตถุ (Object-Oriented Design) ของระบบ AudioMart
 
 ```mermaid
 classDiagram
@@ -430,7 +430,7 @@ classDiagram
 ```
 
 ### 5.3 Sequence Diagram (แผนภาพขั้นตอนการทำงาน)
-แสดงขั้นตอนการส่งข้อความโต้ตอบระหว่างผู้ใช้ หน้าบ้าน (Frontend) ระบบควบคุมการสั่งซื้อ (Order Service) บริการชำระเงิน (Payment Service) และฐานข้อมูลหลัก เมื่อผู้ใช้ (User) ทำการสั่งซื้อนาฬิกาพรีเมียม
+แสดงขั้นตอนการส่งข้อความโต้ตอบระหว่างผู้ใช้ หน้าบ้าน (Frontend) ระบบควบคุมการสั่งซื้อ (Order Service) บริการชำระเงิน (Payment Service) และฐานข้อมูลหลัก เมื่อผู้ใช้ (User) ทำการสั่งซื้อเครื่องเสียงพรีเมียม
 
 ```mermaid
 sequenceDiagram
@@ -482,7 +482,7 @@ sequenceDiagram
 ```
 
 ### 5.4 Activity Diagram (แผนภาพกิจกรรมการสั่งซื้อสินค้า)
-แสดงการไหลของกิจกรรม (Activity Flow) ตั้งแต่เริ่มต้นเลือกชมนาฬิกาจนถึงสิ้นสุดการชำระเงินและการส่งมอบสินค้าสำเร็จ
+แสดงการไหลของกิจกรรม (Activity Flow) ตั้งแต่เริ่มต้นเลือกชมเครื่องเสียงจนถึงสิ้นสุดการชำระเงินและการส่งมอบสินค้าสำเร็จ
 
 ```mermaid
 stateDiagram-v2
@@ -520,11 +520,11 @@ stateDiagram-v2
 ## 6. การออกแบบส่วนติดต่อผู้ใช้งาน (UI/UX Design & Wireframe)
 
 ### 6.1 แนวคิดการออกแบบ UI/UX (Design Concept)
-เพื่อส่งเสริมภาพลักษณ์ความเป็น **Premium Online Chronometers** ระบบได้รับการวิเคราะห์และออกแบบดังนี้:
+เพื่อส่งเสริมภาพลักษณ์ความเป็น **Premium Online Sound Systems** ระบบได้รับการวิเคราะห์และออกแบบดังนี้:
 * **UI Design (User Interface)**:
   * **Color Palette**: ใช้สีโทนเข้มอาร์กอนกึ่งลักชัวรี (Dark Slate: `#0f172a`, Deep Midnight: `#0b0c10`) ตัดกับสีทองหรูทองคำขาว (Primary Accent Gold: `#c5a880`) เพื่อสะท้อนความประณีตมีระดับ
   * **Typography**: ใช้ฟอนต์ **Outfit** ที่มีหน้าตาเรียบหรู ทันสมัย ดูเป็นสากลและสะอาดตา
-  * **Visual**: แสดงรูปภาพนาฬิกาด้วยกรอบ SVG และ Glassmorphism Overlay (โปร่งแสงแต่อบอุ่นด้วยแสงสะท้อน)
+  * **Visual**: แสดงรูปภาพสินค้าเครื่องเสียงด้วยกรอบ SVG และ Glassmorphism Overlay (โปร่งแสงแต่อบอุ่นด้วยแสงสะท้อน)
 * **UX Design (User Experience)**:
   * **Seamless Checkout**: ลูกค้าสามารถกดเพิ่มสินค้าลงตะกร้าได้อย่างรวดเร็วผ่าน Side Cart Drawer โดยไม่ต้องเปลี่ยนหน้าเว็บบ่อยๆ
   * **Mobile-First Experience**: หน้าหลักและระบบการชำระเงินสามารถใช้งานได้อย่างคล่องตัวบนมือถือ ตอบสนองรวดเร็วผ่านโครงสร้าง Flexbox & Grid CSS
@@ -532,9 +532,9 @@ stateDiagram-v2
 ### 6.2 การวางแผนโครงร่างหน้าจอ (Wireframe & Prototype)
 ในการพัฒนาออกแบบระบบจะอ้างอิงจากแบบร่างหน้าจอหลัก (Wireframe) 3 หน้า ดังนี้:
 1. **Homepage (หน้าหลัก)**:
-   * ส่วนบนสุดเป็น Navigation Bar แสดง Logo `WatchMart` และไอคอนตะกร้าสินค้า
+   * ส่วนบนสุดเป็น Navigation Bar แสดง Logo `AudioMart` และไอคอนตะกร้าสินค้า
    * ส่วนถัดมาคือ Hero Section นำเสนอวิสัยทัศน์ของแบรนด์และปุ่มเรียกให้ดำเนินการ (CTA Button: "เลือกชมสินค้า")
-   * ด้านล่างเป็นระบบกรองหมวดหมู่ (Filter Tags) และตารางแสดงรายการนาฬิกาแบบ Grid
+   * ด้านล่างเป็นระบบกรองหมวดหมู่ (Filter Tags) และตารางแสดงรายการสินค้าเครื่องเสียงแบบ Grid
 2. **Side Cart Drawer (ตะกร้าสินค้าแบบแถบข้าง)**:
    * สไลด์ออกมาจากทางขวาเมื่อกดรูปตะกร้า
    * แสดงรายการที่เลือกซื้อ ปุ่มปรับเปลี่ยนจำนวน หรือลบชิ้นงาน และสรุปยอดเงินรวม
@@ -597,13 +597,13 @@ graph TB
  
 1. **บทบาทการดำเนินงานของผู้ใช้งาน (Actors & Operations)**
     - **User (ผู้ซื้อ)**: ทำหน้าที่สั่งซื้อสินค้าจากระบบที่ดำเนินการลงสินค้าโดยพนักงาน (**Employee**)
-    - **Employee (พนักงาน/พนักงานขาย)**: สมาชิกที่เป็นพนักงานองค์กรที่มีหน้าที่รับผิดชอบในการนำนาฬิกาเข้าระบบคลังสินค้าเพื่อตั้งขาย
+    - **Employee (พนักงาน/พนักงานขาย)**: สมาชิกที่เป็นพนักงานองค์กรที่มีหน้าที่รับผิดชอบในการนำเครื่องเสียงเข้าระบบคลังสินค้าเพื่อตั้งขาย
     - **Admin (ผู้ดูแลระบบ/ผู้จัดการ)**: รับผิดชอบการบริหารจัดการระบบทั้งหมด ครอบคลุมการตรวจสอบความถูกต้องของสินค้าและราคากลาง (Audit & Inspection), อนุมัติการนำเข้าสินค้า, ตรวจสอบแบล็คลิสต์ และตอบแชทซัพพอร์ตช่วยเหลือลูกค้า
 2. **ระบบฐานข้อมูลและพื้นที่จัดเก็บข้อมูล (Database & Storage)**
-    - **SQL Database**: จัดเก็บข้อมูลโครงสร้างหลัก ได้แก่ ข้อมูลนาฬิกา (Watch), ข้อมูลผู้ใช้งานทั่วไป (User) และข้อมูลพนักงานขาย (Employee)
+    - **SQL Database**: จัดเก็บข้อมูลโครงสร้างหลัก ได้แก่ ข้อมูลเครื่องเสียง (AudioProduct), ข้อมูลผู้ใช้งานทั่วไป (User) และข้อมูลพนักงานขาย (Employee)
     - **Storage (Data Store)**: ทำหน้าที่จัดเก็บข้อมูลรูปภาพสินค้า (Picture), โครงสร้างระดับราคา (Price Banding) และไฟล์ข้อมูล (Data) อื่น ๆ ทั้งหมดของระบบ
 3. **ระบบตรวจสอบความปลอดภัย (Blacklist & Identity Verification)**
-    - ระบบเพิ่มความปลอดภัยขั้นสูงในการลงทะเบียนพนักงาน โดยผู้ที่เป็น **พนักงาน (Employee)** เท่านั้นที่จะต้องยื่นเอกสาร **บัตรประชาชน** และ **Email** เพื่อตรวจสอบความถูกต้องผ่านระบบ Blacklist ก่อนที่จะได้รับอนุญาตให้จัดการและนำนาฬิกาเข้าคลังสินค้า
+    - ระบบเพิ่มความปลอดภัยขั้นสูงในการลงทะเบียนพนักงาน โดยผู้ที่เป็น **พนักงาน (Employee)** เท่านั้นที่จะต้องยื่นเอกสาร **บัตรประชาชน** และ **Email** เพื่อตรวจสอบความถูกต้องผ่านระบบ Blacklist ก่อนที่จะได้รับอนุญาตให้จัดการและนำเครื่องเสียงเข้าคลังสินค้า
 4. **ระบบรับชำระเงิน (QR Code Payment API)**
     - ดำเนินการชำระเงินโดยใช้ **QR Code** ที่ดึงข้อมูลผ่าน API จากธนาคารใดธนาคารหนึ่ง โดยใช้ระบบการรับบริจาค/ชำระเงิน **Easy Donate** เพื่อความปลอดภัยและยืนยันยอดเงินอัตโนมัติ
 
@@ -638,8 +638,8 @@ erDiagram
         datetime created_at "วันที่บันทึกประวัติ"
     }
 
-    WATCH {
-        int id PK "รหัสนาฬิกา"
+    AUDIO_PRODUCT {
+        int id PK "รหัสสินค้าเครื่องเสียง"
         string brand "แบรนด์"
         string model "รุ่น"
         decimal price "ราคา"
@@ -669,7 +669,7 @@ erDiagram
     USER ||--o| EMPLOYEE : "ลงทะเบียนเป็น"
     EMPLOYEE ||--o| BLACKLIST : "ตรวจสอบกับ"
     USER ||--o| PAYMENT : "ชำระเงิน"
-    WATCH ||--o| STORAGE_DATA : "เก็บไฟล์รูปภาพ/เอกสาร (Picture)"
+    AUDIO_PRODUCT ||--o| STORAGE_DATA : "เก็บไฟล์รูปภาพ/เอกสาร (Picture)"
 ```
 
 

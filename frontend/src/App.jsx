@@ -68,7 +68,7 @@ const translations = {
     notifications: "การแจ้งเตือน",
     help: "ช่วยเหลือ",
     lang: "ไทย",
-    searchPlaceholder: "ค้นหานาฬิกาหรูสไตล์คุณ...",
+    searchPlaceholder: "ค้นหาเครื่องเสียง ลำโพง และหูฟังพรีเมียม...",
     callCenter: "📞 ศูนย์บริการลูกค้า: 02-123-4567",
     project: "✨ โครงงาน CSI204 ระดับพรีเมียม",
     myProfile: "👤 โปรไฟล์ของฉัน",

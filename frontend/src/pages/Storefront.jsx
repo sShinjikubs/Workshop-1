@@ -10,31 +10,31 @@ import SystemLogger from '../components/SystemLogger';
 
 const HERO_SLIDES = [
   {
-    title: "TAG HEUER CARRERA",
-    subtitle: "X PORSCHE AUTOMATIC",
+    title: "MARSHALL STANMORE III",
+    subtitle: "ICONIC BLUETOOTH SPEAKER",
     descKey: "heroDesc1",
-    image: "/images/TAG Heuer/More/TAG Heuer Carrera Chronograph x Porsche Automatic, 44 mm, Steel Front.avif",
+    image: "/images/audio/marshall-stanmore.svg",
     bg: "linear-gradient(135deg, #181d2c 0%, #151515 100%)",
     accent: "var(--accent-gold)",
-    keyword: "carrera"
+    keyword: "marshall"
   },
   {
-    title: "SEIKO PROSPEX",
-    subtitle: "MONSTER CMU 60TH ANNIVERSARY",
+    title: "SONY WH-1000XM5",
+    subtitle: "WIRELESS NOISE CANCELLING",
     descKey: "heroDesc2",
-    image: "/images/SEIKO/SEIKO PROSPEX MONSTER CMU 60th Anniversary Limited Edition หน้า.webp",
+    image: "/images/audio/sony-wh1000xm5.svg",
     bg: "linear-gradient(135deg, #112233 0%, #0a111a 100%)",
-    accent: "#ff6b6b",
-    keyword: "monster"
+    accent: "#38bdf8",
+    keyword: "sony"
   },
   {
-    title: "LUMINOX NAVY SEAL",
-    subtitle: "BEAR GRYLLS SURVIVAL",
+    title: "BOSE QUIETCOMFORT ULTRA",
+    subtitle: "IMMERSIVE SPATIAL AUDIO",
     descKey: "heroDesc3",
-    image: "/images/LUMINOX/Luminox นาฬิกาข้อมือ BEAR GRYLLS SURVIVAL 3720 SEA SERIES รุ่น XB.3729.NGU หน้า.webp",
+    image: "/images/audio/bose-quietcomfort.svg",
     bg: "linear-gradient(135deg, #1a221f 0%, #111513 100%)",
-    accent: "#4ade80",
-    keyword: "bear grylls"
+    accent: "#a855f7",
+    keyword: "bose"
   }
 ];
 
@@ -695,11 +695,12 @@ export default function Storefront() {
             <div className="filter-controls">
               {[
                 { key: 'all', label: t('all') },
-                { key: 'Luminox', label: 'LUMINOX' },
-                { key: 'Seiko', label: 'SEIKO' },
-                { key: 'TAG Heuer', label: 'TAG HEUER' },
-                { key: 'Rolex', label: 'ROLEX' },
-                { key: 'G-SHOCK', label: 'G-SHOCK' }
+                { key: 'Marshall', label: 'MARSHALL' },
+                { key: 'Sony', label: 'SONY' },
+                { key: 'Bose', label: 'BOSE' },
+                { key: 'Apple', label: 'APPLE' },
+                { key: 'JBL', label: 'JBL' },
+                { key: 'B&O', label: 'B&O' }
               ].map(({ key, label }) => (
                 <button
                   key={key}

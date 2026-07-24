@@ -42,28 +42,25 @@ export default function Login() {
         className="login-left-side"
         style={{ backgroundColor: '#080a0f', position: 'relative', overflow: 'hidden' }}
       >
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.9, zIndex: 1 }}>
-          <img 
-            src="/images/TAG Heuer/TAG Heuer Formula 1 Chronograph  Front.avif" 
-            alt="TAG Heuer" 
-            style={{ width: '150%', height: '150%', objectFit: 'contain', animation: 'float-watch 6s ease-in-out infinite' }}
-          />
-        </div>
         <div className="login-left-overlay"></div>
         <div className="login-left-content">
           <div className="login-logo">
-            Watch<span>Mart</span>
+            Audio<span>Mart</span>
           </div>
         </div>
         <div className="login-slogan">
-          <h1>Crafting Time</h1>
-          <p>Discover the finest luxury timepieces. Precision, elegance, and mastery in every second.</p>
+          <h1>Pure Sound Experience</h1>
+          <p>Discover high-fidelity speakers and wireless headphones. Pristine audio engineering and immersive sound in every note.</p>
           <div className="login-brands-tags">
-            <span>TAG HEUER</span>
+            <span>MARSHALL</span>
             <span>|</span>
-            <span>SEIKO</span>
+            <span>SONY</span>
             <span>|</span>
-            <span>LUMINOX</span>
+            <span>BOSE</span>
+            <span>|</span>
+            <span>APPLE</span>
+            <span>|</span>
+            <span>JBL</span>
           </div>
         </div>
       </div>
