@@ -1,10 +1,13 @@
 # 📄 เอกสารการวิเคราะห์และออกแบบระบบ (System Analysis & Design)
 ## โครงการ: AudioMart - แพลตฟอร์มร้านขายเครื่องเสียงและอุปกรณ์เสียงพรีเมียมออนไลน์
 **วิชา: CSI204 ดิจิทัลแพลตฟอร์มสำหรับพัฒนาซอฟต์แวร์ (SPU SIT)**  
-**ผู้จัดทำ:**
-1. **กฤษฎา ต้องไกรเลิศ** (รหัสนักศึกษา: 67115444)
-2. **ภูกิจ ปัญญาธิ** (รหัสนักศึกษา: 67120169)
-3. **นนทิวัชร หมื่นสาย** (รหัสนักศึกษา : 67117362)
+**ผู้จัดทำและการแบ่งงานตามประวัติ Git / SourceTree:**
+
+| ชื่อ-นามสกุล | รหัสนักศึกษา | Git Account / Commit สายงาน | บทบาทและความรับผิดชอบหลัก (Contributions) |
+| :--- | :--- | :--- | :--- |
+| **1. กฤษฎา ต้องไกรเลิศ** | `67115444` | `sShinjikubs` | **Full-Stack Architect & Lead Developer**<br>• ออกแบบ System Architecture, RESTful API & ฐานข้อมูล SQL/Fallback DB<br>• พัฒนา Backend Microservices, JWT Auth, Easy Donate QR Payment & LINE Notify<br>• จัดทำเอกสาร UAT Test Cases (`UAT_Test_Cases.md/pdf`), เอกสารวิเคราะห์ระบบ และ DevOps Deploy บน Render |
+| **2. ภูกิจ ปัญญาธิ** | `67120169` | `DESKTOP-H7BV0KF\PC` | **Backend Data & Inventory Specialist**<br>• ออกแบบโครงสร้างแคตตาล็อกสินค้า (Product Seeds & Database Schema)<br>• พัฒนาระบบคลังสินค้า (Inventory Management) และระบบรายการโปรด (Wishlist System)<br>• ออกแบบโฟลว์การซื้อสินค้าแบบทันที (Isolated Buy Now Checkout) และจัดการไฟล์รูปภาพ |
+| **3. นนทิวัชร หมื่นสาย** | `67117362` | `nxntiwxt` | **Frontend UI/UX & Localization Specialist**<br>• ออกแบบและพัฒนาองค์ประกอบหน้าบ้าน (Frontend UI Components & Layout)<br>• พัฒนาระบบการสลับสองภาษา (Comprehensive i18n System: TH / EN)<br>• ปรับแต่งภาพแบรนด์สินค้า โลโก้ และแก้ไขระบบค้นหาสินค้า (Search Bar UI & Star Rating UI) |
 
 ---
 
