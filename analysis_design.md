@@ -303,7 +303,95 @@ graph TB
     UC_AddAudio -.->|"<<include>>"| UC_Verify
 ```
 
-### 5.2 Sequence Diagram (ลำดับขั้นตอนสั่งซื้อและการตรวจสอบสลิป)
+### 5.2 Class Diagram (แผนภาพคลาสโครงสร้างข้อมูล)
+แสดงความสัมพันธ์ของ Object/Entity ต่างๆ ในเชิงโครงสร้างข้อมูลเชิงวัตถุ (Object-Oriented Design) ของระบบ AudioMart
+
+```mermaid
+classDiagram
+    class User {
+        +int id
+        +string username
+        +string email
+        +string passwordHash
+        +datetime createdAt
+        +register() bool
+        +login() bool
+    }
+
+    class Product {
+        +int id
+        +string name
+        +string brand
+        +string description
+        +decimal price
+        +int stock
+        +string imageUrl
+        +getDetails() Product
+        +updateStock(int qty) bool
+    }
+
+    class Category {
+        +int id
+        +string name
+        +string description
+    }
+
+    class Cart {
+        +int id
+        +int userId
+        +addCartItem(Product p, int qty)
+        +removeCartItem(int productId)
+        +clearCart()
+        +getTotalPrice() decimal
+    }
+
+    class CartItem {
+        +int id
+        +int productId
+        +int quantity
+        +decimal price
+    }
+
+    class Order {
+        +int id
+        +int userId
+        +decimal totalPrice
+        +string status
+        +datetime createdAt
+        +processPayment() bool
+        +cancelOrder() bool
+    }
+
+    class OrderItem {
+        +int id
+        +int productId
+        +int quantity
+        +decimal unitPrice
+    }
+
+    class Payment {
+        +int id
+        +int orderId
+        +string paymentMethod
+        +decimal amount
+        +string transactionRef
+        +string status
+        +process() bool
+    }
+
+    User "1" --> "0..1" Cart : เจ้าของ
+    User "1" --> "0..*" Order : สั่งซื้อ
+    Cart "1" *-- "0..*" CartItem : ประกอบด้วย
+    Product "1" <-- "1" CartItem : อ้างอิง
+    Product "*" --> "1" Category : อยู่ในหมวดหมู่
+    Order "1" *-- "1..*" OrderItem : ประกอบด้วย
+    Product "1" <-- "1" OrderItem : อ้างอิง
+    Order "1" --> "1" Payment : มีการจ่ายเงิน
+```
+
+
+
+### 5.3 Sequence Diagram (ลำดับขั้นตอนสั่งซื้อและการตรวจสอบสลิป)
 
 ```mermaid
 sequenceDiagram
@@ -342,6 +430,44 @@ sequenceDiagram
 ```
 
 ---
+
+### 5.4 Activity Diagram (แผนภาพกิจกรรมการสั่งซื้อสินค้า)
+แสดงการไหลของกิจกรรม (Activity Flow) ตั้งแต่เริ่มต้นเลือกชมเครื่องเสียงจนถึงสิ้นสุดการชำระเงินและการส่งมอบสินค้าสำเร็จ
+
+```mermaid
+stateDiagram-v2
+    [*] --> เข้าสู่เว็บไซต์
+    เข้าสู่เว็บไซต์ --> เลือกชมสินค้า
+    เลือกชมสินค้า --> ค้นหาหรือกรองประเภทสินค้า
+    ค้นหาหรือกรองประเภทสินค้า --> เพิ่มสินค้าลงตะกร้า: สนใจสั่งซื้อ
+    เพิ่มสินค้าลงตะกร้า --> ตรวจสอบตะกร้าสินค้า
+    ตรวจสอบตะกร้าสินค้า --> กดปุ่มสั่งซื้อ: ตกลงชำระเงิน
+    กดปุ่มสั่งซื้อ --> กรอกข้อมูลจัดส่งและเลือกวิธีชำระเงิน
+    
+    state ชำระเงิน <<choice>>
+    กรอกข้อมูลจัดส่งและเลือกวิธีชำระเงิน --> ชำระเงิน
+    
+    ชำระเงิน --> โอนเงินธนาคาร: เลือกโอนเงิน
+    ชำระเงิน --> บัตรเครดิต: กรอกรายละเอียดบัตร
+    ชำระเงิน --> สแกนพร้อมเพย์: สแกนคิวอาร์โค้ด
+    
+    state ผลการชำระเงิน <<choice>>
+    โอนเงินธนาคาร --> ผลการชำระเงิน
+    บัตรเครดิต --> ผลการชำระเงิน
+    สแกนพร้อมเพย์ --> ผลการชำระเงิน
+    
+    ผลการชำระเงิน --> ยกเลิกคำสั่งซื้อ: ชำระเงินล้มเหลว / กดยกเลิก
+    ผลการชำระเงิน --> ยืนยันคำสั่งซื้อ: ชำระเงินสำเร็จ
+    
+    ยืนยันคำสั่งซื้อ --> ระบบอัปเดตสต็อกสินค้า
+    ระบบอัปเดตสต็อกสินค้า --> พนักงานตรวจสอบและส่งมอบสินค้า
+    พนักงานตรวจสอบและส่งมอบสินค้า --> [*]: ลูกค้าได้รับสินค้าสำเร็จ
+    ยกเลิกคำสั่งซื้อ --> [*]
+```
+
+---
+
+
 
 ## 6. การออกแบบส่วนติดต่อผู้ใช้งาน (UI/UX Design & Wireframe Layout)
 
