@@ -553,10 +553,10 @@ app.get('*', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, '..', 'public', 'index.html'));
 });
 // Initialize database tables, then start listening
-database_1.db.initDb().then(() => {
+database_1.db.initDb().catch(err => {
+    console.warn('initDb failed, switching to Local JSON fallback:', err?.message || err);
+}).finally(() => {
     app.listen(PORT, () => {
         console.log(`WatchMart backend server running on port ${PORT}`);
     });
-}).catch(err => {
-    console.error("Failed to initialize database:", err);
 });
