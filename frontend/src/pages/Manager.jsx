@@ -11,22 +11,24 @@ function drawBarChart(canvas, products, orders) {
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const brands = { luminox: 0, seiko: 0, 'tag heuer': 0 };
+  const brandTotals = {};
   orders.filter((o) => o.status !== 'cancelled').forEach((ord) => {
-    ord.items.forEach((item) => {
+    (ord.items || []).forEach((item) => {
       const prod = products.find((p) => p.id === item.id);
-      const brand = prod ? prod.brand.toLowerCase() : '';
-      if (brand && brands[brand] !== undefined) {
-        brands[brand] += item.price * item.quantity;
-      }
+      const brand = prod && prod.brand ? prod.brand.trim() : 'Audio';
+      brandTotals[brand] = (brandTotals[brand] || 0) + ((item.price || 0) * (item.quantity || 1));
     });
   });
 
-  const data = [
-    { name: 'Luminox', value: brands.luminox, color: '#c5a880' },
-    { name: 'Seiko', value: brands.seiko, color: '#ff6b6b' },
-    { name: 'Tag Heuer', value: brands['tag heuer'], color: '#4dabf7' },
-  ];
+  const colors = ['#c5a880', '#ff6b6b', '#4dabf7', '#a855f7', '#51cf66', '#ff922b'];
+  const data = Object.keys(brandTotals).length > 0 
+    ? Object.entries(brandTotals).slice(0, 6).map(([name, value], idx) => ({ name, value, color: colors[idx % colors.length] }))
+    : [
+        { name: 'Marshall', value: 0, color: '#c5a880' },
+        { name: 'Sony', value: 0, color: '#ff6b6b' },
+        { name: 'Bose', value: 0, color: '#4dabf7' },
+        { name: 'Apple', value: 0, color: '#a855f7' }
+      ];
 
   const maxValue = Math.max(...data.map((d) => d.value), 10000);
   const padding = 40, chartWidth = canvas.width - padding * 2, chartHeight = canvas.height - padding * 2;
@@ -161,6 +163,20 @@ export default function Manager() {
 
   const setForm = (f) => (e) => setProductForm((prev) => ({ ...prev, [f]: e.target.value }));
 
+  const handleImageUpload = (e, field) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      showNotif('ขนาดไฟล์รูปภาพต้องไม่เกิน 5MB', false);
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      setProductForm((prev) => ({ ...prev, [field]: evt.target.result }));
+    };
+    reader.readAsDataURL(file);
+  };
+
   const startEdit = (prod) => {
     setEditingProduct(prod.id);
     setProductForm({
@@ -195,7 +211,7 @@ export default function Manager() {
     const prod = products.find((p) => p.id === id);
     if (!confirm(t('deleteConfirm').replace('{name}', prod?.name))) return;
     const res = await api.deleteProduct(id);
-    if (res.ok) { showNotif(t('deleteSuccess'), false); refreshData(); }
+    if (res.ok) { showNotif(t('deleteSuccess')); refreshData(); }
     else showNotif(t('deleteFailed'), false);
   };
 
@@ -246,7 +262,7 @@ export default function Manager() {
 
   // Audit
   const filteredAudit = products
-    .filter((p) => p.name.toLowerCase().includes(auditSearch.toLowerCase()) || p.id.toLowerCase().includes(auditSearch.toLowerCase()))
+    .filter((p) => (p?.name || '').toLowerCase().includes((auditSearch || '').toLowerCase()) || (p?.id || '').toLowerCase().includes((auditSearch || '').toLowerCase()))
     .map((p) => {
       const origin = pendingWatches.find((w) => w.id === p.id);
       return {
@@ -343,11 +359,39 @@ export default function Manager() {
                 </div>
                 <div className="form-group">
                   <label className="form-label">{t('frontImageLabel')}</label>
-                  <input className="form-input" value={productForm.image} onChange={setForm('image')} id="prod-image" disabled={user?.role !== 'admin'} />
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                    <input className="form-input" value={productForm.image} onChange={setForm('image')} id="prod-image" placeholder="URL หรือ อัปโหลดรูปภาพ..." disabled={user?.role !== 'admin' && editingProduct} style={{ flexGrow: 1 }} />
+                    {(user?.role === 'admin' || !editingProduct) && (
+                      <label className="btn btn-secondary" style={{ cursor: 'pointer', flexShrink: 0, padding: '0.45rem 0.8rem', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                        📷 อัปโหลดรูป
+                        <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleImageUpload(e, 'image')} />
+                      </label>
+                    )}
+                  </div>
+                  {productForm.image && (
+                    <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                      <img src={productForm.image} alt="Front Preview" style={{ width: '55px', height: '55px', objectFit: 'contain', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', border: '1px solid var(--glass-border)' }} />
+                      <button type="button" onClick={() => setProductForm(p => ({ ...p, image: '' }))} style={{ background: 'none', border: 'none', color: '#ff6b6b', cursor: 'pointer', fontSize: '0.8rem' }}>❌ ลบรูป</button>
+                    </div>
+                  )}
                 </div>
                 <div className="form-group">
                   <label className="form-label">{t('backImageLabel')}</label>
-                  <input className="form-input" value={productForm.imageBack} onChange={setForm('imageBack')} id="prod-image-back" disabled={user?.role !== 'admin'} />
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                    <input className="form-input" value={productForm.imageBack} onChange={setForm('imageBack')} id="prod-image-back" placeholder="URL หรือ อัปโหลดรูปภาพ..." disabled={user?.role !== 'admin' && editingProduct} style={{ flexGrow: 1 }} />
+                    {(user?.role === 'admin' || !editingProduct) && (
+                      <label className="btn btn-secondary" style={{ cursor: 'pointer', flexShrink: 0, padding: '0.45rem 0.8rem', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                        📷 อัปโหลดรูป
+                        <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleImageUpload(e, 'imageBack')} />
+                      </label>
+                    )}
+                  </div>
+                  {productForm.imageBack && (
+                    <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                      <img src={productForm.imageBack} alt="Back Preview" style={{ width: '55px', height: '55px', objectFit: 'contain', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', border: '1px solid var(--glass-border)' }} />
+                      <button type="button" onClick={() => setProductForm(p => ({ ...p, imageBack: '' }))} style={{ background: 'none', border: 'none', color: '#ff6b6b', cursor: 'pointer', fontSize: '0.8rem' }}>❌ ลบรูป</button>
+                    </div>
+                  )}
                 </div>
                 <div className="btn-group">
                   <button type="submit" className="btn btn-primary" id="btn-submit-form">

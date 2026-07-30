@@ -6,41 +6,28 @@ import { api } from '../api';
 import Header from '../components/Header';
 import { Icons } from '../components/Icons';
 
-// ─── Watch SVG Preview (larger) ──────────────────────────────────────────────
+// ─── Audio SVG Preview (larger) ──────────────────────────────────────────────
 function WatchPreview({ color, strokeColor, size = 260 }) {
-  const c = color || '#1a1a2e';
   const s = strokeColor || '#c5a880';
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} style={{ filter: 'drop-shadow(0 12px 32px rgba(0,0,0,0.6))' }}>
-      {/* Case outer */}
-      <circle cx="100" cy="100" r="75" fill="none" stroke={s} strokeWidth="4" />
-      {/* Case */}
-      <circle cx="100" cy="100" r="70" fill={c} />
-      {/* Inner bezel */}
-      <circle cx="100" cy="100" r="64" fill="none" stroke={s} strokeWidth="1" strokeOpacity="0.4" />
-      {/* Hour markers */}
-      {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg, i) => {
-        const r = 56;
-        const rad = (deg - 90) * Math.PI / 180;
-        const x1 = 100 + r * Math.cos(rad);
-        const y1 = 100 + r * Math.sin(rad);
-        const len = i % 3 === 0 ? 8 : 4;
-        const rad2 = rad;
-        const x2 = 100 + (r - len) * Math.cos(rad2);
-        const y2 = 100 + (r - len) * Math.sin(rad2);
-        return <line key={deg} x1={x1} y1={y1} x2={x2} y2={y2} stroke={s} strokeWidth={i % 3 === 0 ? 2 : 1} strokeOpacity="0.8" />;
-      })}
-      {/* Crown */}
-      <rect x="172" y="94" width="10" height="12" rx="3" fill="#2a2a3a" stroke={s} strokeWidth="1" />
-      {/* Hour hand */}
-      <line x1="100" y1="100" x2="100" y2="66" stroke={s} strokeWidth="3" strokeLinecap="round" />
-      {/* Minute hand */}
-      <line x1="100" y1="100" x2="100" y2="46" stroke={s} strokeWidth="2" strokeLinecap="round" />
-      {/* Second hand */}
-      <line x1="100" y1="110" x2="100" y2="50" stroke="#ff4757" strokeWidth="1" strokeLinecap="round" />
-      {/* Center dot */}
-      <circle cx="100" cy="100" r="3.5" fill={s} />
-      <circle cx="100" cy="100" r="1.5" fill="#000" />
+      {/* Outer Glow Circle */}
+      <circle cx="100" cy="100" r="85" fill="none" stroke={s} strokeWidth="2" strokeDasharray="6 6" opacity="0.4" />
+      <circle cx="100" cy="100" r="75" fill="rgba(15, 23, 42, 0.8)" stroke={s} strokeWidth="3" />
+      
+      {/* Headband arch */}
+      <path d="M 50 110 A 50 50 0 0 1 150 110" fill="none" stroke={s} strokeWidth="6" strokeLinecap="round" />
+      {/* Left Ear cup */}
+      <rect x="40" y="100" width="20" height="42" rx="10" fill="#1e293b" stroke={s} strokeWidth="3" />
+      {/* Right Ear cup */}
+      <rect x="140" y="100" width="20" height="42" rx="10" fill="#1e293b" stroke={s} strokeWidth="3" />
+      {/* Left cushion */}
+      <rect x="56" y="105" width="7" height="32" rx="3" fill={s} opacity="0.85" />
+      {/* Right cushion */}
+      <rect x="137" y="105" width="7" height="32" rx="3" fill={s} opacity="0.85" />
+      {/* Sound waves in center */}
+      <circle cx="100" cy="120" r="18" fill="none" stroke={s} strokeWidth="2" opacity="0.3" />
+      <circle cx="100" cy="120" r="9" fill={s} opacity="0.7" />
     </svg>
   );
 }
@@ -310,7 +297,7 @@ export default function ProductDetail() {
 
             {/* Price */}
             <div className="pd-price-box">
-              <div className="pd-price">฿ {product.price.toLocaleString()}</div>
+              <div className="pd-price">฿ {(product?.price || 0).toLocaleString()}</div>
               <div className="pd-price-note">{t('priceVatFreeShipping')}</div>
             </div>
 

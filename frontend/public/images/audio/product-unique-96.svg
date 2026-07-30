@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad_96" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0b00" />
+      <stop offset="100%" stop-color="#2a1405" />
+    </linearGradient>
+    <radialGradient id="radial_96" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6b00" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#1a0b00" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="400" fill="url(#grad_96)" />
+  <circle cx="250" cy="210" r="160" fill="url(#radial_96)" />
+
+  <!-- Grid accent lines -->
+  <line x1="0" y1="330" x2="500" y2="330" stroke="#3d1d08" stroke-width="2" opacity="0.5" />
+  
+  <!-- Brand Badge Top -->
+  <rect x="30" y="25" width="130" height="32" rx="16" fill="#3d1d08" stroke="#ff6b00" stroke-width="1.5" />
+  <text x="95" y="46" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="800" fill="#ff8c38" text-anchor="middle" letter-spacing="1">JBL</text>
+
+  <!-- Category Badge Top Right -->
+  <rect x="350" y="25" width="120" height="32" rx="16" fill="#3d1d08" />
+  <text x="410" y="46" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="700" fill="#ff6b00" text-anchor="middle" letter-spacing="1"># 96 HEADPHONES</text>
+
+  <!-- Central Graphic -->
+  
+      <!-- Headphones Graphics -->
+      <path d="M 160 210 A 90 90 0 0 1 340 210" fill="none" stroke="#ff6b00" stroke-width="14" stroke-linecap="round" />
+      <rect x="140" y="190" width="36" height="70" rx="18" fill="#ff6b00" opacity="0.9" />
+      <rect x="324" y="190" width="36" height="70" rx="18" fill="#ff6b00" opacity="0.9" />
+      <circle cx="158" cy="225" r="12" fill="#1a0b00" />
+      <circle cx="342" cy="225" r="12" fill="#1a0b00" />
+      <!-- Equalizer waves -->
+      <line x1="210" y1="230" x2="210" y2="200" stroke="#ff8c38" stroke-width="4" stroke-linecap="round" />
+      <line x1="230" y1="240" x2="230" y2="190" stroke="#ff6b00" stroke-width="4" stroke-linecap="round" />
+      <line x1="250" y1="245" x2="250" y2="185" stroke="#ff8c38" stroke-width="4" stroke-linecap="round" />
+      <line x1="270" y1="235" x2="270" y2="195" stroke="#ff6b00" stroke-width="4" stroke-linecap="round" />
+      <line x1="290" y1="225" x2="290" y2="205" stroke="#ff8c38" stroke-width="4" stroke-linecap="round" />
+    
+
+  <!-- Model Title Bottom -->
+  <text x="250" y="340" font-family="'Inter', system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">JBL Vibe 772 Headphones</text>
+  <text x="250" y="365" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="600" fill="#ff6b00" text-anchor="middle">฿22,390 • Bluetooth 5.2 / AptX Adaptive</text>
+</svg>

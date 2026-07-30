@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="ear" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="70%" stop-color="#111"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="cup" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#333"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </radialGradient>
+    <filter id="shadow3">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="500" fill="url(#bg3)"/>
+
+  <g filter="url(#shadow3)">
+    <!-- Headband arc -->
+    <path d="M 155 270 C 155 80 445 80 445 270" fill="none" stroke="#1a1a1a" stroke-width="48" stroke-linecap="round"/>
+    <path d="M 155 270 C 155 80 445 80 445 270" fill="none" stroke="#2a2a2a" stroke-width="36" stroke-linecap="round"/>
+    <!-- Headband highlight -->
+    <path d="M 165 260 C 165 100 435 100 435 260" fill="none" stroke="#444" stroke-width="14" stroke-linecap="round"/>
+    <!-- Center pad -->
+    <path d="M 245 140 C 255 105 345 105 355 140" fill="none" stroke="#1a1a1a" stroke-width="30" stroke-linecap="round"/>
+    <path d="M 245 140 C 255 110 345 110 355 140" fill="none" stroke="#333" stroke-width="16" stroke-linecap="round"/>
+
+    <!-- Left ear cup -->
+    <ellipse cx="145" cy="275" rx="90" ry="105" fill="url(#cup)"/>
+    <ellipse cx="145" cy="275" rx="75" ry="88" fill="url(#ear)"/>
+    <!-- Left ear cushion ring -->
+    <ellipse cx="145" cy="275" rx="90" ry="105" fill="none" stroke="#333" stroke-width="5"/>
+    <!-- AT Logo Left -->
+    <circle cx="145" cy="275" r="32" fill="#111" stroke="#555" stroke-width="2"/>
+    <text x="145" y="282" font-family="Arial" font-size="15" font-weight="900" fill="#888" text-anchor="middle">AT</text>
+
+    <!-- Right ear cup -->
+    <ellipse cx="455" cy="275" rx="90" ry="105" fill="url(#cup)"/>
+    <ellipse cx="455" cy="275" rx="75" ry="88" fill="url(#ear)"/>
+    <!-- Right ear cushion ring -->
+    <ellipse cx="455" cy="275" rx="90" ry="105" fill="none" stroke="#333" stroke-width="5"/>
+    <!-- Right inner detail -->
+    <circle cx="455" cy="275" r="32" fill="#111" stroke="#555" stroke-width="2"/>
+    <circle cx="455" cy="275" r="8" fill="#333"/>
+
+    <!-- Foldable arm joints -->
+    <rect x="100" y="250" width="55" height="25" rx="5" fill="#1a1a1a" stroke="#444" stroke-width="2"/>
+    <rect x="445" y="250" width="55" height="25" rx="5" fill="#1a1a1a" stroke="#444" stroke-width="2"/>
+  </g>
+
+  <!-- Label -->
+  <rect x="0" y="420" width="600" height="80" fill="#050505" opacity="0.95"/>
+  <text x="30" y="448" font-family="Arial" font-size="12" font-weight="700" fill="#e5e7eb" letter-spacing="3">AUDIO-TECHNICA</text>
+  <text x="30" y="467" font-family="Arial" font-size="16" font-weight="800" fill="#ffffff">ATH-M50xBT2 Studio Headphones</text>
+  <text x="570" y="467" font-family="Arial" font-size="18" font-weight="900" fill="#e5e7eb" text-anchor="end">฿7,990</text>
+  <text x="30" y="488" font-family="Arial" font-size="11" fill="#9ca3af">Multipoint BT5.0 • 50H Battery • AAC/LDAC/aptX</text>
+</svg>

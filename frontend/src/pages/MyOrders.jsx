@@ -163,6 +163,7 @@ export default function MyOrders() {
                 <span className={`badge ${
                   ord.status === 'pending_payment' ? 'badge-pending' :
                   ord.status === 'pending_review' ? 'badge-pending' :
+                  ord.status === 'manager_approved' ? 'badge-paid' :
                   ord.status === 'confirmed' ? 'badge-paid' :
                   ord.status === 'paid' ? 'badge-paid' :
                   ord.status === 'shipped' ? 'badge-shipped' : 'badge-cancelled'
@@ -170,16 +171,20 @@ export default function MyOrders() {
                 style={{
                   background: 
                     ord.status === 'pending_payment' ? 'rgba(255,165,0,0.18)' :
-                    ord.status === 'pending_review' ? 'rgba(59,130,246,0.18)' : undefined,
+                    ord.status === 'pending_review' ? 'rgba(59,130,246,0.18)' :
+                    ord.status === 'manager_approved' ? 'rgba(168,85,247,0.18)' : undefined,
                   color:
                     ord.status === 'pending_payment' ? '#ffa94d' :
-                    ord.status === 'pending_review' ? '#60a5fa' : undefined,
+                    ord.status === 'pending_review' ? '#60a5fa' :
+                    ord.status === 'manager_approved' ? '#a855f7' : undefined,
                   border:
                     ord.status === 'pending_payment' ? '1px solid #ffa94d55' :
-                    ord.status === 'pending_review' ? '1px solid #60a5fa55' : undefined
+                    ord.status === 'pending_review' ? '1px solid #60a5fa55' :
+                    ord.status === 'manager_approved' ? '1px solid #a855f755' : undefined
                 }}>
                   {ord.status === 'pending_payment' ? t('statusPendingPayment') :
                    ord.status === 'pending_review' ? t('statusPendingReview') :
+                   ord.status === 'manager_approved' ? (t('statusManagerApproved') || 'ผ่านการตรวจสลิป รอ Admin ยืนยัน') :
                    ord.status === 'confirmed' ? t('statusConfirmed') :
                    ord.status === 'paid' ? t('statusPaid') :
                    ord.status === 'shipped' ? t('statusShipped') : t('statusCancelled')}
@@ -309,7 +314,7 @@ export default function MyOrders() {
                 </div>
               )}
 
-              {(ord.status === 'paid' || ord.status === 'confirmed' || ord.status === 'pending_payment' || ord.status === 'pending_review') && (
+              {(ord.status === 'pending_payment' || ord.status === 'pending_review') && (
                 <button 
                   className="btn btn-danger" 
                   style={{ marginTop: '1.2rem', padding: '0.45rem 1.2rem', fontSize: '0.85rem', fontWeight: 600 }} 

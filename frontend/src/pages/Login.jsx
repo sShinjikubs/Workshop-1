@@ -17,7 +17,7 @@ export default function Login() {
     setError('');
     setLoading(true);
     try {
-      const res = await api.login(role, username, password);
+      const res = await api.login(username, password);
       const data = await res.json();
       if (res.ok && data.success) {
         const userData = data.user || { username: data.username, role: data.role };
@@ -43,6 +43,89 @@ export default function Login() {
         style={{ backgroundColor: '#080a0f', position: 'relative', overflow: 'hidden' }}
       >
         <div className="login-left-overlay"></div>
+
+        {/* Product Image Collage */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'none',
+        }}>
+          {/* Radial glow behind products */}
+          <div style={{
+            position: 'absolute',
+            width: '420px',
+            height: '420px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(197,168,128,0.12) 0%, transparent 70%)',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -60%)',
+          }} />
+
+          {/* Main center product - Sony WH-1000XM5 */}
+          <img
+            src="/images/audio/sony-wh1000xm5.png"
+            alt="Sony WH-1000XM5"
+            style={{
+              position: 'absolute',
+              width: '260px',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -60%)',
+              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.8))',
+              animation: 'loginFloat 6s ease-in-out infinite',
+            }}
+          />
+
+          {/* Left product - Marshall Stanmore */}
+          <img
+            src="/images/audio/marshall-stanmore.png"
+            alt="Marshall"
+            style={{
+              position: 'absolute',
+              width: '160px',
+              bottom: '28%',
+              left: '6%',
+              filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.7))',
+              opacity: 0.85,
+              animation: 'loginFloat 7s ease-in-out infinite 1s',
+            }}
+          />
+
+          {/* Right product - Bose QC Ultra */}
+          <img
+            src="/images/audio/bose-quietcomfort.png"
+            alt="Bose"
+            style={{
+              position: 'absolute',
+              width: '150px',
+              bottom: '26%',
+              right: '6%',
+              filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.7))',
+              opacity: 0.85,
+              animation: 'loginFloat 5s ease-in-out infinite 0.5s',
+            }}
+          />
+
+          {/* Top small product - Apple AirPods */}
+          <img
+            src="/images/audio/apple-airpods-pro2.png"
+            alt="Apple AirPods"
+            style={{
+              position: 'absolute',
+              width: '110px',
+              top: '14%',
+              right: '18%',
+              filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.6))',
+              opacity: 0.8,
+              animation: 'loginFloat 8s ease-in-out infinite 2s',
+            }}
+          />
+        </div>
+
         <div className="login-left-content">
           <div className="login-logo">
             Audio<span>Mart</span>

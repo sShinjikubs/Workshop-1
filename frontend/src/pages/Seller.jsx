@@ -55,7 +55,7 @@ export default function Seller() {
   const handleWatchSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await api.proposWatch({
+      const res = await api.proposeWatch({
         ...watchForm,
         price: parseFloat(watchForm.price),
         sellerName: regForm.name || user?.username || 'Seller',
@@ -72,9 +72,13 @@ export default function Seller() {
     } catch (_) { showNotif(t('serverErrorGeneric'), false); }
   };
 
-  const totalProposed = pendingWatches.length;
-  const pendingCount = pendingWatches.filter((w) => w.importStatus === 'pending').length;
-  const importedCount = pendingWatches.filter((w) => w.importStatus === 'imported').length;
+  // Filter to show only this seller's proposals
+  const myWatches = pendingWatches.filter(
+    (w) => w.sellerEmail === regForm.email || w.sellerName === (regForm.name || user?.username)
+  );
+  const totalProposed = myWatches.length;
+  const pendingCount = myWatches.filter((w) => w.importStatus === 'pending').length;
+  const importedCount = myWatches.filter((w) => w.importStatus === 'imported').length;
 
   return (
     <div className="page-wrapper">
@@ -172,9 +176,9 @@ export default function Seller() {
                       </tr>
                     </thead>
                     <tbody id="seller-watches-table">
-                      {pendingWatches.length === 0 ? (
+                      {myWatches.length === 0 ? (
                         <tr><td colSpan={5} style={{ textAlign: 'center', color: 'var(--text-muted)' }}>{t('noProposals')}</td></tr>
-                      ) : pendingWatches.map((w) => (
+                      ) : myWatches.map((w) => (
                         <tr key={w.id}>
                           <td><strong>{w.brand}</strong> {w.model}</td>
                           <td>฿ {w.price?.toLocaleString()}</td>

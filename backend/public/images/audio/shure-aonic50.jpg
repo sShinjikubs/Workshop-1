@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0f18"/>
+      <stop offset="100%" stop-color="#080810"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0f0f18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cupShure" cx="38%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#3d3d4a"/>
+      <stop offset="70%" stop-color="#1e1e2d"/>
+      <stop offset="100%" stop-color="#111118"/>
+    </radialGradient>
+    <filter id="shadow4">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="500" fill="url(#bg4)"/>
+  <ellipse cx="300" cy="250" rx="200" ry="160" fill="url(#glow4)"/>
+
+  <g filter="url(#shadow4)">
+    <!-- Headband steel arc -->
+    <path d="M 160 265 C 160 70 440 70 440 265" fill="none" stroke="#15151f" stroke-width="44" stroke-linecap="round"/>
+    <path d="M 160 265 C 160 70 440 70 440 265" fill="none" stroke="#252535" stroke-width="30" stroke-linecap="round"/>
+    <!-- Headband highlight -->
+    <path d="M 168 255 C 168 95 432 95 432 255" fill="none" stroke="#3a3a4a" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Size adjustment sliders -->
+    <rect x="108" y="218" width="65" height="28" rx="4" fill="#1a1a2a" stroke="#3a3a55" stroke-width="2"/>
+    <rect x="427" y="218" width="65" height="28" rx="4" fill="#1a1a2a" stroke="#3a3a55" stroke-width="2"/>
+
+    <!-- Left ear cup (large oval) -->
+    <ellipse cx="148" cy="295" rx="95" ry="110" fill="url(#cupShure)"/>
+    <ellipse cx="148" cy="295" rx="95" ry="110" fill="none" stroke="#3a3a55" stroke-width="4"/>
+    <!-- Left cup inner -->
+    <ellipse cx="148" cy="295" rx="70" ry="83" fill="#111118"/>
+    <!-- Shure logo on cup -->
+    <text x="148" y="286" font-family="Arial" font-size="11" font-weight="900" fill="#4f46e5" text-anchor="middle" letter-spacing="2">SHURE</text>
+    <text x="148" y="302" font-family="Arial" font-size="8" font-weight="600" fill="#9ca3af" text-anchor="middle" letter-spacing="1">AONIC 50</text>
+    <!-- ANC button -->
+    <circle cx="84" cy="295" r="12" fill="#4f46e5"/>
+    <text x="84" y="299" font-family="Arial" font-size="7" font-weight="700" fill="white" text-anchor="middle">ANC</text>
+
+    <!-- Right ear cup -->
+    <ellipse cx="452" cy="295" rx="95" ry="110" fill="url(#cupShure)"/>
+    <ellipse cx="452" cy="295" rx="95" ry="110" fill="none" stroke="#3a3a55" stroke-width="4"/>
+    <!-- Right cup inner -->
+    <ellipse cx="452" cy="295" rx="70" ry="83" fill="#111118"/>
+    <!-- Control wheel -->
+    <circle cx="452" cy="295" r="38" fill="#1e1e2d" stroke="#3a3a55" stroke-width="2"/>
+    <circle cx="452" cy="295" r="18" fill="#252535"/>
+    <!-- Center button -->
+    <circle cx="452" cy="295" r="9" fill="#4f46e5"/>
+  </g>
+
+  <!-- Label -->
+  <rect x="0" y="420" width="600" height="80" fill="#080810" opacity="0.95"/>
+  <text x="30" y="448" font-family="Arial" font-size="12" font-weight="700" fill="#4f46e5" letter-spacing="3">SHURE</text>
+  <text x="30" y="467" font-family="Arial" font-size="16" font-weight="800" fill="#ffffff">AONIC 50 Gen 2 Wireless Headphones</text>
+  <text x="570" y="467" font-family="Arial" font-size="18" font-weight="900" fill="#818cf8" text-anchor="end">฿15,900</text>
+  <text x="30" y="488" font-family="Arial" font-size="11" fill="#9ca3af">Adjustable ANC • 45H Battery • SBC/AAC/aptX Adaptive</text>
+</svg>

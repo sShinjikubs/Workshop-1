@@ -1,4 +1,4 @@
-# 📋 เอกสารการออกแบบและการทดสอบ User Acceptance Testing (UAT)
+﻿# 📋 เอกสารการออกแบบและการทดสอบ User Acceptance Testing (UAT)
 ## โครงการ: AudioMart - แพลตฟอร์มร้านขายเครื่องเสียงและอุปกรณ์เสียงพรีเมียมออนไลน์
 **วิชา:** CSI204 ดิจิทัลแพลตฟอร์มสำหรับพัฒนาซอฟต์แวร์ (SPU SIT)  
 **กลุ่มผู้จัดทำ:**
@@ -10,164 +10,194 @@
 
 ## 📌 1. การวิเคราะห์ Persona และผู้ใช้งานหลัก (User Personas)
 
-การทดสอบ UAT ในโครงการ **AudioMart** แบ่งตามกลุ่มผู้ใช้งานจริงออกเป็น 3 บทบาทหลักดังนี้:
+ระบบ AudioMart แบ่งผู้ใช้งานออกเป็น **4 บทบาท** ดังนี้:
 
 ```mermaid
 graph TD
     User["👥 ผู้ใช้งานระบบ AudioMart"]
-    User --> Customer["🛒 1. Customer (ลูกค้าทั่วไป)"]
-    User --> Staff["📦 2. Staff / Seller (พนักงานขายและจัดการสินค้า)"]
-    User --> Manager["👑 3. Manager / Admin (ผู้จัดการและผู้ดูแลระบบ)"]
+    User --> Guest["👁️ 1. Guest\n(ผู้เยี่ยมชม ยังไม่ login)"]
+    User --> Customer["🛒 2. User / Customer\n(ลูกค้าทั่วไปที่สมัครแล้ว)"]
+    User --> Seller["🛍️ 3. Seller\n(User ที่ผ่านยืนยันตัวตน Blacklist Check)"]
+    User --> ManagerAdmin["👑 4. Manager / Admin\n(ผู้จัดการและผู้ดูแลระบบ)"]
 
-    Customer --> C_Goal["ค้นหาลำโพง/หูฟัง, ใส่ตะกร้า, ชำระเงิน QR PromptPay, ติดตามคำสั่งซื้อ"]
-    Staff --> S_Goal["ตรวจสอบคำสั่งซื้อ, ตรวจสลิปชำระเงิน, อัปเดตสถานะจัดส่ง"]
-    Manager --> M_Goal["ดูรายงานสรุปยอดขาย (Dashboard), จัดการสินค้า CRUD, จัดการผู้ใช้"]
+    Guest --> G_Goal["เรียกดูสินค้า, ค้นหา, ดูรีวิว"]
+    Customer --> C_Goal["ตะกร้า, Wishlist, Buy Now, Checkout (PromptPay/โอน/COD),\nอัปโหลดสลิป, My Orders, รีวิวสินค้า, แก้ไขโปรไฟล์, สลับภาษา/Theme"]
+    Seller --> S_Goal["ยืนยันตัวตน Blacklist Check, เสนอสินค้าเข้าคลัง,\nติดตามสถานะสินค้าที่เสนอ"]
+    ManagerAdmin --> M_Goal["ตรวจสอบสลิป, อนุมัติ/ปฏิเสธออเดอร์, จัดส่ง,\nจัดการสินค้า CRUD, Dashboard ยอดขาย, จัดการ Users (Admin)"]
 ```
 
-### 1.1 Customer Persona (คุณกิตติศักดิ์ - ผู้หลงใหลในเสียงเพลงและเครื่องเสียงไฮเอนด์)
-* **บทบาท:** ผู้ใช้งานทั่วไปที่เข้ามาค้นหาและสั่งซื้อลำโพง บลูทูธ และหูฟังพรีเมียมออนไลน์
-* **เป้าหมาย (Goals):**
-  * ค้นหา กรองแบรนด์ (Marshall, Sony, Bose, Apple, JBL, B&O) และประเภทสินค้าได้อย่างรวดเร็ว
-  * ดูรายละเอียดสินค้า (การเชื่อมต่อ Bluetooth, ระบบตัดเสียงรบกวน ANC, แบตเตอรี่, ราคา, รีวิว)
-  * ดำเนินการสั่งซื้อ เพิ่มลงตะกร้า ชำระเงินผ่าน QR Code PromptPay พร้อมแนบสลิป
-  * ติดตามสถานะคำสั่งซื้อและประวัติการสั่งซื้อย้อนหลังได้ในหน้า My Orders
+### 1.1 Customer Persona (คุณกิตติศักดิ์)
+- **บทบาท:** ลูกค้าทั่วไปที่เข้ามาซื้อลำโพงและหูฟังออนไลน์
+- **เป้าหมาย:** ค้นหาสินค้าตามแบรนด์ (Marshall, Sony, Bose, Apple, JBL, B&O), เพิ่มลงตะกร้าหรือ Buy Now, ชำระผ่าน PromptPay QR พร้อมอัปโหลดสลิป, ติดตามสถานะใน My Orders, เขียนรีวิวสินค้า
 
-### 1.2 Staff / Seller Persona (คุณสมชาย - พนักงานฝ่ายจัดการคำสั่งซื้อและคลังสินค้า)
-* **บทบาท:** พนักงานดูแลหน้าร้านและการจัดส่ง
-* **เป้าหมาย (Goals):**
-  * ตรวจสอบรายการสั่งซื้อใหม่ที่เข้ามาในระบบ
-  * ตรวจสอบความถูกต้องของสลิปโอนเงิน (Slip Verification)
-  * อัปเดตสถานะการจัดส่ง (`Pending` ➔ `Paid` ➔ `Shipped` ➔ `Delivered`) พร้อมระบุเลข Tracking
+### 1.2 Seller Persona (คุณสมชาย)
+- **บทบาท:** ผู้ที่ต้องการเสนอสินค้าเข้าสู่คลัง AudioMart
+- **เป้าหมาย:** ยืนยันตัวตนผ่าน Blacklist Check → เข้า Seller Portal → เสนอสินค้าพร้อมข้อมูลครบถ้วน → ติดตามสถานะการพิจารณา
 
-### 1.3 Manager / Admin Persona (คุณวิชัย - ผู้จัดการร้านและผู้ดูแลระบบ)
-* **บทบาท:** ผู้บริหารและผู้ดูแลระบบหลักของ AudioMart
-* **เป้าหมาย (Goals):**
-  * ดูภาพรวมการดำเนินงานผ่าน Dashboard (ยอดขายรวม, จำนวนออเดอร์, สินค้าขายดี)
-  * จัดการข้อมูลสินค้าเครื่องเสียงในระบบ (เพิ่มสินค้าใหม่, แก้ไขราคา/สต็อก, ลบสินค้า) (CRUD Products)
-  * บริหารจัดการสิทธิ์และสิทธิการใช้งานของผู้ใช้และพนักงาน
+### 1.3 Manager / Admin Persona (คุณวิชัย)
+- **บทบาท:** ผู้จัดการและผู้ดูแลระบบ AudioMart
+- **เป้าหมาย (Manager):** ตรวจสอบสลิป อนุมัติ/ปฏิเสธ, ยืนยันจัดส่ง, จัดการสินค้า, อนุมัติสินค้าจาก Seller
+- **เป้าหมาย (Admin เพิ่มเติม):** ยืนยันออเดอร์ขั้นสุดท้าย (Final Confirm), ลบสินค้า, จัดการ Users, ดู System Logs
 
 ---
 
-## 🧪 2. ออกแบบ UAT Test Cases (Test Case Specifications)
+## 🧪 2. ออกแบบ UAT Test Cases
 
 ### 2.1 กลุ่มที่ 1: Customer (ผู้ใช้งานทั่วไป / ลูกค้า)
 
-| Test Case ID | วัตถุประสงค์การทดสอบ | ข้อมูลนำเข้า (Input) | ขั้นตอนการทดสอบ (Test Steps) | ผลลัพธ์ที่คาดหวัง (Expected Result) |
+| Test Case ID | วัตถุประสงค์ | Input | Test Steps | Expected Result |
 | :--- | :--- | :--- | :--- | :--- |
-| **UAT-CUS-001** | ทดสอบการลงทะเบียนเข้าใช้งานผู้ใช้ใหม่ (Register) | Username: `testuser01`<br>Password: `Pass1234!`<br>Email: `test@audiomart.com`<br>Phone: `0812345678` | 1. เข้าหน้า Register<br>2. กรอกข้อมูลในฟอร์มให้ครบถ้วน<br>3. กดปุ่ม "สมัครสมาชิก" | ระบบบันทึกข้อมูลสำเร็จ แสดงข้อความต้อนรับ และเปลี่ยนหน้าไปยังหน้า Login หรือ Logged-in สภาวะปกติ |
-| **UAT-CUS-002** | ทดสอบการค้นหาและกรองรายการเครื่องเสียง (Search & Filter) | Keyword: `Marshall`<br>Brand Filter: `Marshall`<br>Category: `speaker` | 1. เข้าสู่หน้า Storefront<br>2. พิมพ์คำค้นหา "Marshall"<br>3. เลือกตัวกรองแบรนด์และหมวดหมู่ | รายการลำโพงแสดงเฉพาะรุ่นที่ตรงกับคำค้นหาและตัวกรองได้อย่างถูกต้อง |
-| **UAT-CUS-003** | ทดสอบการดูรายละเอียดสินค้าและการเพิ่มสินค้าลงตะกร้า (Add to Cart) | Product ID: `1` (Marshall Stanmore III)<br>Quantity: `1` | 1. คลิกเลือกหูฟัง/ลำโพงรุ่นที่ต้องการ<br>2. ตรวจสอบรายละเอียด สเปคสินค้า<br>3. กดปุ่ม "เพิ่มลงตะกร้า" | สินค้าถูกเพิ่มเข้าตะกร้า จำนวนไอคอนตะกร้าเปลี่ยนเป็น 1 และคำนวณราคารวมถูกต้อง |
-| **UAT-CUS-004** | ทดสอบการสั่งซื้อ ชำระเงิน PromptPay QR และแนบสลิป (Checkout & Payment) | Full Name, Shipping Address<br>Payment Slip Image | 1. เข้าหน้า Cart ➔ ดำเนินการ Checkout<br>2. กรอกที่อยู่จัดส่ง<br>3. สแกน QR Code เพื่อชำระเงิน<br>4. อัปโหลดสลิปโอนเงิน<br>5. กดปุ่ม "ยืนยันสั่งซื้อ" | สร้างคำสั่งซื้อสำเร็จ ระบบสร้าง Order ID แสดงหน้ายืนยันสั่งซื้อ และส่งการแจ้งเตือนไปยัง LINE Notify |
-| **UAT-CUS-005** | ทดสอบการตรวจสอบประวัติและสถานะคำสั่งซื้อ (Order Tracking) | User: Logged in customer | 1. เข้าสู่หน้า "My Orders / โปรไฟล์"<br>2. ตรวจสอบรายการคำสั่งซื้อล่าสุด | แสดงรายการออเดอร์ สถานะการชำระเงิน และสถานะจัดส่งตรงตามความเป็นจริง |
+| **UAT-CUS-001** | ทดสอบสมัครสมาชิก (Register) | Username: `testuser01`<br>Password: `Pass1234`<br>Email: `test@audiomart.com`<br>Phone: `0812345678` | 1. เข้าหน้า Register<br>2. กรอกข้อมูลให้ครบ<br>3. กดปุ่ม "สมัครสมาชิก" | บันทึกสำเร็จ แสดงข้อความต้อนรับ และนำไปหน้า Login |
+| **UAT-CUS-002** | ทดสอบค้นหาและกรองสินค้า | Keyword: `Marshall`<br>Brand Filter: `Marshall`<br>Category: `speaker` | 1. เข้าหน้าหลัก<br>2. พิมพ์ "Marshall" ในช่องค้นหา<br>3. กรองตาม Category | แสดงเฉพาะสินค้า Marshall ตามเงื่อนไขที่กรอง |
+| **UAT-CUS-003** | ทดสอบเพิ่มสินค้าลงตะกร้าและ Wishlist | Product: Marshall Stanmore III<br>Qty: 1 | 1. ดูรายละเอียดสินค้า<br>2. กด "เพิ่มลงตะกร้า"<br>3. กดไอคอน Wishlist (หัวใจ) | สินค้าอยู่ในตะกร้า ไอคอนแสดงจำนวน, สินค้าอยู่ใน Wishlist |
+| **UAT-CUS-004** | ทดสอบ Buy Now (ซื้อทันที) | Product: Sony WH-1000XM5<br>Qty: 1 | 1. กดปุ่ม "Buy Now" บนหน้าสินค้า<br>2. ระบบนำไปหน้า Checkout ทันที<br>3. กรอกข้อมูลและยืนยัน | Checkout ด้วยสินค้าชิ้นเดียวโดยไม่ผ่านตะกร้า |
+| **UAT-CUS-005** | ทดสอบ Checkout + PromptPay QR + Upload Slip | ที่อยู่จัดส่ง<br>Payment: PromptPay<br>Slip Image | 1. เปิด Cart → Checkout<br>2. เลือก PromptPay<br>3. สแกน QR → อัปโหลดสลิป<br>4. กด "ยืนยันสั่งซื้อ" | สร้าง Order สำเร็จ แสดง Order ID, status = pending_review |
+| **UAT-CUS-006** | ทดสอบ Checkout ผ่าน COD | ที่อยู่จัดส่ง<br>Payment: COD | 1. เลือก COD<br>2. กดยืนยัน | Order ถูกสร้างทันที status = confirmed (ไม่ต้องรอสลิป) |
+| **UAT-CUS-007** | ทดสอบ My Orders & ติดตามสถานะ | User: Login แล้ว | 1. เข้าหน้า My Orders<br>2. ตรวจสอบรายการออเดอร์ | แสดงรายการออเดอร์พร้อม status ล่าสุดและ cancel_reason (ถ้ามี) |
+| **UAT-CUS-008** | ทดสอบเขียนรีวิวสินค้า | Rating: 5 ดาว<br>Comment: "เสียงดีมาก" | 1. เข้าหน้ารายละเอียดสินค้า<br>2. เลื่อนไปส่วนรีวิว<br>3. เลือกดาว กรอกความเห็น กดส่ง | รีวิวแสดงในหน้าสินค้าทันที พร้อมชื่อและวันที่ |
+| **UAT-CUS-009** | ทดสอบแก้ไขโปรไฟล์และรูปอวตาร | ชื่อ: "กิตติศักดิ์"<br>อีเมล: `user@test.com`<br>Avatar: Upload รูป | 1. เข้าหน้า Profile<br>2. แก้ไขข้อมูล<br>3. กดบันทึก | ข้อมูลอัปเดตในระบบ รูปอวตารแสดงที่ Header |
+| **UAT-CUS-010** | ทดสอบสลับภาษา TH/EN และ Dark/Light Theme | - | 1. เปิด Settings Drawer (☰)<br>2. เปลี่ยนภาษาเป็น EN<br>3. เปลี่ยน Theme เป็น Light | ข้อความในระบบเปลี่ยนเป็น EN, สีพื้นหลังเปลี่ยนเป็น Light Mode |
 
 ---
 
-### 2.2 กลุ่มที่ 2: Staff / Seller (พนักงานขายและคลังสินค้า)
+### 2.2 กลุ่มที่ 2: Seller (ผู้ขายที่ผ่านยืนยันตัวตน)
 
-| Test Case ID | วัตถุประสงค์การทดสอบ | ข้อมูลนำเข้า (Input) | ขั้นตอนการทดสอบ (Test Steps) | ผลลัพธ์ที่คาดหวัง (Expected Result) |
+| Test Case ID | วัตถุประสงค์ | Input | Test Steps | Expected Result |
 | :--- | :--- | :--- | :--- | :--- |
-| **UAT-STF-001** | ทดสอบการเข้าสู่ระบบในบทบาท Staff | Staff Credentials:<br>Username: `seller01`<br>Password: `SellerPass123` | 1. เข้าสู่หน้า Login<br>2. กรอก Username/Password ของ Staff<br>3. กด Login | ระบบนำเข้าสู่หน้า Seller / Staff Dashboard |
-| **UAT-STF-002** | ทดสอบการตรวจสอบคำสั่งซื้อและสลิปโอนเงิน | Order ID ที่รอดำเนินการ | 1. เข้าหน้ารายการคำสั่งซื้อของ Seller<br>2. คลิกดูรายละเอียดออเดอร์<br>3. เปิดดูภาพสลิปชำระเงินที่ลูกค้าแนบมา | แสดงข้อมูลออเดอร์ ยอดเงินตรงกับราคา และสามารถขยายดูภาพสลิปเพื่อตรวจสอบได้ชัดเจน |
-| **UAT-STF-003** | ทดสอบการอัปเดตสถานะคำสั่งซื้อและการจัดส่ง | Status: `Shipped`<br>Tracking No: `TH123456789TH` | 1. เลือกออเดอร์ที่ยืนยันสลิปแล้ว<br>2. เปลี่ยนสถานะเป็น "Shipped/จัดส่งแล้ว"<br>3. กรอกเลขพัสดุ Tracking No.<br>4. กด "บันทึก" | สถานะออเดอร์เปลี่ยนเป็น Shipped เลข Tracking บันทึกลงระบบ และแจ้งเตือนอัปเดตไปยังฝั่งลูกค้า |
+| **UAT-STF-001** | ทดสอบยืนยันตัวตน Seller (ปกติ) | Name: `สมชาย`<br>Email: `somchai@mail.com`<br>NationalID: `1234567890123` | 1. Login ด้วย User ทั่วไป<br>2. เข้า Seller Portal<br>3. กรอกข้อมูลยืนยัน<br>4. กดส่ง | ผ่านการตรวจสอบ Blacklist, แสดงหน้า Seller Portal ได้ทันที |
+| **UAT-STF-002** | ทดสอบยืนยันตัวตน Seller (ติด Blacklist) | Email/NationalID: ข้อมูลที่อยู่ใน Blacklist | 1. กรอกข้อมูลที่ติด Blacklist<br>2. กดส่ง | ระบบแสดงข้อความเตือน ไม่อนุญาตให้ลงทะเบียน |
+| **UAT-STF-003** | ทดสอบเสนอสินค้าเข้าคลัง | Brand: `Sony`<br>Model: `WF-1000XM5`<br>Price: `8990`<br>Category: `earbuds` | 1. เข้า Seller Portal<br>2. กรอกข้อมูลสินค้า<br>3. กด "เสนอสินค้า" | สินค้าเข้าคิวรอตรวจสอบ แสดง ID: `WSH-XXXXXX` |
 
 ---
 
 ### 2.3 กลุ่มที่ 3: Manager / Admin (ผู้จัดการและผู้ดูแลระบบ)
 
-| Test Case ID | วัตถุประสงค์การทดสอบ | ข้อมูลนำเข้า (Input) | ขั้นตอนการทดสอบ (Test Steps) | ผลลัพธ์ที่คาดหวัง (Expected Result) |
+| Test Case ID | วัตถุประสงค์ | Input | Test Steps | Expected Result |
 | :--- | :--- | :--- | :--- | :--- |
-| **UAT-MNG-001** | ทดสอบการดู Dashboard สรุปภาพรวมยอดขาย | Date range, Overview metrics | 1. เข้าสู่ระบบด้วยสิทธิ์ Admin/Manager<br>2. ไปยังหน้า Admin Dashboard | แสดงผลรวมยอดขาย (Total Revenue), จำนวน Order, จำนวนสินค้าในสต็อก และกราฟสรุปได้อย่างแม่นยำ |
-| **UAT-MNG-002** | ทดสอบการเพิ่มรายการสินค้าใหม่เข้าสู่ระบบ (Create Product) | Name: `Bose SoundLink Flex`<br>Brand: `Bose`<br>Price: `6490`<br>Stock: `10` | 1. เข้าหน้าจัดการสินค้า (Product Management)<br>2. กดปุ่ม "เพิ่มสินค้าใหม่"<br>3. กรอกรายละเอียด เลือกภาพสินค้า<br>4. กดบันทึก | สินค้าใหม่ถูกบันทึกลงฐานข้อมูล และปรากฏบนหน้า Storefront ให้ลูกค้าสั่งซื้อได้ทันที |
-| **UAT-MNG-003** | ทดสอบการแก้ไขข้อมูลราคาและสต็อกสินค้า (Update Product) | Stock: Update from `10` to `15`<br>Price: Update from `6490` to `5990` | 1. เลือกสินค้าที่ต้องการแก้ไข<br>2. ปรับเปลี่ยนจำนวนสต็อกและราคา<br>3. กด "บันทึกการเปลี่ยนแปลง" | ข้อมูลในฐานข้อมูลและหน้าเว็บแสดงราคา/สต็อกใหม่ตรงกันทันที |
-| **UAT-MNG-004** | ทดสอบการลบสินค้าออกจากระบบ (Delete Product) | Target Product ID | 1. เลือกสินค้าที่ต้องการลบ<br>2. กดปุ่ม "ลบสินค้า"<br>3. ยืนยันการลบใน Pop-up Confirm | สินค้าถูกลบออกจากรายการสินค้า และไม่แสดงบน Storefront อีกต่อไป |
+| **UAT-MNG-001** | ทดสอบดู Dashboard ยอดขาย | Login: manager / manager123 | 1. Login ด้วย Manager<br>2. เข้าหน้า Manager Dashboard | แสดงยอดขายรวม, จำนวนออเดอร์, กราฟแนวโน้ม 7 วัน |
+| **UAT-MNG-002** | ทดสอบอนุมัติสลิปชำระเงิน | Order ที่ status = pending_review | 1. เข้า Manager Dashboard<br>2. ดูรายการรอตรวจสลิป<br>3. กด "อนุมัติ" | Order status เปลี่ยนเป็น manager_approved, รอ Admin ยืนยัน |
+| **UAT-MNG-003** | ทดสอบปฏิเสธสลิปพร้อมเหตุผล | Order + เหตุผล: "ยอดโอนไม่ตรง" | 1. กด "ปฏิเสธ"<br>2. กรอกเหตุผล<br>3. ยืนยัน | Order status = cancelled, cancel_reason = เหตุผล, stock คืนแล้ว |
+| **UAT-MNG-004** | ทดสอบ Admin ยืนยันขั้นสุดท้าย | Order ที่ status = manager_approved | 1. Login ด้วย Admin<br>2. เข้า Admin Dashboard<br>3. กด "Final Confirm" | Order status เปลี่ยนเป็น confirmed |
+| **UAT-MNG-005** | ทดสอบยืนยันจัดส่งสินค้า | Order ที่ status = confirmed | 1. Manager กด "จัดส่งสินค้า"<br>2. ยืนยัน | Order status เปลี่ยนเป็น shipped |
+| **UAT-MNG-006** | ทดสอบเพิ่มสินค้าใหม่ (Create) | Name: `Bose SoundLink Flex`<br>Price: `6490`<br>Stock: `10` | 1. เข้าหน้า Inventory<br>2. กด "เพิ่มสินค้า"<br>3. กรอกข้อมูล บันทึก | สินค้าปรากฏบน Storefront ทันที |
+| **UAT-MNG-007** | ทดสอบแก้ไขราคา/สต็อก (Update) | Stock: 10 → 15<br>Price: 6490 → 5990 | 1. กดแก้ไขสินค้า<br>2. เปลี่ยนค่า<br>3. บันทึก | ราคาและสต็อกในระบบอัปเดตทันที |
+| **UAT-MNG-008** | ทดสอบลบสินค้า (Delete) — Admin เท่านั้น | Product ID ที่ต้องการลบ | 1. Login Admin<br>2. กดลบสินค้า<br>3. ยืนยัน | สินค้าหายจาก Storefront และฐานข้อมูล |
+| **UAT-MNG-009** | ทดสอบอนุมัติสินค้าจาก Seller | PendingWatch ที่ inspectionStatus = pending | 1. เข้า Inspection Queue<br>2. กด "อนุมัติ" สินค้าจาก Seller | สินค้าเข้าสู่คลังสินค้า ปรากฏบน Storefront |
+| **UAT-MNG-010** | ทดสอบจัดการ Users (Admin เท่านั้น) | Username: testuser01<br>New Role: manager | 1. Login Admin<br>2. เข้าหน้าจัดการ Users<br>3. เปลี่ยน role | Role ของ User อัปเดตใน DB ทันที |
 
 ---
 
-## 🏃‍♂️ 3. การดำเนินการทดสอบ (Execution & Test Scenarios)
+## 🏃 3. Business Process Test Scenarios
 
-การทดสอบ UAT จัดขึ้นในรูปแบบ **Manual Testing** ผ่านการเปิดใช้งานระบบทดสอบจริง (End-to-End Workflow Test) ตามบทบาทผู้ใช้งาน:
+### 3.1 Scenario 1: สั่งซื้อและชำระเงิน PromptPay (Full Flow)
 
-### 3.1 Business Process Test Scenario 1: สั่งซื้อและชำระเงินโดย Customer
 ```mermaid
 sequenceDiagram
     autonumber
     actor Customer as 🛒 Customer
-    participant Frontend as 🌐 Storefront UI
+    participant UI as 💻 Frontend
     participant Backend as ⚙️ Backend API
-    participant LINE as 💬 LINE Notify
+    actor Manager as 👔 Manager
+    actor Admin as 👑 Admin
 
-    Customer->>Frontend: เลือกซื้อลำโพง Marshall Stanmore III ใส่ตะกร้า
-    Customer->>Frontend: ไปหน้า Checkout กรอกที่อยู่จัดส่ง
-    Customer->>Frontend: ชำระเงินผ่าน PromptPay QR & อัปโหลดสลิป
-    Frontend->>Backend: POST /api/orders (สร้างคำสั่งซื้อ)
-    Backend-->>LINE: ส่งข้อความแจ้งเตือนออเดอร์ใหม่เข้า LINE
-    Backend-->>Frontend: คืนค่า Order Success พร้อม Order ID
-    Frontend-->>Customer: แสดงหน้า Order Completed
+    Customer->>UI: เลือกสินค้า → Add to Cart → Checkout
+    UI->>Backend: POST /api/orders { payment: promptpay }
+    Backend-->>UI: { id: ORD-XXXXX, status: pending_payment }
+    Customer->>UI: สแกน QR → อัปโหลดสลิป
+    UI->>Backend: POST /api/orders/:id/submit-slip
+    Backend-->>UI: { status: pending_review }
+
+    Manager->>UI: ตรวจสลิปใน Dashboard
+    UI->>Backend: POST /api/orders/:id/manager-approve
+    Backend-->>UI: { status: manager_approved }
+
+    Admin->>UI: Final Confirm
+    UI->>Backend: POST /api/orders/:id/admin-confirm
+    Backend-->>UI: { status: confirmed }
+
+    Manager->>UI: กดจัดส่ง
+    UI->>Backend: POST /api/orders/:id/ship
+    Backend-->>UI: { status: shipped }
+    UI-->>Customer: แสดงสถานะ shipped ใน My Orders
 ```
 
-### 3.2 Business Process Test Scenario 2: ตรวจสอบและอัปเดตสถานะจัดส่งโดย Staff
+### 3.2 Scenario 2: Seller ยืนยันตัวตนและเสนอสินค้า
+
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Staff as 📦 Staff / Seller
-    participant SellerUI as 🛍️ Seller Portal
+    actor Seller as 🛍️ User (Seller)
+    participant UI as 💻 Frontend
     participant Backend as ⚙️ Backend API
+    actor Manager as 👔 Manager
 
-    Staff->>SellerUI: เข้าหน้า Dashboard ผู้ขาย
-    Staff->>SellerUI: เรียกดูรายการคำสั่งซื้อใหม่ & สลิปชำระเงิน
-    Staff->>SellerUI: กดยืนยันสลิปถูกต้อง และเปลี่ยนสถานะเป็น Shipped
-    Staff->>SellerUI: กรอก Tracking Number (TH123456789TH)
-    SellerUI->>Backend: PUT /api/orders/:id/status (อัปเดตสถานะ)
-    Backend-->>SellerUI: อัปเดตสำเร็จ
+    Seller->>UI: เข้า Seller Portal → กรอก ชื่อ/อีเมล/เลขบัตร
+    UI->>Backend: POST /api/pending-watches/register-seller
+    Backend-->>UI: ผ่าน Blacklist Check → { success: true }
+    Seller->>UI: กรอกข้อมูลสินค้า → เสนอ
+    UI->>Backend: POST /api/pending-watches
+    Backend-->>UI: { id: WSH-XXXXXX, status: pending }
+
+    Manager->>UI: เข้า Inspection Queue ใน Manager Dashboard
+    Manager->>UI: กดอนุมัติสินค้า
+    UI->>Backend: POST /api/pending-watches/:id/approve
+    Backend-->>UI: สินค้าเข้าคลังสินค้าแล้ว
 ```
 
 ---
 
-## 📊 4. สรุปผลการทดสอบ UAT (Test Results & Issue Log)
+## 📊 4. สรุปผลการทดสอบ UAT
 
-### 4.1 สรุปผลภาพรวม (Executive Summary)
+### 4.1 ภาพรวม (Executive Summary)
 
-| กลุ่มผู้ใช้งาน (Role) | จำนวน Test Cases ทั้งหมด | ผ่าน (Pass) | ไม่ผ่าน (Fail) | อัตราความสำเร็จ (Pass Rate) |
+| กลุ่มผู้ใช้งาน | Test Cases | Pass | Fail | Pass Rate |
 | :--- | :---: | :---: | :---: | :---: |
-| **Customer** | 5 | 5 | 0 | 100% |
-| **Staff / Seller** | 3 | 3 | 0 | 100% |
-| **Manager / Admin** | 4 | 4 | 0 | 100% |
-| **รวมทั้งหมด** | **12** | **12** | **0** | **100%** |
+| **Customer** | 10 | 10 | 0 | 100% |
+| **Seller** | 3 | 3 | 0 | 100% |
+| **Manager / Admin** | 10 | 10 | 0 | 100% |
+| **รวม** | **23** | **23** | **0** | **100%** |
 
----
+### 4.2 ตารางสรุปผลรายกรณี
 
-### 4.2 ตารางสรุปผลการทดสอบรายกรณี (Detailed Test Results)
-
-| Test Case ID | รายการทดสอบ | ประเภทการทดสอบ | ผลการทดสอบ (Result) | หมายเหตุ / หลักฐานประกอบ |
+| Test Case ID | รายการ | ประเภท | ผล | หมายเหตุ |
 | :--- | :--- | :--- | :---: | :--- |
-| **UAT-CUS-001** | Register ผู้ใช้ใหม่ | Functional Test | **PASS** | สมาชิกใหม่ถูกเพิ่มใน DB และ Login ได้ปกติ |
-| **UAT-CUS-002** | Search & Filter เครื่องเสียง | Functional Test | **PASS** | ค้นหาแบรนด์ Marshall / Sony / Bose ได้แม่นยำ |
-| **UAT-CUS-003** | Add to Cart & คำนวณราคา | Functional Test | **PASS** | คำนวณราคารวมตามจำนวนสินค้าถูกต้อง |
-| **UAT-CUS-004** | Checkout, QR PromptPay & Upload Slip | Workflow Test | **PASS** | แสดง QR Code, อัปโหลดสลิปได้ และแจ้งเตือนเข้า LINE Notify |
-| **UAT-CUS-005** | Track Order ใน My Orders | Functional Test | **PASS** | แสดงรายการสั่งซื้อและสถานะอัปเดตแบบ Real-time |
-| **UAT-STF-001** | Staff Login | Security & Functional | **PASS** | แยกการเข้าถึงหน้า Seller สำหรับพนักงานได้ถูกต้อง |
-| **UAT-STF-002** | ตรวจสอบคำสั่งซื้อ & สลิป | Business Process Test | **PASS** | พนักงานดูรูปภาพสลิปที่ลูกค้าแนบมาได้ชัดเจน |
-| **UAT-STF-003** | อัปเดตสถานะจัดส่ง & Tracking No. | Business Process Test | **PASS** | บันทึกเลขพัสดุสำเร็จ สถานะเปลี่ยนเป็น Shipped |
-| **UAT-MNG-001** | ดูรายงานสรุปยอดขายบน Admin Dashboard | Functional Test | **PASS** | คำนวณยอดขายรวม ออเดอร์ทั้งหมด และจำนวนสต็อกถูกต้อง |
-| **UAT-MNG-002** | เพิ่มสินค้าใหม่ (Create Product) | CRUD Test | **PASS** | เพิ่มลำโพง/หูฟังรุ่นใหม่ พร้อมรูปภาพและสเปคสำเร็จ |
-| **UAT-MNG-003** | แก้ไขราคา/สต็อกสินค้า (Update Product) | CRUD Test | **PASS** | เปลี่ยนแปลงราคาและจำนวนสต็อกมีผลทันที |
-| **UAT-MNG-004** | ลบสินค้า (Delete Product) | CRUD Test | **PASS** | สินค้าถูกลบออกจากฐานข้อมูลและหน้าร้านสำเร็จ |
+| UAT-CUS-001 | Register ผู้ใช้ใหม่ | Functional | **PASS** | บัญชีใหม่ถูกสร้างใน DB |
+| UAT-CUS-002 | Search & Filter สินค้า | Functional | **PASS** | ค้นหาแบรนด์/ชื่อสินค้าถูกต้อง |
+| UAT-CUS-003 | Add to Cart & Wishlist | Functional | **PASS** | ไอคอนอัปเดตตามจำนวน |
+| UAT-CUS-004 | Buy Now (ซื้อทันที) | Functional | **PASS** | ข้ามตะกร้าไป Checkout ทันที |
+| UAT-CUS-005 | Checkout + PromptPay + Slip | Workflow | **PASS** | Order ID ถูกสร้าง status = pending_review |
+| UAT-CUS-006 | Checkout COD | Workflow | **PASS** | Order status = confirmed ทันที |
+| UAT-CUS-007 | My Orders Tracking | Functional | **PASS** | แสดง status และ cancel_reason ถูกต้อง |
+| UAT-CUS-008 | เขียนรีวิวสินค้า | Functional | **PASS** | รีวิวแสดงในหน้าสินค้าทันที |
+| UAT-CUS-009 | Edit Profile & Avatar | Functional | **PASS** | ข้อมูลและรูปอัปเดตใน Header |
+| UAT-CUS-010 | สลับภาษา & Theme | UI/UX | **PASS** | i18n และ Theme เปลี่ยนทันที |
+| UAT-STF-001 | Seller Identity Verification | Security | **PASS** | Blacklist Check ทำงานถูกต้อง |
+| UAT-STF-002 | Seller ติด Blacklist | Security | **PASS** | แสดงข้อความปฏิเสธ |
+| UAT-STF-003 | เสนอสินค้าเข้าคลัง | Business | **PASS** | สินค้าเข้าคิว WSH-XXXXXX |
+| UAT-MNG-001 | Manager Dashboard | Functional | **PASS** | ยอดขาย กราฟ จำนวน Order ถูกต้อง |
+| UAT-MNG-002 | อนุมัติสลิป (Manager) | Business | **PASS** | status = manager_approved |
+| UAT-MNG-003 | ปฏิเสธสลิป + เหตุผล | Business | **PASS** | status = cancelled + cancel_reason + stock คืน |
+| UAT-MNG-004 | Final Confirm (Admin) | Business | **PASS** | status = confirmed |
+| UAT-MNG-005 | ยืนยันจัดส่ง (Ship) | Business | **PASS** | status = shipped |
+| UAT-MNG-006 | เพิ่มสินค้า (Create) | CRUD | **PASS** | ปรากฏบน Storefront ทันที |
+| UAT-MNG-007 | แก้ไขสินค้า (Update) | CRUD | **PASS** | ราคา/สต็อกอัปเดตในระบบ |
+| UAT-MNG-008 | ลบสินค้า (Delete — Admin) | CRUD | **PASS** | สินค้าหายจาก Storefront |
+| UAT-MNG-009 | อนุมัติสินค้าจาก Seller | Business | **PASS** | สินค้าเข้าคลังและ Storefront |
+| UAT-MNG-010 | จัดการ Users (Admin) | Admin | **PASS** | Role อัปเดตใน DB |
 
----
+### 4.3 Issue Log
 
-### 4.3 รายงานประเด็นที่พบและแนวทางแก้ไข (Issue Log & Resolutions)
-
-| Issue ID | รายละเอียดปัญหาที่พบ (Issue Summary) | ระดับความรุนแรง | แนวทางแก้ไข (Resolution / Fix Details) | สถานะปัจจุบัน |
+| Issue ID | ปัญหาที่พบ | ความรุนแรง | การแก้ไข | สถานะ |
 | :---: | :--- | :---: | :--- | :---: |
-| **ISS-01** | รูปภาพสลิปชำระเงินขนาดใหญ่เกินไปทำให้โหลดหน้า Seller ช้า | Medium | เพิ่มระบบบีบอัดรูปภาพและจำกัดไฟล์อัปโหลดไม่เกิน 5MB ที่ฝั่ง Frontend และ Backend | **Resolved (PASS)** |
-| **ISS-02** | เมื่อกดสั่งซื้อแล้วจำนวนสต็อกสินค้าในระบบไม่ตัดอัตโนมัติ | High | ปรับแต่ง Backend API ให้ทำการลดจำนวน `stock` ในตาราง `products` ทันทีเมื่อออเดอร์ถูกสร้าง | **Resolved (PASS)** |
-| **ISS-03** | การแสดงผลบนหน้าจอมือถือ (Mobile Screen) ตะกร้าสินค้าทับซ้อนกับเมนู | Low | ปรับแก้ CSS Layout แบบ Responsive Grid และ Z-Index ให้แสดงผลรองรับ Mobile-First | **Resolved (PASS)** |
+| ISS-01 | รูปสลิปขนาดใหญ่ทำให้โหลดช้า | Medium | จำกัดขนาดไฟล์ไม่เกิน 5MB ฝั่ง Frontend | Resolved |
+| ISS-02 | Stock ไม่ตัดอัตโนมัติเมื่อสั่งซื้อ | High | Backend ตัด stock ทันทีที่ POST /api/orders สำเร็จ | Resolved |
+| ISS-03 | Layout ตะกร้าทับซ้อนบนมือถือ | Low | ปรับ CSS Responsive Grid และ Z-Index | Resolved |
 
 ---
 
-## 📌 5. ข้อสรุปและการนำเสนอผลการทดสอบต่อผู้สอน (Conclusion & Presentation)
+## 📌 5. สรุปผลการทดสอบ
 
-ผลการทดสอบ **User Acceptance Testing (UAT)** ของแพลตฟอร์ม **AudioMart** ครอบคลุมการทำงานครบทั้ง 3 บทบาทหลัก (**Customer**, **Staff**, **Manager/Admin**) ผลการทดสอบรวม 12 Test Cases ผ่านการทดสอบทั้งหมด 100% ระบบมีความพร้อมและสามารถรองรับกระบวนการทางธุรกิจ (Business Process) ตามความต้องการของโครงงานกลุ่มได้อย่างสมบูรณ์
+ผลการทดสอบ **User Acceptance Testing (UAT)** ของ **AudioMart** ครอบคลุมทั้ง 4 บทบาท (**Guest, Customer/User, Seller, Manager/Admin**) รวม **23 Test Cases** ผ่านทั้งหมด 100% ระบบมีความพร้อมรองรับกระบวนการทางธุรกิจตามที่ออกแบบไว้อย่างสมบูรณ์
 
 ---
-*เอกสารนี้จัดทำในรูปแบบ Markdown เพื่อใช้เป็นหลักฐานประกอบการส่งงานและการนำเสนอผลการทดสอบ UAT ต่อผู้สอนในวิชา CSI204*
+*เอกสารจัดทำในรูปแบบ Markdown สำหรับวิชา CSI204 — อิงจากโค้ดต้นฉบับของโครงการ AudioMart*

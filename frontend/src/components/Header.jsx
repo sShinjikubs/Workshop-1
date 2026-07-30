@@ -529,18 +529,28 @@ export default function Header({ showCart, cartCount: cartCountProp, onCartClick
             ☰
           </button>
           <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginRight: '0.5rem' }}>
-            <img src="/images/logo.jpg" alt="WatchMart Logo" style={{ height: '46px', borderRadius: '8px', border: '1px solid var(--glass-border)', objectFit: 'contain' }} />
+            <span style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: '800',
+              fontSize: '1.4rem',
+              letterSpacing: '3px',
+              textTransform: 'uppercase',
+              color: '#ffffff',
+              lineHeight: 1,
+            }}>
+              AUDIO<span style={{ color: 'var(--accent-gold, #c5a880)' }}>MART</span>
+            </span>
           </Link>
 
           {/* Brand Logos */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.4rem', borderLeft: '1px solid var(--glass-border)', paddingLeft: '1.4rem' }}>
             {[
-              { name: 'Marshall', isText: true, style: { fontWeight: '900', fontSize: '0.9rem', fontStyle: 'italic', color: '#d4af37', fontFamily: 'serif' } },
-              { name: 'Sony', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', letterSpacing: '1px', color: '#38bdf8', fontFamily: 'sans-serif' } },
-              { name: 'Bose', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', letterSpacing: '1.5px', color: '#a855f7', fontFamily: 'sans-serif' } },
-              { name: 'Apple', isText: true, style: { fontWeight: '800', fontSize: '0.85rem', color: '#f43f5e', fontFamily: 'sans-serif' } },
-              { name: 'JBL', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', color: '#f97316', fontFamily: 'Impact, sans-serif' } },
-              { name: 'B&O', isText: true, style: { fontWeight: '800', fontSize: '0.85rem', color: '#10b981', fontFamily: 'sans-serif' } }
+              { name: 'Marshall', isText: true, style: { fontWeight: '900', fontSize: '0.9rem', fontStyle: 'italic', color: '#c5a880', fontFamily: 'serif', letterSpacing: '0.5px' } },
+              { name: 'Sony', isText: true, style: { fontWeight: '700', fontSize: '0.85rem', letterSpacing: '2px', color: '#a0a0a0', fontFamily: 'sans-serif' } },
+              { name: 'Bose', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', letterSpacing: '2px', color: '#a0a0a0', fontFamily: 'sans-serif' } },
+              { name: 'Apple', isText: true, style: { fontWeight: '600', fontSize: '0.85rem', color: '#a0a0a0', fontFamily: '-apple-system, sans-serif', letterSpacing: '0.5px' } },
+              { name: 'JBL', isText: true, style: { fontWeight: '900', fontSize: '0.85rem', color: '#c5a880', fontFamily: 'Impact, sans-serif', letterSpacing: '1px' } },
+              { name: 'B&O', isText: true, style: { fontWeight: '700', fontSize: '0.85rem', color: '#a0a0a0', fontFamily: 'sans-serif', letterSpacing: '1px' } }
             ].map((b) => (
               <button
                 key={b.name}

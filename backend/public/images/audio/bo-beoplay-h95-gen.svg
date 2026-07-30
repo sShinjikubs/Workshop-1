@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradBO" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1612" />
+      <stop offset="100%" stop-color="#080705" />
+    </linearGradient>
+    <radialGradient id="spotBO" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#1a1612" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bgGradBO)" />
+  <circle cx="300" cy="225" r="180" fill="url(#spotBO)" />
+
+  <!-- B&O Headphones Graphic -->
+  <g transform="translate(160, 110)">
+    <path d="M 50 140 A 130 130 0 0 1 230 140" fill="none" stroke="#d4af37" stroke-width="16" stroke-linecap="round" />
+    <!-- Earcups -->
+    <rect x="25" y="120" width="50" height="90" rx="25" fill="#28231d" stroke="#d4af37" stroke-width="4" />
+    <rect x="205" y="120" width="50" height="90" rx="25" fill="#28231d" stroke="#d4af37" stroke-width="4" />
+    <circle cx="50" cy="165" r="16" fill="#d4af37" />
+    <circle cx="230" cy="165" r="16" fill="#d4af37" />
+    <text x="50" y="170" font-family="'Inter', sans-serif" font-size="10" font-weight="900" fill="#1a1612" text-anchor="middle">B&amp;O</text>
+    <text x="230" y="170" font-family="'Inter', sans-serif" font-size="10" font-weight="900" fill="#1a1612" text-anchor="middle">B&amp;O</text>
+  </g>
+
+  <rect x="25" y="25" width="170" height="32" rx="16" fill="#362f27" stroke="#d4af37" stroke-width="1.5" />
+  <text x="110" y="46" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#e6c875" text-anchor="middle">BANG &amp; OLUFSEN</text>
+  <text x="300" y="390" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">Bang &amp; Olufsen Beoplay H95 ANC</text>
+  <text x="300" y="415" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#e6c875" text-anchor="middle">฿39,900 • Luxury Lambskin • 38 Hours Battery</text>
+</svg>

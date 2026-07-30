@@ -13,7 +13,7 @@ const HERO_SLIDES = [
     title: "MARSHALL STANMORE III",
     subtitle: "ICONIC BLUETOOTH SPEAKER",
     descKey: "heroDesc1",
-    image: "/images/audio/marshall-stanmore.svg",
+    image: "/images/audio/marshall-stanmore.png",
     bg: "linear-gradient(135deg, #181d2c 0%, #151515 100%)",
     accent: "var(--accent-gold)",
     keyword: "marshall"
@@ -22,7 +22,7 @@ const HERO_SLIDES = [
     title: "SONY WH-1000XM5",
     subtitle: "WIRELESS NOISE CANCELLING",
     descKey: "heroDesc2",
-    image: "/images/audio/sony-wh1000xm5.svg",
+    image: "/images/audio/sony-wh1000xm5.png",
     bg: "linear-gradient(135deg, #112233 0%, #0a111a 100%)",
     accent: "#38bdf8",
     keyword: "sony"
@@ -31,7 +31,7 @@ const HERO_SLIDES = [
     title: "BOSE QUIETCOMFORT ULTRA",
     subtitle: "IMMERSIVE SPATIAL AUDIO",
     descKey: "heroDesc3",
-    image: "/images/audio/bose-quietcomfort.svg",
+    image: "/images/audio/bose-quietcomfort.png",
     bg: "linear-gradient(135deg, #1a221f 0%, #111513 100%)",
     accent: "#a855f7",
     keyword: "bose"
@@ -128,10 +128,14 @@ export default function Storefront() {
 
   useEffect(() => { refreshData(); }, []);
 
-  // ─── Filtered Products ────────────────────────────────────────────────────
   const filteredProducts = products.filter((p) => {
+    if (!p) return false;
     if (filter !== 'all' && p.brand !== filter) return false;
-    if (search && !p.name.toLowerCase().includes(search.toLowerCase()) && !p.brand.toLowerCase().includes(search.toLowerCase())) return false;
+    const nameStr = (p.name || '').toLowerCase();
+    const nameEnStr = (p.nameEn || '').toLowerCase();
+    const brandStr = (p.brand || '').toLowerCase();
+    const searchStr = (search || '').toLowerCase();
+    if (search && !nameStr.includes(searchStr) && !nameEnStr.includes(searchStr) && !brandStr.includes(searchStr)) return false;
     return true;
   });
 
@@ -294,7 +298,7 @@ export default function Storefront() {
               }}
               onClick={() => {
                 const keyword = HERO_SLIDES[currentSlide].keyword;
-                const matched = products.find((p) => p.name.toLowerCase().includes(keyword));
+                const matched = products.find((p) => (p?.name || '').toLowerCase().includes(keyword));
                 if (matched) navigate(`/product/${matched.id}`);
               }}
             >
@@ -479,7 +483,7 @@ export default function Storefront() {
                     <h3 className="product-card-title">{lang === 'en' && p.nameEn ? p.nameEn : p.name}</h3>
                     {renderRatingStars(p.rating, p.reviewCount)}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-                      <span className="product-card-price">฿ {p.price.toLocaleString()}</span>
+                      <span className="product-card-price">฿ {(p.price || 0).toLocaleString()}</span>
                       <span className="product-card-stock" style={{ color: p.stock === 0 ? '#ff6b6b' : p.stock <= 3 ? '#ff922b' : '#51cf66' }}>
                         {p.stock === 0 ? t('outOfStock') : t('stockLeft').replace('{count}', p.stock)}
                       </span>
@@ -570,7 +574,7 @@ export default function Storefront() {
                     <h3 className="product-card-title">{lang === 'en' && p.nameEn ? p.nameEn : p.name}</h3>
                     {renderRatingStars(p.rating, p.reviewCount)}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-                      <span className="product-card-price">฿ {p.price.toLocaleString()}</span>
+                      <span className="product-card-price">฿ {(p.price || 0).toLocaleString()}</span>
                       <span className="product-card-stock" style={{ color: p.stock === 0 ? '#ff6b6b' : p.stock <= 3 ? '#ff922b' : '#51cf66' }}>
                         {p.stock === 0 ? t('outOfStock') : t('stockLeft').replace('{count}', p.stock)}
                       </span>
@@ -663,10 +667,10 @@ export default function Storefront() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
                       <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <span style={{ fontSize: '0.75rem', textDecoration: 'line-through', color: 'var(--text-muted)' }}>
-                          ฿ {Math.round(p.price * 1.15).toLocaleString()}
+                          ฿ {Math.round((p.price || 0) * 1.15).toLocaleString()}
                         </span>
                         <span className="product-card-price" style={{ color: '#ef4444' }}>
-                          ฿ {p.price.toLocaleString()}
+                          ฿ {(p.price || 0).toLocaleString()}
                         </span>
                       </div>
                       <span className="product-card-stock" style={{ color: p.stock === 0 ? '#ff6b6b' : p.stock <= 3 ? '#ff922b' : '#51cf66' }}>
@@ -779,12 +783,13 @@ export default function Storefront() {
                       style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
                     />
                   ) : (
-                    <svg className="product-watch-svg" viewBox="0 0 200 200">
-                      <circle cx="100" cy="100" r="70" fill="none" stroke={p.strokeColor} strokeWidth="3" />
-                      <circle cx="100" cy="100" r="66" fill={p.color} />
-                      <line x1="100" y1="100" x2="100" y2="76" stroke="#f5f5f7" strokeWidth="1.8" strokeLinecap="round" />
-                      <line x1="100" y1="100" x2="118" y2="100" stroke="#f5f5f7" strokeWidth="1.2" strokeLinecap="round" />
-                      <line x1="100" y1="100" x2="90" y2="124" stroke="#ff6b6b" strokeWidth="0.8" />
+                    <svg viewBox="0 0 200 200" style={{ width: '60%', height: '60%', opacity: 0.7 }}>
+                      <circle cx="100" cy="100" r="75" fill="rgba(15, 23, 42, 0.8)" stroke="var(--accent-gold)" strokeWidth="3" />
+                      <path d="M 55 105 A 45 45 0 0 1 145 105" fill="none" stroke="var(--accent-gold)" strokeWidth="5" strokeLinecap="round" />
+                      <rect x="45" y="95" width="18" height="36" rx="8" fill="#1e293b" stroke="var(--accent-gold)" strokeWidth="2" />
+                      <rect x="137" y="95" width="18" height="36" rx="8" fill="#1e293b" stroke="var(--accent-gold)" strokeWidth="2" />
+                      <circle cx="100" cy="115" r="14" fill="none" stroke="var(--accent-gold)" strokeWidth="2" opacity="0.4" />
+                      <circle cx="100" cy="115" r="6" fill="var(--accent-gold)" opacity="0.8" />
                     </svg>
                   )}
                 </div>
@@ -793,7 +798,7 @@ export default function Storefront() {
                   <h3 className="product-card-title">{lang === 'en' && p.nameEn ? p.nameEn : p.name}</h3>
                   {renderRatingStars(p.rating, p.reviewCount)}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-                    <span className="product-card-price">฿ {p.price.toLocaleString()}</span>
+                    <span className="product-card-price">฿ {(p.price || 0).toLocaleString()}</span>
                     <span className="product-card-stock" style={{ color: p.stock === 0 ? '#ff6b6b' : p.stock <= 3 ? '#ff922b' : '#51cf66' }}>
                       {p.stock === 0 ? t('outOfStock') : t('stockLeft').replace('{count}', p.stock)}
                     </span>

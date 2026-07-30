@@ -1,146 +1,139 @@
-# 📄 เอกสารการวิเคราะห์และออกแบบระบบ (System Analysis & Design)
+﻿# 📄 เอกสารการวิเคราะห์และออกแบบระบบ (System Analysis & Design)
 ## โครงการ: AudioMart - แพลตฟอร์มร้านขายเครื่องเสียงและอุปกรณ์เสียงพรีเมียมออนไลน์
 **วิชา: CSI204 ดิจิทัลแพลตฟอร์มสำหรับพัฒนาซอฟต์แวร์ (SPU SIT)**  
 **ผู้จัดทำและการแบ่งงานตามประวัติ Git / SourceTree:**
 
 | ชื่อ-นามสกุล | รหัสนักศึกษา | Git Account / Commit สายงาน | บทบาทและความรับผิดชอบหลัก (Contributions) |
 | :--- | :--- | :--- | :--- |
-| **1. กฤษฎา ต้องไกรเลิศ** | `67115444` | `sShinjikubs` | **Full-Stack Architect & Lead Developer**<br>• ออกแบบ System Architecture, RESTful API & ฐานข้อมูล SQL/Fallback DB<br>• พัฒนา Backend Microservices, JWT Auth, Easy Donate QR Payment & LINE Notify<br>• จัดทำเอกสาร UAT Test Cases (`UAT_Test_Cases.md/pdf`), เอกสารวิเคราะห์ระบบ และ DevOps Deploy บน Render |
-| **2. ภูกิจ ปัญญาธิ** | `67120169` | `DESKTOP-H7BV0KF\PC` | **Backend Data & Inventory Specialist**<br>• ออกแบบโครงสร้างแคตตาล็อกสินค้า (Product Seeds & Database Schema)<br>• พัฒนาระบบคลังสินค้า (Inventory Management) และระบบรายการโปรด (Wishlist System)<br>• ออกแบบโฟลว์การซื้อสินค้าแบบทันที (Isolated Buy Now Checkout) และจัดการไฟล์รูปภาพ |
-| **3. นนทิวัชร หมื่นสาย** | `67117362` | `nxntiwxt` | **Frontend UI/UX & Localization Specialist**<br>• ออกแบบและพัฒนาองค์ประกอบหน้าบ้าน (Frontend UI Components & Layout)<br>• พัฒนาระบบการสลับสองภาษา (Comprehensive i18n System: TH / EN)<br>• ปรับแต่งภาพแบรนด์สินค้า โลโก้ และแก้ไขระบบค้นหาสินค้า (Search Bar UI & Star Rating UI) |
+| **1. กฤษฎา ต้องไกรเลิศ** | `67115444` | `sShinjikubs` | **Full-Stack Architect & Lead Developer**<br>• ออกแบบ System Architecture, RESTful API & ฐานข้อมูล SQL/Fallback DB<br>• พัฒนา Backend API (Auth, Orders, Products, Seller, Reviews, Wishlist)<br>• จัดทำเอกสาร UAT Test Cases, เอกสารวิเคราะห์ระบบ และ DevOps Deploy บน Render |
+| **2. ภูกิจ ปัญญาธิ** | `67120169` | `DESKTOP-H7BV0KF\PC` | **Backend Data & Inventory Specialist**<br>• ออกแบบโครงสร้างแคตตาล็อกสินค้า (Product Seeds & Database Schema)<br>• พัฒนาระบบคลังสินค้า (Inventory Management) และระบบรายการโปรด (Wishlist System)<br>• ออกแบบโฟลว์การซื้อสินค้าแบบทันที (Buy Now Checkout) และจัดการไฟล์รูปภาพ |
+| **3. นนทิวัชร หมื่นสาย** | `67117362` | `nxntiwxt` | **Frontend UI/UX & Localization Specialist**<br>• ออกแบบและพัฒนาองค์ประกอบหน้าบ้าน (Frontend UI Components & Layout)<br>• พัฒนาระบบการสลับสองภาษา (i18n System: TH / EN) และ Dark/Light Theme<br>• พัฒนาระบบรีวิวสินค้า (Star Rating & Review System) และแก้ไขระบบค้นหาสินค้า |
 
 ---
 
 ## 1. การวิเคราะห์ความต้องการของระบบ (System Requirements)
-แพลตฟอร์ม **AudioMart** พัฒนาขึ้นเพื่อรองรับพฤติกรรมการซื้อเครื่องเสียง ลำโพง และหูฟังพรีเมียมผ่านทางออนไลน์ โดยแบ่งความต้องการออกเป็น 2 ส่วนหลัก:
 
 ### 1.1 ความต้องการเชิงฟังก์ชัน (Functional Requirements)
-- **ระบบสำหรับผู้ซื้อทั่วไป (Customer Front-end)**:
-  - ลงทะเบียนและเข้าสู่ระบบ (Register / Login)
-  - เลือกชมและค้นหาลำโพง/หูฟังตามประเภท แบรนด์ (Marshall, Sony, Bose, Apple, JBL, B&O) หรือช่วงราคา (Product Browsing & Filtering)
-  - ระบบตะกร้าสินค้า (Shopping Cart) เพิ่ม/ลดจำนวนสินค้า
-  - สั่งซื้อสินค้าและชำระเงินผ่าน PromptPay QR Code (Easy Donate API) หรือโอนเงินผ่านธนาคาร
-  - แนบสลิปชำระเงิน และติดตามสถานะคำสั่งซื้อพร้อมดูเหตุผลการยกเลิก/ปฏิเสธรายการ (`cancel_reason`)
-- **ระบบสำหรับพนักงานขาย (Employee / Sales Portal)**:
-  - ลงทะเบียนยืนยันตัวตนพนักงานด้วยเลขบัตรประชาชน (13 หลัก) และอีเมลองค์กร
-  - ตรวจสอบประวัติความปลอดภัยผ่านระบบแบล็คลิสต์ (Blacklist Verification System)
-  - เสนอนำเข้าสินค้าเครื่องเสียงใหม่สู่คลังสินค้าเพื่อรอผู้จัดการตรวจสอบ (Add Audio Product to Stock)
-- **ระบบสำหรับผู้จัดการและผู้ดูแลระบบ (Manager & Admin Dashboard)**:
-  - ตรวจสอบคุณภาพสินค้า (Inspection Queue) และอนุมัตินำเข้าสินค้าขึ้นหน้าร้าน
-  - จัดการข้อมูลคลังสินค้าและราคาสินค้า (CRUD Inventory Management)
-  - ตรวจสอบสลิปชำระเงิน อนุมัติออเดอร์ หรือปฏิเสธพร้อมระบุเหตุผล (Order & Slip Management)
-  - ตรวจสอบราคากลางและความถูกต้อง (Price Compliance Audit)
-  - ระบบแชทช่วยเหลือลูกค้าสด (Live Support Chat Simulation)
-- **ระบบแจ้งเตือนภายนอก (Integration Notification)**:
-  - แจ้งเตือนยอดคำสั่งซื้อและการชำระเงินผ่าน LINE Notify API
+
+#### 👤 ระบบสำหรับผู้เยี่ยมชม (Guest — ยังไม่ได้ล็อกอิน)
+- เรียกดูและค้นหาสินค้าเครื่องเสียงตามชื่อ แบรนด์ หรือหมวดหมู่
+- กรองสินค้าตามประเภท (Speaker / Headphones / Earbuds) และช่วงราคา
+- ดูรายละเอียดสินค้า สเปค รูปภาพ และรีวิวจากลูกค้า
+
+#### 🛒 ระบบสำหรับลูกค้า (User — ผ่านการสมัครสมาชิก)
+- ลงทะเบียนสมัครสมาชิกและเข้าสู่ระบบ (Register / Login)
+- จัดการตะกร้าสินค้า: เพิ่ม / ลด / ลบสินค้า พร้อมเลือกรายการที่ต้องการชำระ
+- จัดการรายการสินค้าที่ต้องการ (Wishlist) เพิ่ม/ลบได้
+- ซื้อสินค้าทันที (Buy Now) โดยไม่ผ่านตะกร้า
+- สั่งซื้อและชำระเงินผ่าน 3 ช่องทาง: PromptPay QR / โอนเงินธนาคาร / เก็บเงินปลายทาง (COD)
+- แนบสลิปชำระเงิน (Upload Slip) สำหรับช่องทาง PromptPay และโอนธนาคาร
+- ติดตามสถานะคำสั่งซื้อและดูประวัติทั้งหมดใน My Orders
+- ยกเลิกคำสั่งซื้อที่ยังไม่ถูกยืนยัน พร้อมดูเหตุผลการปฏิเสธ (cancel_reason)
+- เขียนรีวิวและให้คะแนนสินค้า (1-5 ดาว)
+- แก้ไขข้อมูลโปรไฟล์ส่วนตัว (ชื่อ, ที่อยู่, อีเมล, เบอร์โทร, รูปอวตาร)
+- สลับภาษาไทย / อังกฤษ และสลับ Dark / Light Theme
+
+#### 🛍️ ระบบสำหรับผู้ขาย (Seller — User ที่ผ่านการยืนยันตัวตน)
+- ยืนยันตัวตนด้วยชื่อ, อีเมล, และเลขบัตรประชาชน (13 หลัก) พร้อมตรวจสอบประวัติแบล็คลิสต์
+- เมื่อผ่านการยืนยัน สามารถเข้าถึง Seller Portal เพื่อเสนอนำเข้าสินค้าใหม่สู่คลังสินค้า
+- ติดตามสถานะการพิจารณาสินค้าที่เสนอ (pending / approved / rejected)
+
+#### 👔 ระบบสำหรับผู้จัดการ (Manager)
+- ดูภาพรวมยอดขายผ่าน Dashboard (ยอดรวม, จำนวนออเดอร์, กราฟแนวโน้ม 7 วัน)
+- ตรวจสอบสลิปชำระเงิน: อนุมัติหรือปฏิเสธพร้อมระบุเหตุผล
+- จัดการคลังสินค้า: เพิ่ม, แก้ไขราคา/สต็อก/รูปภาพสินค้า (CRUD)
+- ตรวจสอบและอนุมัติ/ปฏิเสธสินค้าที่ Seller เสนอเข้า (Inspection Queue)
+- ยืนยันการจัดส่งสินค้าหลังจาก Admin อนุมัติ
+
+#### 👑 ระบบสำหรับผู้ดูแลระบบ (Admin)
+- ทุกอย่างที่ Manager ทำได้
+- ยืนยันขั้นสุดท้ายของออเดอร์ที่ Manager อนุมัติสลิปแล้ว (Admin Final Confirm)
+- ลบสินค้าออกจากระบบ
+- จัดการผู้ใช้: เปลี่ยน role และ reset รหัสผ่าน
+- ดู System Logs การทำงานทั้งหมด
+- เข้าถึงหน้าเอกสารระบบ (System Docs)
 
 ### 1.2 ความต้องการที่มิใช่เชิงฟังก์ชัน (Non-Functional Requirements)
-- **Security**: การรักษาความปลอดภัยข้อมูลผู้ใช้ รหัสผ่านถูกแฮชก่อนบันทึก และใช้ Token-based Authentication (JWT)
-- **Performance**: โหลดหน้าเว็บได้รวดเร็ว (ต่ำกว่า 2 วินาที) โดยมีระบบ Cache สำหรับข้อมูลรายการสินค้าที่เข้าถึงบ่อย
-- **Scalability**: สถาปัตยกรรมแยกส่วน (Microservices) รองรับการขยายตัวเมื่อมีผู้ใช้งานพร้อมกันจำนวนมาก
-- **Responsiveness**: หน้าเว็บแสดงผลได้ดีทั้งบนหน้าจอคอมพิวเตอร์ แท็บเล็ต และมือถือ (Mobile-First Design)
+- **Security**: ตรวจสอบสิทธิ์ด้วย Session-based Auth (localStorage + server validation)
+- **Performance**: Backend ใช้ PostgreSQL พร้อม JSON Fallback เพื่อความเสถียรเมื่อ DB ไม่พร้อมใช้งาน
+- **Scalability**: แยก Frontend (Vite/React SPA) และ Backend (Express/TypeScript REST API)
+- **Responsiveness**: UI รองรับหน้าจอทุกขนาด (Mobile-First Responsive Design)
+- **Bilingual**: รองรับภาษาไทยและอังกฤษ (i18n) และ Dark/Light Theme
 
 ---
 
 ## 2. การออกแบบสถาปัตยกรรมระบบ (System Architecture)
-ระบบถูกออกแบบตามหลักการ **Separation of Concerns (SoC)** และสถาปัตยกรรม **Microservices** เพื่อการพัฒนาที่ยืดหยุ่น
 
-### 2.1 แผนผังสถาปัตยกรรมระบบ (Mermaid Diagram)
+ระบบพัฒนาตามแนวคิด **Separation of Concerns** โดยแบ่งเป็น 2 ส่วนหลัก:
+- **Frontend**: Single Page Application (SPA) พัฒนาด้วย React + Vite + Vanilla CSS
+- **Backend**: RESTful API Server พัฒนาด้วย Node.js + Express + TypeScript
 
 ```mermaid
 graph TB
-    subgraph Client_Layer ["📱 Client Layer (Frontend UI)"]
-        A1["💻 User Portal (Customer UI)"]
-        A2["🛍️ Employee Portal (Sales UI)"]
-        A3["👑 Manager & Admin Dashboard"]
-    end
- 
-    subgraph Gateway_Layer ["🔒 Gateway & Authentication"]
-        CDN["🌐 CDN (Content Delivery Network)"]
-        GW["🔑 API Gateway & Auth Manager (JWT / Roles)"]
-    end
- 
-    subgraph Backend_Layer ["⚙️ Backend Microservices"]
-        AuthSvc["👤 Authentication Service"]
-        VerifySvc["🛡️ Employee Verification & Blacklist Check"]
-        InspectSvc["🔎 Audio Inspection & Catalog Service"]
-        AuditSvc["📊 Price Compliance & Audit Service"]
-        ChatSvc["💬 Live Support Chat Service"]
-        PaySvc["💳 Easy Donate QR Payment Service"]
-    end
- 
-    subgraph Data_Layer ["💾 Database & Storage Layer"]
-        SQL_DB[("🗄️ Primary SQL DB<br>(Users, Employees, Products, Orders, Logs)")]
-        Redis_DB[("⚡ Redis Cache<br>(Blacklist, Product Catalog)")]
-        Storage[("📦 File Storage<br>(Receipt Slips, Product Images, Documents)")]
+    subgraph Client_Layer ["📱 Client Layer (Frontend — React + Vite SPA)"]
+        A1["💻 User / Seller Portal<br/>(Customer UI + Seller Portal)"]
+        A2["👔 Manager Dashboard<br/>(/manager)"]
+        A3["👑 Admin Dashboard<br/>(/admin)"]
     end
 
-    subgraph External_Services ["🌐 External Integration APIs"]
-        LineAPI["💬 LINE Notify API"]
-        BankAPI["📱 Easy Donate QR Bank Gateway"]
-        BlacklistAPI["🔍 External Blacklist Provider"]
+    subgraph Backend_Layer ["⚙️ Backend API Server (Express + TypeScript — Unified Server)"]
+        AuthSvc["👤 Auth & Profile<br/>POST /api/auth/login<br/>POST /api/auth/register<br/>GET|POST /api/auth/profile"]
+        ProductSvc["📦 Product Catalog<br/>GET /api/products<br/>POST /api/products<br/>PUT|DELETE /api/products/:id"]
+        OrderSvc["🧾 Order & Payment Flow<br/>POST /api/orders<br/>POST /api/orders/:id/submit-slip<br/>POST /api/orders/:id/manager-approve<br/>POST /api/orders/:id/manager-reject<br/>POST /api/orders/:id/admin-confirm<br/>POST /api/orders/:id/ship<br/>POST /api/orders/:id/cancel"]
+        SellerSvc["🛍️ Seller & Inspection<br/>POST /api/pending-watches/register-seller<br/>GET|POST /api/pending-watches<br/>POST /api/pending-watches/:id/approve<br/>POST /api/pending-watches/:id/reject"]
+        ReviewSvc["⭐ Reviews & Wishlist<br/>GET|POST /api/reviews/:productId<br/>GET|POST|DELETE /api/wishlist/:username"]
+        PaymentSvc["💳 PromptPay QR Generator<br/>GET /api/payment/qr"]
+        LogSvc["📋 System Logs<br/>GET|POST /api/logs<br/>GET /api/users<br/>PUT /api/users/:username"]
     end
 
-    %% Connections
-    A1 & A2 & A3 --> CDN
-    CDN --> GW
+    subgraph Data_Layer ["💾 Database Layer"]
+        SQL_DB[("🗄️ PostgreSQL<br/>(Primary DB)")]
+        JSON_DB[("📁 db.json<br/>(Fallback DB)")]
+    end
 
-    GW --> AuthSvc
-    GW --> VerifySvc
-    GW --> InspectSvc
-    GW --> AuditSvc
-    GW --> ChatSvc
-    GW --> PaySvc
+    A1 --> AuthSvc
+    A1 --> ProductSvc
+    A1 --> OrderSvc
+    A1 --> ReviewSvc
+    A1 --> PaymentSvc
+    A1 --> SellerSvc
+
+    A2 --> OrderSvc
+    A2 --> ProductSvc
+    A2 --> SellerSvc
+    A2 --> LogSvc
+
+    A3 --> OrderSvc
+    A3 --> ProductSvc
+    A3 --> SellerSvc
+    A3 --> LogSvc
+    A3 --> AuthSvc
 
     AuthSvc --> SQL_DB
-    VerifySvc --> SQL_DB
-    VerifySvc --> Redis_DB
-    InspectSvc --> SQL_DB
-    InspectSvc --> Storage
-    AuditSvc --> SQL_DB
-    ChatSvc --> SQL_DB
-    PaySvc --> SQL_DB
-    PaySvc --> Storage
+    ProductSvc --> SQL_DB
+    OrderSvc --> SQL_DB
+    SellerSvc --> SQL_DB
+    ReviewSvc --> SQL_DB
+    LogSvc --> SQL_DB
 
-    VerifySvc --> BlacklistAPI
-    PaySvc --> BankAPI
-    PaySvc --> LineAPI
-    InspectSvc --> LineAPI
+    SQL_DB -.-> JSON_DB
 ```
 
 ---
 
-## 3. การออกแบบตามหลักการวิศวกรรมซอฟต์แวร์ (Software Engineering Principles)
+## 3. โครงสร้างฐานข้อมูล (Database Schema Design)
 
-### 3.1 Separation of Concerns (SoC) & Modularity
-- **Frontend Layer**: จัดการการแสดงผล UI และ User Interaction ด้วย React + Vanilla CSS
-- **Backend Layer**: แยกฟังก์ชันเป็น Microservices อิสระผ่าน RESTful APIs
-
-### 3.2 Single Responsibility Principle (SRP)
-- `Auth Service`: ทำหน้าที่ยืนยันตัวตนผู้ใช้
-- `Product Service`: จัดการคลังและรายการสินค้าเครื่องเสียง
-- `Order Service`: จัดการตะกร้า คำสั่งซื้อ และเหตุผลการปฏิเสธรายการ
-
-### 3.3 Loose Coupling & Performance Optimization
-- สื่อสารระหว่างบริการด้วยมาตรฐาน JSON ผ่าน RESTful API
-- ใช้ **Redis Cache** สำหรับข้อมูลสินค้าที่ถูกเรียกดูบ่อย เพื่อลดภาระการ Query ของฐานข้อมูลหลัก
-
----
-
-## 4. โครงสร้างฐานข้อมูล (Database Schema Design)
-
-### 4.1 แผนภาพความสัมพันธ์ฐานข้อมูลฉบับสมบูรณ์ (Unified ER Diagram)
+### 3.1 แผนภาพความสัมพันธ์ฐานข้อมูล (ER Diagram)
 
 ```mermaid
 erDiagram
     users ||--o| profiles : "has profile"
     users ||--o{ orders : "places"
     users ||--o{ reviews : "writes"
-    users ||--o| employee_verifications : "registers as"
-    employee_verifications ||--o| blacklist : "checks with"
-    products ||--o{ reviews : "has review"
-    products ||--o{ storage_data : "stores media"
-    orders ||--o{ storage_data : "attaches slip"
+    users ||--o{ wishlist : "saves"
+    users ||--o{ pending_watches : "proposes"
+    products ||--o{ reviews : "receives"
+    products ||--o{ wishlist : "saved in"
 
     users {
         varchar username PK
@@ -156,21 +149,7 @@ erDiagram
         varchar email
         varchar phone
         text address
-    }
-
-    employee_verifications {
-        int id PK
-        varchar username FK
-        varchar email UK
-        varchar national_id UK
-        varchar verify_status
-        timestamp verified_at
-    }
-
-    blacklist {
-        varchar email PK
-        varchar national_id UK
-        text reason
+        text avatar
     }
 
     products {
@@ -182,6 +161,7 @@ erDiagram
         numeric price
         int stock
         varchar image
+        varchar image_back
     }
 
     orders {
@@ -193,7 +173,7 @@ erDiagram
         text address
         varchar payment
         varchar status
-        varchar date
+        timestamp date
         text slip
         text cancel_reason
     }
@@ -207,282 +187,449 @@ erDiagram
         varchar date
     }
 
-    storage_data {
+    wishlist {
         serial id PK
-        varchar file_name
-        varchar file_path
-        varchar file_type
-        int size_bytes
+        varchar username FK
+        varchar product_id FK
+    }
+
+    pending_watches {
+        varchar id PK
+        varchar brand
+        varchar model
+        numeric price
+        varchar proposed_banding
+        varchar dial_color
+        text description
+        varchar seller_name
+        varchar seller_email
+        varchar inspection_status
+    }
+
+    blacklist {
+        varchar email PK
+        varchar national_id UK
+        text reason
+    }
+
+    system_logs {
+        serial id PK
+        text message
+        timestamp created_at
     }
 ```
 
-### 4.2 รายละเอียดโครงสร้างตาราง (Data Dictionary)
+### 3.2 รายละเอียดโครงสร้างตาราง (Data Dictionary)
 
-#### 1. ตาราง `users`
-| Column Name | Data Type | Constraints | Description |
-| :--- | :--- | :--- | :--- |
-| `username` | VARCHAR(50) | PRIMARY KEY | ชื่อผู้ใช้สำหรับเข้าสู่ระบบ |
-| `password` | VARCHAR(255) | NOT NULL | รหัสผ่านที่ผ่านการ Hashing |
-| `role` | VARCHAR(20) | NOT NULL | สิทธิ์ผู้ใช้ (`user`, `manager`, `admin`) |
+#### ตาราง `users`
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `username` | VARCHAR(50) PK | ชื่อผู้ใช้สำหรับเข้าสู่ระบบ |
+| `password` | VARCHAR(255) | รหัสผ่าน |
+| `role` | VARCHAR(20) | สิทธิ์ผู้ใช้: `user` / `manager` / `admin` |
 
-#### 2. ตาราง `products`
-| Column Name | Data Type | Constraints | Description |
-| :--- | :--- | :--- | :--- |
-| `id` | VARCHAR(50) | PRIMARY KEY | รหัสสินค้าเครื่องเสียง |
-| `name` | VARCHAR(100) | NOT NULL | ชื่อสินค้าภาษาไทย |
-| `name_en` | VARCHAR(100) | | ชื่อสินค้าภาษาอังกฤษ |
-| `brand` | VARCHAR(50) | NOT NULL | แบรนด์ (Marshall, Sony, Bose, ฯลฯ) |
-| `category` | VARCHAR(50) | NOT NULL | หมวดหมู่ (`speaker`, `headphones`, `earbuds`) |
-| `price` | NUMERIC(12,2) | NOT NULL | ราคาขาย (บาท) |
-| `stock` | INT | DEFAULT 0 | จำนวนสินค้าคงเหลือในคลัง |
-| `image` | VARCHAR(255) | | ที่อยู่ไฟล์รูปภาพสินค้า |
+#### ตาราง `products`
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `id` | VARCHAR PK | รหัสสินค้า เช่น `PROD-123456` |
+| `name` | VARCHAR | ชื่อสินค้าภาษาไทย |
+| `name_en` | VARCHAR | ชื่อสินค้าภาษาอังกฤษ |
+| `brand` | VARCHAR | แบรนด์ (Marshall, Sony, Bose, Apple, JBL, B&O) |
+| `category` | VARCHAR | หมวดหมู่: `speaker` / `headphones` / `earbuds` |
+| `price` | NUMERIC | ราคาขาย (บาท) |
+| `stock` | INT | จำนวนคงเหลือในคลัง |
+| `image` | VARCHAR | URL รูปภาพหน้าสินค้า |
+| `image_back` | VARCHAR | URL รูปภาพด้านหลังสินค้า |
 
-#### 3. ตาราง `orders`
-| Column Name | Data Type | Constraints | Description |
-| :--- | :--- | :--- | :--- |
-| `id` | VARCHAR(50) | PRIMARY KEY | รหัสใบสั่งซื้อ (เช่น `ORD-123456`) |
-| `user_id` | VARCHAR(50) | FOREIGN KEY | รหัสผู้สั่งซื้อ |
-| `items` | JSONB | NOT NULL | รายการสินค้าและจำนวนในออเดอร์ |
-| `total` | NUMERIC(12,2) | NOT NULL | ราคารวมทั้งสิ้น |
-| `payment` | VARCHAR(50) | NOT NULL | ช่องทางชำระเงิน (PromptPay, Bank Transfer) |
-| `status` | VARCHAR(20) | NOT NULL | สถานะ (`pending_review`, `completed`, `cancelled`) |
-| `slip` | TEXT | | รูปภาพสลิปโอนเงิน Base64/URL |
-| `cancel_reason` | TEXT | | เหตุผลการยกเลิก/ปฏิเสธสลิปโดยผู้จัดการ |
+#### ตาราง `orders` — Order Status ทั้งหมดในระบบ
+| Status | ความหมาย | เปลี่ยนเมื่อ |
+| :--- | :--- | :--- |
+| `pending_payment` | รอลูกค้าแนบสลิป | สั่งซื้อแล้วแต่ยังไม่แนบสลิป |
+| `pending_review` | รอ Manager ตรวจสลิป | ลูกค้าแนบสลิปแล้ว |
+| `manager_approved` | Manager อนุมัติ รอ Admin | `POST /api/orders/:id/manager-approve` |
+| `confirmed` | Admin ยืนยัน รอจัดส่ง | `POST /api/orders/:id/admin-confirm` หรือ COD |
+| `shipped` | จัดส่งแล้ว | `POST /api/orders/:id/ship` |
+| `cancelled` | ยกเลิก | ลูกค้ายกเลิก หรือ Manager ปฏิเสธสลิป |
 
 ---
 
-## 5. การวิเคราะห์และออกแบบระบบด้วย UML Diagram (UML Design)
+## 4. การวิเคราะห์และออกแบบระบบด้วย UML Diagram
 
-### 5.1 Use Case Diagram (แผนภาพแสดงการทำงานของผู้ใช้)
+### 4.1 Use Case Diagram (ครอบคลุมทุก Role และทุก Feature)
 
 ```mermaid
 graph TB
-    UserActor["👤 ผู้ซื้อ (Customer)"]
-    EmployeeActor["🛍️ พนักงานขาย (Employee)"]
-    AdminActor["👑 ผู้ดูแลระบบ/ผู้จัดการ (Admin & Manager)"]
+    GuestActor["👁️ Guest<br/>(ไม่ได้ล็อกอิน)"]
+    UserActor["🛒 User<br/>(ลูกค้าทั่วไป)"]
+    SellerActor["🛍️ Seller<br/>(User ที่ผ่านยืนยันตัวตน)"]
+    ManagerActor["👔 Manager"]
+    AdminActor["👑 Admin"]
 
-    subgraph AudioMart_System ["💼 ระบบ AudioMart Platform"]
-        UC_Login["เข้าสู่ระบบ (Login)"]
-
-        subgraph Customer_Actions ["🛒 Customer Use Cases"]
-            UC_Search["ค้นหาและกรองเครื่องเสียง (Search & Filter)"]
-            UC_Cart["จัดการตะกร้าสินค้า (Manage Cart)"]
-            UC_Checkout["สั่งซื้อสินค้า PromptPay/โอนเงิน (Checkout)"]
-            UC_UploadSlip["แนบสลิปชำระเงิน (Upload Slip)"]
-            UC_Track["ติดตามสถานะ & ดูเหตุผลยกเลิก (Track Orders)"]
-        end
-
-        subgraph Employee_Actions ["🛍️ Employee Use Cases"]
-            UC_Verify["ยืนยันตัวตนพนักงาน & ตรวจ Blacklist (Employee Verify)"]
-            UC_AddAudio["เสนอนำเข้าสินค้าเครื่องเสียง (Propose Audio Stock)"]
-        end
-
-        subgraph Admin_Actions ["👑 Admin & Manager Use Cases"]
-            UC_Inspect["ตรวจสอบคุณภาพสินค้า (Inspect & Approve)"]
-            UC_VerifySlip["ตรวจสอบสลิป & อนุมัติ/ปฏิเสธพร้อมระบุเหตุผล (Verify Slip)"]
-            UC_PriceAudit["ตรวจสอบราคากลาง (Price Compliance Audit)"]
-            UC_Inventory["จัดการคลังสินค้าและราคา (Inventory CRUD)"]
-        end
+    subgraph Public_Zone ["🌐 Public (ไม่ต้อง Login)"]
+        UC_Browse["เรียกดูสินค้า (Browse)"]
+        UC_Filter["ค้นหา & กรองสินค้า (Search & Filter)"]
+        UC_ViewDetail["ดูรายละเอียดสินค้า & รีวิว"]
+        UC_LoginReg["Login / Register"]
     end
 
-    UserActor --> UC_Login
-    UserActor --> UC_Search
+    subgraph User_Zone ["🛒 User Features"]
+        UC_Cart["จัดการตะกร้าสินค้า (Cart)"]
+        UC_Wishlist["รายการโปรด (Wishlist)"]
+        UC_BuyNow["ซื้อทันที (Buy Now)"]
+        UC_Checkout["สั่งซื้อ: PromptPay / โอนธนาคาร / COD"]
+        UC_UploadSlip["แนบสลิปชำระเงิน (Upload Slip)"]
+        UC_TrackOrder["ติดตามสถานะออเดอร์ (My Orders)"]
+        UC_CancelOrder["ยกเลิกคำสั่งซื้อ (Cancel Order)"]
+        UC_Review["เขียนรีวิวสินค้า (Review & Rating)"]
+        UC_Profile["แก้ไขโปรไฟล์ (Profile Edit)"]
+        UC_UIPrefs["สลับภาษา TH/EN & Dark/Light Theme"]
+    end
+
+    subgraph Seller_Zone ["🛍️ Seller Portal (ผ่านยืนยันตัวตน)"]
+        UC_VerifySeller["ยืนยันตัวตน & ตรวจ Blacklist"]
+        UC_ProposeProduct["เสนอสินค้าเข้าคลัง (Propose Product)"]
+        UC_TrackProposal["ติดตามสถานะสินค้าที่เสนอ"]
+    end
+
+    subgraph Manager_Zone ["👔 Manager Dashboard"]
+        UC_Dashboard["ดูยอดขาย Dashboard & กราฟ 7 วัน"]
+        UC_ReviewSlip["ตรวจสอบสลิป: อนุมัติ / ปฏิเสธ + เหตุผล"]
+        UC_ShipOrder["ยืนยันจัดส่งสินค้า (Ship)"]
+        UC_ManageProduct["จัดการสินค้า: เพิ่ม / แก้ไขสต็อก-ราคา"]
+        UC_InspectProduct["ตรวจสอบ & อนุมัติสินค้าจาก Seller"]
+        UC_ViewLogs["ดู System Activity Logs"]
+    end
+
+    subgraph Admin_Zone ["👑 Admin Only"]
+        UC_AdminConfirm["ยืนยันออเดอร์ขั้นสุดท้าย (Final Confirm)"]
+        UC_DeleteProduct["ลบสินค้าออกจากระบบ"]
+        UC_ManageUsers["จัดการ Users: เปลี่ยน Role / Reset Password"]
+        UC_ViewDocs["เข้าถึงเอกสารระบบ (System Docs)"]
+    end
+
+    GuestActor --> UC_Browse
+    GuestActor --> UC_Filter
+    GuestActor --> UC_ViewDetail
+    GuestActor --> UC_LoginReg
+
+    UserActor --> UC_Browse
+    UserActor --> UC_Filter
+    UserActor --> UC_ViewDetail
     UserActor --> UC_Cart
+    UserActor --> UC_Wishlist
+    UserActor --> UC_BuyNow
     UserActor --> UC_Checkout
     UserActor --> UC_UploadSlip
-    UserActor --> UC_Track
+    UserActor --> UC_TrackOrder
+    UserActor --> UC_CancelOrder
+    UserActor --> UC_Review
+    UserActor --> UC_Profile
+    UserActor --> UC_UIPrefs
+    UserActor --> UC_VerifySeller
 
-    EmployeeActor --> UC_Login
-    EmployeeActor --> UC_Verify
-    EmployeeActor --> UC_AddAudio
+    SellerActor --> UC_Browse
+    SellerActor --> UC_Cart
+    SellerActor --> UC_Wishlist
+    SellerActor --> UC_Checkout
+    SellerActor --> UC_Review
+    SellerActor --> UC_Profile
+    SellerActor --> UC_VerifySeller
+    SellerActor --> UC_ProposeProduct
+    SellerActor --> UC_TrackProposal
 
-    AdminActor --> UC_Login
-    AdminActor --> UC_Inspect
-    AdminActor --> UC_VerifySlip
-    AdminActor --> UC_PriceAudit
-    AdminActor --> UC_Inventory
+    ManagerActor --> UC_Dashboard
+    ManagerActor --> UC_ReviewSlip
+    ManagerActor --> UC_ShipOrder
+    ManagerActor --> UC_ManageProduct
+    ManagerActor --> UC_InspectProduct
+    ManagerActor --> UC_ViewLogs
 
-    UC_Checkout -.->|"<<include>>"| UC_Login
-    UC_AddAudio -.->|"<<include>>"| UC_Verify
+    AdminActor --> UC_Dashboard
+    AdminActor --> UC_ReviewSlip
+    AdminActor --> UC_ShipOrder
+    AdminActor --> UC_ManageProduct
+    AdminActor --> UC_InspectProduct
+    AdminActor --> UC_ViewLogs
+    AdminActor --> UC_AdminConfirm
+    AdminActor --> UC_DeleteProduct
+    AdminActor --> UC_ManageUsers
+    AdminActor --> UC_ViewDocs
+
+    UC_Checkout -.-> UC_LoginReg
+    UC_ProposeProduct -.-> UC_VerifySeller
+    UC_ReviewSlip -.-> UC_AdminConfirm
+    UC_AdminConfirm -.-> UC_ShipOrder
 ```
 
-### 5.2 Class Diagram (แผนภาพคลาสโครงสร้างข้อมูล)
-แสดงความสัมพันธ์ของ Object/Entity ต่างๆ ในเชิงโครงสร้างข้อมูลเชิงวัตถุ (Object-Oriented Design) ของระบบ AudioMart
+---
 
-```mermaid
-classDiagram
-    class User {
-        +int id
-        +string username
-        +string email
-        +string passwordHash
-        +datetime createdAt
-        +register() bool
-        +login() bool
-    }
-
-    class Product {
-        +int id
-        +string name
-        +string brand
-        +string description
-        +decimal price
-        +int stock
-        +string imageUrl
-        +getDetails() Product
-        +updateStock(int qty) bool
-    }
-
-    class Category {
-        +int id
-        +string name
-        +string description
-    }
-
-    class Cart {
-        +int id
-        +int userId
-        +addCartItem(Product p, int qty)
-        +removeCartItem(int productId)
-        +clearCart()
-        +getTotalPrice() decimal
-    }
-
-    class CartItem {
-        +int id
-        +int productId
-        +int quantity
-        +decimal price
-    }
-
-    class Order {
-        +int id
-        +int userId
-        +decimal totalPrice
-        +string status
-        +datetime createdAt
-        +processPayment() bool
-        +cancelOrder() bool
-    }
-
-    class OrderItem {
-        +int id
-        +int productId
-        +int quantity
-        +decimal unitPrice
-    }
-
-    class Payment {
-        +int id
-        +int orderId
-        +string paymentMethod
-        +decimal amount
-        +string transactionRef
-        +string status
-        +process() bool
-    }
-
-    User "1" --> "0..1" Cart : เจ้าของ
-    User "1" --> "0..*" Order : สั่งซื้อ
-    Cart "1" *-- "0..*" CartItem : ประกอบด้วย
-    Product "1" <-- "1" CartItem : อ้างอิง
-    Product "*" --> "1" Category : อยู่ในหมวดหมู่
-    Order "1" *-- "1..*" OrderItem : ประกอบด้วย
-    Product "1" <-- "1" OrderItem : อ้างอิง
-    Order "1" --> "1" Payment : มีการจ่ายเงิน
-```
-
-
-
-### 5.3 Sequence Diagram (ลำดับขั้นตอนสั่งซื้อและการตรวจสอบสลิป)
+### 4.2 Sequence Diagram — โฟลว์การสั่งซื้อและอนุมัติออเดอร์ (ตาม API จริง)
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Customer as 👤 ผู้ซื้อ (Customer)
+    actor Customer as 👤 Customer
     participant UI as 💻 Frontend UI
     participant Backend as ⚙️ Backend API
-    participant DB as 🗄️ SQL Database
-    participant Line as 💬 LINE Notify API
-    actor Manager as 🛍️ ผู้จัดการ (Manager)
+    participant DB as 🗄️ Database
+    actor Manager as 👔 Manager
+    actor Admin as 👑 Admin
 
-    Customer->>UI: เลือกสินค้าเครื่องเสียง & กด Checkout
-    UI->>Backend: POST /api/orders (สร้างคำสั่งซื้อ)
-    Backend->>DB: บันทึก Order (status: 'pending_review')
-    Backend-->>UI: ตอบกลับ Order ID & QR Code PromptPay
-    Customer->>UI: แนบรูปสลิปโอนเงิน (Upload Slip)
-    UI->>Backend: PUT /api/orders/:id/slip
-    Backend->>DB: บันทึก Slip Data
-    Backend->>Line: ส่งการแจ้งเตือนมีสลิปใหม่รอตรวจสอบ
-    
-    Manager->>UI: ตรวจสอบสลิปผ่าน Manager Dashboard
-    alt สลิปถูกต้อง
-        Manager->>UI: กดอนุมัติออเดอร์ (Approve)
-        UI->>Backend: PUT /api/orders/:id/status ('completed')
-        Backend->>DB: อัปเดตสถานะเป็น completed & ตัดสต็อกสินค้า
-    else สลิปไม่ถูกต้อง / ยอดเงินไม่ตรง
-        Manager->>UI: กดปฏิเสธสลิป + กรอกเหตุผล (Reject + Reason)
-        UI->>Backend: PUT /api/orders/:id/status ('cancelled', cancelReason)
-        Backend->>DB: อัปเดต status='cancelled' & cancel_reason=เหตุผล
+    Customer->>UI: เลือกสินค้า กด Checkout
+    UI->>Backend: POST /api/orders { items, payment, slip? }
+    Backend->>DB: ตรวจสอบ stock และตัด stock
+    Note over Backend: COD → status: confirmed<br/>มีสลิป → status: pending_review<br/>ไม่มีสลิป → status: pending_payment
+    Backend-->>UI: 201 { id: "ORD-XXXXXX", status }
+    UI-->>Customer: แสดงหน้า QR Code หรือยืนยัน COD
+
+    alt กรณี pending_payment (ยังไม่แนบสลิป)
+        Customer->>UI: อัปโหลดสลิปการชำระเงิน
+        UI->>Backend: POST /api/orders/:id/submit-slip { slip }
+        Backend->>DB: อัปเดต slip + status = pending_review
+        Backend-->>UI: 200 { success: true }
     end
 
-    Customer->>UI: เข้าดูหน้า My Orders
+    Manager->>UI: เข้าหน้า Manager Dashboard
     UI->>Backend: GET /api/orders
-    Backend-->>UI: คืนค่ารายการออเดอร์พร้อมเหตุผล cancel_reason (ถ้ามี)
-    UI-->>Customer: แสดงผลสถานะออเดอร์ & กล่องระบุเหตุผลการปฏิเสธ
+    Backend-->>UI: รายการออเดอร์ที่ status = pending_review
+
+    alt สลิปถูกต้อง
+        Manager->>UI: กดอนุมัติสลิป (Approve)
+        UI->>Backend: POST /api/orders/:id/manager-approve
+        Backend->>DB: status = manager_approved
+        Backend-->>UI: 200 { success: true }
+
+        Admin->>UI: เข้าหน้า Admin Dashboard
+        Admin->>UI: กดยืนยันขั้นสุดท้าย (Final Confirm)
+        UI->>Backend: POST /api/orders/:id/admin-confirm
+        Backend->>DB: status = confirmed
+        Backend-->>UI: 200 { success: true }
+
+        Manager->>UI: กดยืนยันจัดส่ง (Ship)
+        UI->>Backend: POST /api/orders/:id/ship
+        Backend->>DB: status = shipped
+        Backend-->>UI: 200 { success: true }
+
+    else สลิปไม่ถูกต้อง
+        Manager->>UI: กดปฏิเสธ + กรอกเหตุผล (Reject)
+        UI->>Backend: POST /api/orders/:id/manager-reject { note }
+        Backend->>DB: status = cancelled + cancel_reason + คืน stock
+        Backend-->>UI: 200 { success: true }
+    end
+
+    Customer->>UI: เข้าหน้า My Orders
+    UI->>Backend: GET /api/orders
+    Backend-->>UI: รายการออเดอร์พร้อม status และ cancel_reason
+    UI-->>Customer: แสดงสถานะ + เหตุผล (ถ้ามี)
 ```
 
 ---
 
-### 5.4 Activity Diagram (แผนภาพกิจกรรมการสั่งซื้อสินค้า)
-แสดงการไหลของกิจกรรม (Activity Flow) ตั้งแต่เริ่มต้นเลือกชมเครื่องเสียงจนถึงสิ้นสุดการชำระเงินและการส่งมอบสินค้าสำเร็จ
+### 4.3 Sequence Diagram — โฟลว์การยืนยันตัวตน Seller
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 👤 User (role: user)
+    participant UI as 💻 Frontend UI
+    participant Backend as ⚙️ Backend API
+    participant DB as 🗄️ Database (Blacklist)
+
+    User->>UI: เข้าหน้า Seller Portal (/seller)
+    Note over UI: ตรวจสอบว่ายืนยันตัวตนแล้วหรือยัง<br/>ถ้ายังไม่ผ่าน → แสดงฟอร์มยืนยัน
+
+    User->>UI: กรอก ชื่อ / อีเมล / เลขบัตร 13 หลัก
+    UI->>Backend: POST /api/pending-watches/register-seller { name, email, nationalId }
+    Backend->>DB: ตรวจสอบกับตาราง blacklist
+
+    alt ข้อมูลติด Blacklist
+        Backend-->>UI: 403 { error: "ข้อมูลของท่านอยู่ในบัญชีดำ" }
+        UI-->>User: แสดงข้อความเตือน ไม่อนุญาต
+    else ผ่านการตรวจสอบ
+        Backend->>DB: บันทึก System Log
+        Backend-->>UI: 200 { success: true }
+        UI-->>User: แสดงหน้า Seller Portal พร้อมเสนอสินค้าได้ทันที
+    end
+
+    User->>UI: กรอกข้อมูลสินค้า: แบรนด์, รุ่น, ราคา, สี, คำอธิบาย
+    UI->>Backend: POST /api/pending-watches { brand, model, price, ... }
+    Backend->>DB: บันทึก pending_watch (inspectionStatus: pending)
+    Backend-->>UI: 201 { success: true, id: "WSH-XXXXXX" }
+    UI-->>User: แสดงสถานะ "รอการตรวจสอบจากผู้จัดการ"
+```
+
+---
+
+### 4.4 Activity Diagram — โฟลว์การสั่งซื้อสินค้าฉบับสมบูรณ์
 
 ```mermaid
 stateDiagram-v2
     [*] --> เข้าสู่เว็บไซต์
-    เข้าสู่เว็บไซต์ --> เลือกชมสินค้า
-    เลือกชมสินค้า --> ค้นหาหรือกรองประเภทสินค้า
-    ค้นหาหรือกรองประเภทสินค้า --> เพิ่มสินค้าลงตะกร้า: สนใจสั่งซื้อ
-    เพิ่มสินค้าลงตะกร้า --> ตรวจสอบตะกร้าสินค้า
-    ตรวจสอบตะกร้าสินค้า --> กดปุ่มสั่งซื้อ: ตกลงชำระเงิน
-    กดปุ่มสั่งซื้อ --> กรอกข้อมูลจัดส่งและเลือกวิธีชำระเงิน
-    
-    state ชำระเงิน <<choice>>
-    กรอกข้อมูลจัดส่งและเลือกวิธีชำระเงิน --> ชำระเงิน
-    
-    ชำระเงิน --> โอนเงินธนาคาร: เลือกโอนเงิน
-    ชำระเงิน --> บัตรเครดิต: กรอกรายละเอียดบัตร
-    ชำระเงิน --> สแกนพร้อมเพย์: สแกนคิวอาร์โค้ด
-    
-    state ผลการชำระเงิน <<choice>>
-    โอนเงินธนาคาร --> ผลการชำระเงิน
-    บัตรเครดิต --> ผลการชำระเงิน
-    สแกนพร้อมเพย์ --> ผลการชำระเงิน
-    
-    ผลการชำระเงิน --> ยกเลิกคำสั่งซื้อ: ชำระเงินล้มเหลว / กดยกเลิก
-    ผลการชำระเงิน --> ยืนยันคำสั่งซื้อ: ชำระเงินสำเร็จ
-    
-    ยืนยันคำสั่งซื้อ --> ระบบอัปเดตสต็อกสินค้า
-    ระบบอัปเดตสต็อกสินค้า --> พนักงานตรวจสอบและส่งมอบสินค้า
-    พนักงานตรวจสอบและส่งมอบสินค้า --> [*]: ลูกค้าได้รับสินค้าสำเร็จ
-    ยกเลิกคำสั่งซื้อ --> [*]
+    เข้าสู่เว็บไซต์ --> ค้นหาและกรองสินค้า
+    ค้นหาและกรองสินค้า --> ดูรายละเอียดสินค้า
+
+    state เพิ่มสินค้า_choice <<choice>>
+    ดูรายละเอียดสินค้า --> เพิ่มสินค้า_choice
+
+    เพิ่มสินค้า_choice --> เพิ่มลงตะกร้า : กด Add to Cart
+    เพิ่มสินค้า_choice --> ซื้อทันที : กด Buy Now
+
+    เพิ่มลงตะกร้า --> เลือกสินค้าในตะกร้า
+    เลือกสินค้าในตะกร้า --> หน้า_Checkout
+    ซื้อทันที --> หน้า_Checkout
+
+    หน้า_Checkout --> กรอกที่อยู่จัดส่ง
+    กรอกที่อยู่จัดส่ง --> เลือกช่องทางชำระเงิน
+
+    state ช่องทางชำระเงิน <<choice>>
+    เลือกช่องทางชำระเงิน --> ช่องทางชำระเงิน
+
+    ช่องทางชำระเงิน --> PromptPay_QR : เลือก PromptPay
+    ช่องทางชำระเงิน --> โอนธนาคาร : เลือกโอนเงิน
+    ช่องทางชำระเงิน --> COD_ปลายทาง : เลือกเก็บเงินปลายทาง
+
+    PromptPay_QR --> แนบสลิป
+    โอนธนาคาร --> แนบสลิป
+
+    แนบสลิป --> รอ_Manager_ตรวจสลิป
+
+    state ผล_ตรวจสลิป <<choice>>
+    รอ_Manager_ตรวจสลิป --> ผล_ตรวจสลิป
+
+    ผล_ตรวจสลิป --> Manager_อนุมัติ : สลิปถูกต้อง
+    ผล_ตรวจสลิป --> ยกเลิก_คืนสต็อก : สลิปไม่ถูกต้อง
+
+    Manager_อนุมัติ --> รอ_Admin_Confirm
+    รอ_Admin_Confirm --> Admin_ยืนยัน
+    Admin_ยืนยัน --> Manager_จัดส่ง
+
+    COD_ปลายทาง --> Manager_จัดส่ง : ยืนยันทันที (status: confirmed)
+
+    Manager_จัดส่ง --> [*] : ลูกค้าได้รับสินค้า (status: shipped)
+    ยกเลิก_คืนสต็อก --> [*] : status: cancelled + cancel_reason
 ```
 
 ---
 
+### 4.5 Class Diagram (โครงสร้างข้อมูลหลัก)
 
+```mermaid
+classDiagram
+    class User {
+        +string username
+        +string password
+        +string role
+        +register() bool
+        +login() bool
+    }
 
-## 6. การออกแบบส่วนติดต่อผู้ใช้งาน (UI/UX Design & Wireframe Layout)
+    class Profile {
+        +string username
+        +string firstname
+        +string lastname
+        +string email
+        +string phone
+        +string address
+        +string avatar
+        +update() void
+    }
 
-### 6.1 แนวคิดการออกแบบ UI/UX (Design Concept)
-* **UI Design**:
-  * **Color Palette**: ใช้สีโทนเข้มอาร์กอนกึ่งลักชัวรี (Dark Slate: `#0f172a`, Deep Midnight: `#0b0c10`) ตัดกับสีทองพรีเมียม (`#c5a880`)
-  * **Typography**: ใช้ฟอนต์ **Outfit** สะอาดตาและทันสมัย
-  * **Visual**: แสดงรูปภาพสินค้าเครื่องเสียงไฮเอนด์ด้วย Glassmorphism UI
-* **UX Design**:
-  * **Seamless Cart & Checkout**: สั่งซื้อและสแกน QR Code ชำระเงินได้อย่างสะดวกรวดเร็ว
-  * **Dismissible Notifications**: ป้ายแจ้งเตือนหน้าต่างป๊อปอัปสามารถคลิกเพื่อปิดได้ทันที
-  * **Order Transparency**: แสดงเหตุผลการปฏิเสธสลิปอย่างชัดเจนเพื่อความโปร่งใส
+    class Product {
+        +string id
+        +string name
+        +string nameEn
+        +string brand
+        +string category
+        +decimal price
+        +int stock
+        +string image
+        +string imageBack
+        +updateStock(qty) void
+    }
+
+    class Order {
+        +string id
+        +string userId
+        +OrderItem[] items
+        +decimal total
+        +string payment
+        +string status
+        +string slip
+        +string cancelReason
+        +submitSlip(slip) void
+        +cancel(reason) void
+    }
+
+    class Review {
+        +int id
+        +string productId
+        +string username
+        +int rating
+        +string comment
+        +string date
+    }
+
+    class Wishlist {
+        +string username
+        +string productId
+        +add() void
+        +remove() void
+    }
+
+    class PendingWatch {
+        +string id
+        +string brand
+        +string model
+        +decimal price
+        +string sellerEmail
+        +string inspectionStatus
+        +approve() void
+        +reject() void
+    }
+
+    class Blacklist {
+        +string email
+        +string nationalId
+        +string reason
+        +check(email, nationalId) bool
+    }
+
+    User "1" --> "0..1" Profile : has
+    User "1" --> "0..*" Order : places
+    User "1" --> "0..*" Review : writes
+    User "1" --> "0..*" Wishlist : saves
+    User "1" --> "0..*" PendingWatch : proposes
+    Product "1" --> "0..*" Review : receives
+    Product "1" --> "0..*" Wishlist : savedIn
+    Blacklist --> User : verifies
+```
 
 ---
-*เอกสารนี้จัดทำในรูปแบบ Markdown สำหรับโครงงานวิชา CSI204*
+
+## 5. การออกแบบส่วนติดต่อผู้ใช้งาน (UI/UX Design)
+
+### 5.1 แนวคิดการออกแบบ
+- **Color Palette**: Dark Slate `#0f172a` / Deep Midnight `#0b0c10` ตัดกับ Gold `#c5a880`
+- **Typography**: Outfit (Google Fonts) — ทันสมัย อ่านง่าย
+- **Visual Style**: Glassmorphism Cards + Backdrop Blur Effects
+- **Animation**: Micro-animations และ Smooth Transitions
+
+### 5.2 โครงสร้างหน้าเว็บในระบบ (Page Structure & Role Access)
+
+| หน้า | Route | Role ที่เข้าได้ |
+| :--- | :--- | :--- |
+| หน้าแรก (Storefront) | `/` | ทุกคน |
+| รายละเอียดสินค้า | `/product/:id` | ทุกคน |
+| เข้าสู่ระบบ | `/login` | Guest เท่านั้น |
+| สมัครสมาชิก | `/register` | Guest เท่านั้น |
+| โปรไฟล์ | `/profile` | user, manager, admin |
+| ชำระเงิน | `/checkout` | user, manager, admin |
+| ประวัติออเดอร์ | `/my-orders` | user, manager, admin |
+| Seller Portal | `/seller` | user (ผ่านยืนยัน), manager, admin |
+| Manager Dashboard | `/manager` | manager, admin |
+| Admin Dashboard | `/admin` | admin |
+| เอกสารระบบ | `/docs` | admin |
+
+---
+
+*เอกสารนี้จัดทำโดยอิงจากโค้ดต้นฉบับของโครงการ AudioMart สำหรับวิชา CSI204*

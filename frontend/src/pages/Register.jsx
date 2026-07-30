@@ -53,6 +53,89 @@ export default function Register() {
         style={{ backgroundColor: '#080a0f', position: 'relative', overflow: 'hidden' }}
       >
         <div className="login-left-overlay"></div>
+
+        {/* Product Image Collage */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'none',
+        }}>
+          {/* Radial glow */}
+          <div style={{
+            position: 'absolute',
+            width: '380px',
+            height: '380px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(197,168,128,0.12) 0%, transparent 70%)',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -60%)',
+          }} />
+
+          {/* Main center - Sennheiser Momentum 4 */}
+          <img
+            src="/images/audio/sennheiser-momentum4.png"
+            alt="Sennheiser"
+            style={{
+              position: 'absolute',
+              width: '240px',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -60%)',
+              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.8))',
+              animation: 'loginFloat 6s ease-in-out infinite',
+            }}
+          />
+
+          {/* Left - Marshall Emberton */}
+          <img
+            src="/images/audio/marshall-emberton.png"
+            alt="Marshall Emberton"
+            style={{
+              position: 'absolute',
+              width: '150px',
+              bottom: '28%',
+              left: '6%',
+              filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.7))',
+              opacity: 0.85,
+              animation: 'loginFloat 7s ease-in-out infinite 1.2s',
+            }}
+          />
+
+          {/* Right - Sony WF Earbuds */}
+          <img
+            src="/images/audio/sony-wf1000xm5.png"
+            alt="Sony Earbuds"
+            style={{
+              position: 'absolute',
+              width: '130px',
+              bottom: '24%',
+              right: '8%',
+              filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.7))',
+              opacity: 0.85,
+              animation: 'loginFloat 5s ease-in-out infinite 0.7s',
+            }}
+          />
+
+          {/* Top - Apple AirPods Max */}
+          <img
+            src="/images/audio/apple-airpods-max.png"
+            alt="Apple AirPods Max"
+            style={{
+              position: 'absolute',
+              width: '120px',
+              top: '12%',
+              left: '16%',
+              filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.6))',
+              opacity: 0.8,
+              animation: 'loginFloat 9s ease-in-out infinite 1.8s',
+            }}
+          />
+        </div>
+
         <div className="login-left-content">
           <div className="login-logo">
             Audio<span>Mart</span>

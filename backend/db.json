@@ -1,0 +1,3934 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "username": "manager",
+      "password": "manager123",
+      "role": "manager"
+    },
+    {
+      "username": "buyer",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "username": "seller",
+      "password": "123456",
+      "role": "user"
+    }
+  ],
+  "profiles": {},
+  "products": [
+    {
+      "id": "1",
+      "name": "Marshall Stanmore III Bluetooth Speaker",
+      "nameEn": "Marshall Stanmore III Bluetooth Speaker",
+      "brand": "Marshall",
+      "category": "speaker",
+      "price": 17900,
+      "stock": 12,
+      "connectivity": "Bluetooth 5.2 / AUX / RCA",
+      "batteryLife": "AC Powered",
+      "image": "/images/audio/marshall-stanmore.png",
+      "rating": 4.8,
+      "reviewCount": 15
+    },
+    {
+      "id": "2",
+      "name": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+      "nameEn": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+      "brand": "Sony",
+      "category": "headphones",
+      "price": 14990,
+      "stock": 15,
+      "connectivity": "Bluetooth 5.2 / 3.5mm",
+      "batteryLife": "30 Hours",
+      "image": "/images/audio/sony-wh1000xm5.png",
+      "rating": 4.9,
+      "reviewCount": 28
+    },
+    {
+      "id": "3",
+      "name": "Bose QuietComfort Ultra Headphones",
+      "nameEn": "Bose QuietComfort Ultra Headphones",
+      "brand": "Bose",
+      "category": "headphones",
+      "price": 15900,
+      "stock": 10,
+      "connectivity": "Bluetooth 5.3",
+      "batteryLife": "24 Hours",
+      "image": "/images/audio/bose-quietcomfort.png",
+      "rating": 4.7,
+      "reviewCount": 19
+    },
+    {
+      "id": "4",
+      "name": "Apple AirPods Max (USB-C)",
+      "nameEn": "Apple AirPods Max (USB-C)",
+      "brand": "Apple",
+      "category": "headphones",
+      "price": 19900,
+      "stock": 8,
+      "connectivity": "Bluetooth 5.0 / Apple H1",
+      "batteryLife": "20 Hours",
+      "image": "/images/audio/apple-airpods-max.png",
+      "rating": 4.8,
+      "reviewCount": 32
+    },
+    {
+      "id": "5",
+      "name": "JBL Charge 5 Portable Waterproof Speaker",
+      "nameEn": "JBL Charge 5 Portable Waterproof Speaker",
+      "brand": "JBL",
+      "category": "speaker",
+      "price": 6990,
+      "stock": 20,
+      "connectivity": "Bluetooth 5.1",
+      "batteryLife": "20 Hours",
+      "image": "/images/audio/jbl-charge5.png",
+      "rating": 4.6,
+      "reviewCount": 12
+    },
+    {
+      "id": "6",
+      "name": "Bang & Olufsen Beosound A1 2nd Gen",
+      "nameEn": "Bang & Olufsen Beosound A1 2nd Gen",
+      "brand": "B&O",
+      "category": "speaker",
+      "price": 12900,
+      "stock": 7,
+      "connectivity": "Bluetooth 5.1",
+      "batteryLife": "18 Hours",
+      "image": "/images/audio/bo-beosound.png",
+      "rating": 4.9,
+      "reviewCount": 8
+    },
+    {
+      "id": "7",
+      "name": "Sony WF-1000XM5 True Wireless Earbuds",
+      "nameEn": "Sony WF-1000XM5 True Wireless Earbuds",
+      "brand": "Sony",
+      "category": "earbuds",
+      "price": 10990,
+      "stock": 18,
+      "connectivity": "Bluetooth 5.3",
+      "batteryLife": "24 Hours (with Case)",
+      "image": "/images/audio/sony-wf1000xm5.png",
+      "rating": 4.8,
+      "reviewCount": 21
+    },
+    {
+      "id": "8",
+      "name": "Marshall Emberton II Compact Speaker",
+      "nameEn": "Marshall Emberton II Compact Speaker",
+      "brand": "Marshall",
+      "category": "speaker",
+      "price": 7490,
+      "stock": 14,
+      "connectivity": "Bluetooth 5.1",
+      "batteryLife": "30+ Hours",
+      "image": "/images/audio/marshall-emberton.png",
+      "rating": 4.7,
+      "reviewCount": 16
+    },
+    {
+      "id": "9",
+      "name": "Sennheiser Momentum 4 Wireless",
+      "nameEn": "Sennheiser Momentum 4 Wireless",
+      "brand": "Sennheiser",
+      "category": "headphones",
+      "price": 12990,
+      "stock": 15,
+      "connectivity": "Bluetooth 5.2 / 3.5mm",
+      "batteryLife": "60 Hours",
+      "image": "/images/audio/sennheiser-momentum4.png",
+      "rating": 4.9,
+      "reviewCount": 10
+    },
+    {
+      "id": "10",
+      "name": "Marshall Motif II A.N.C. Earbuds",
+      "nameEn": "Marshall Motif II A.N.C. Earbuds",
+      "brand": "Marshall",
+      "category": "earbuds",
+      "price": 6990,
+      "stock": 20,
+      "connectivity": "Bluetooth 5.3",
+      "batteryLife": "30 Hours",
+      "image": "/images/audio/marshall-motif.png",
+      "rating": 4.7,
+      "reviewCount": 9
+    },
+    {
+      "id": "11",
+      "name": "Sony ULT Field 7 Party Speaker",
+      "nameEn": "Sony ULT Field 7 Party Speaker",
+      "brand": "Sony",
+      "category": "speaker",
+      "price": 14990,
+      "stock": 12,
+      "connectivity": "Bluetooth 5.2 / ULT Power",
+      "batteryLife": "30 Hours",
+      "image": "/images/audio/sony-ultfield7.png",
+      "rating": 4.8,
+      "reviewCount": 14
+    },
+    {
+      "id": "12",
+      "name": "Bose SoundLink Max Speaker",
+      "nameEn": "Bose SoundLink Max Speaker",
+      "brand": "Bose",
+      "category": "speaker",
+      "price": 14500,
+      "stock": 10,
+      "connectivity": "Bluetooth 5.3 / AUX",
+      "batteryLife": "20 Hours",
+      "image": "/images/audio/bose-soundlink-max.png",
+      "rating": 4.8,
+      "reviewCount": 11
+    },
+    {
+      "id": "13",
+      "name": "Apple AirPods Pro (2nd Gen)",
+      "nameEn": "Apple AirPods Pro (2nd Gen)",
+      "brand": "Apple",
+      "category": "earbuds",
+      "price": 8990,
+      "stock": 18,
+      "connectivity": "Bluetooth 5.3 / H2 Chip",
+      "batteryLife": "30 Hours",
+      "image": "/images/audio/apple-airpods-pro2.png",
+      "rating": 4.9,
+      "reviewCount": 25
+    }
+  ],
+  "orders": [],
+  "pendingWatches": [],
+  "blacklist": [
+    {
+      "email": "bad@mail.com",
+      "nationalId": "1-1111-11111-11-1",
+      "reason": "มีประวัติฉ้อโกงบัตรประชาชน"
+    },
+    {
+      "email": "fraud@watch.com",
+      "nationalId": "2-2222-22222-22-2",
+      "reason": "มีประวัติส่งนาฬิกาปลอมเลียนแบบ"
+    }
+  ],
+  "logs": [
+    {
+      "timestamp": "2026-07-30T16:21:35.377Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: undefined (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T16:21:35.385Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: undefined (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T16:21:35.394Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: undefined (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T16:21:35.403Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: undefined (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T16:51:18.139Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T16:51:18.146Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T16:51:18.153Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T16:51:18.160Z",
+      "message": "[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.852Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.860Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.868Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.874Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.882Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.888Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.894Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T16:58:01.902Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T16:59:44.392Z",
+      "message": "[INVENTORY]: ผู้จัดการเพิ่มนาฬิการุ่นใหม่เข้าคลังสินค้า: Sennheiser Momentum 4 Wireless (รหัส: PROD-784387)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.938Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.944Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.949Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.955Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.961Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.967Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.973Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.979Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.985Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:04:05.991Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.022Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.029Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.035Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.042Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.050Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.059Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.066Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.074Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.081Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.090Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: PROD-784387)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.098Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.106Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.114Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.121Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.129Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.137Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.145Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.154Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.163Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:06:43.172Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:31.514Z",
+      "message": "[AUTH]: ผู้ใช้เข้าสู่ระบบสำเร็จในบทบาท ADMIN (admin)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:32.981Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 247 Headphones (ID: 21)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:32.989Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 240 Speaker (ID: 20)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:32.998Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 254 Earbuds (ID: 22)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.006Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 261 Speaker (ID: 23)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.026Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 275 Earbuds (ID: 25)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.035Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 268 Headphones (ID: 24)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.044Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 282 Speaker (ID: 26)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.052Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 289 Headphones (ID: 27)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.063Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 303 Speaker (ID: 29)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.078Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 296 Earbuds (ID: 28)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.090Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 317 Earbuds (ID: 31)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.098Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 310 Headphones (ID: 30)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.105Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 324 Speaker (ID: 32)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.113Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 331 Headphones (ID: 33)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.120Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 345 Speaker (ID: 35)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.129Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 338 Earbuds (ID: 34)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.136Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 359 Earbuds (ID: 37)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.143Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 352 Headphones (ID: 36)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.151Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 366 Speaker (ID: 38)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.158Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 373 Headphones (ID: 39)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.165Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 380 Earbuds (ID: 40)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.171Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 387 Speaker (ID: 41)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.180Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 401 Earbuds (ID: 43)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.186Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 394 Headphones (ID: 42)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.194Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 408 Speaker (ID: 44)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.202Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 422 Earbuds (ID: 46)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.211Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 415 Headphones (ID: 45)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.219Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 429 Speaker (ID: 47)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.242Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 436 Headphones (ID: 48)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.249Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 443 Earbuds (ID: 49)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.257Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 450 Speaker (ID: 50)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.264Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 457 Headphones (ID: 51)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.272Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 464 Earbuds (ID: 52)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.280Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 471 Speaker (ID: 53)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.287Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 478 Headphones (ID: 54)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.296Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 485 Earbuds (ID: 55)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.305Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 492 Speaker (ID: 56)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.312Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 499 Headphones (ID: 57)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.319Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 506 Earbuds (ID: 58)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.327Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 513 Speaker (ID: 59)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.334Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Pro 520 Headphones (ID: 60)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.342Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Ultra 527 Earbuds (ID: 61)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.351Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Studio 534 Speaker (ID: 62)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.359Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Elite 541 Headphones (ID: 63)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.368Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Master 548 Earbuds (ID: 64)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.384Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Wireless 562 Headphones (ID: 66)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.393Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins A.N.C. 555 Speaker (ID: 65)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.402Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Spatial 569 Earbuds (ID: 67)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.411Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Hi-Res 576 Speaker (ID: 68)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.419Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Signature Edition 583 Headphones (ID: 69)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.427Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Stage 590 Earbuds (ID: 70)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.437Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Classic 604 Headphones (ID: 72)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.451Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Tour 597 Speaker (ID: 71)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.459Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sport 611 Earbuds (ID: 73)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.469Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Active 618 Speaker (ID: 74)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.479Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Pure 625 Headphones (ID: 75)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.488Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Vibe 632 Earbuds (ID: 76)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.497Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sonic 639 Speaker (ID: 77)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.507Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Pulse 646 Headphones (ID: 78)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.517Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Acoustic 653 Earbuds (ID: 79)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.526Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 667 Headphones (ID: 81)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.537Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 660 Speaker (ID: 80)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.546Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 681 Speaker (ID: 83)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.558Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 674 Earbuds (ID: 82)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.568Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 695 Earbuds (ID: 85)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.579Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 688 Headphones (ID: 84)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.591Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 702 Speaker (ID: 86)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.601Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 709 Headphones (ID: 87)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.610Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 716 Earbuds (ID: 88)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.620Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 723 Speaker (ID: 89)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.631Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 730 Headphones (ID: 90)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.640Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 737 Earbuds (ID: 91)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.650Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 744 Speaker (ID: 92)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.659Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 751 Headphones (ID: 93)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.671Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 758 Earbuds (ID: 94)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.681Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 765 Speaker (ID: 95)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.690Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 772 Headphones (ID: 96)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.698Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 786 Speaker (ID: 98)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.707Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 779 Earbuds (ID: 97)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.716Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 793 Headphones (ID: 99)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.726Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 800 Earbuds (ID: 100)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.734Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 807 Speaker (ID: 101)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.744Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 814 Headphones (ID: 102)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.753Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 828 Speaker (ID: 104)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.761Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 821 Earbuds (ID: 103)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.771Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 842 Earbuds (ID: 106)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.779Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 835 Headphones (ID: 105)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.789Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 849 Speaker (ID: 107)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.799Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 856 Headphones (ID: 108)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.808Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 863 Earbuds (ID: 109)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.819Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 870 Speaker (ID: 110)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.829Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 877 Headphones (ID: 111)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.837Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 884 Earbuds (ID: 112)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.846Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 891 Speaker (ID: 113)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.856Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 905 Earbuds (ID: 115)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.868Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 898 Headphones (ID: 114)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.876Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 912 Speaker (ID: 116)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.886Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 919 Headphones (ID: 117)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.896Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 933 Speaker (ID: 119)"
+    },
+    {
+      "timestamp": "2026-07-30T17:07:33.906Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 926 Earbuds (ID: 118)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:09.359Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:11.502Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:14.460Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:17.369Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:19.580Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:25.609Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:29.070Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:31.827Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:34.175Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:36.882Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:39.087Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: PROD-784387)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:41.089Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:44.426Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:48.232Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:50.961Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:54.763Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:08:57.720Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:09:01.099Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:09:03.704Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:09:06.649Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:09:29.635Z",
+      "message": "[AUTH]: ผู้ใช้ admin ออกจากระบบ"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.608Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.615Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.623Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.630Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.638Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.645Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.653Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.661Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.671Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.684Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: PROD-784387)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.694Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.704Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.715Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.724Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.735Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.745Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.753Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.764Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.774Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.783Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.793Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 240 Speaker (ID: 20)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.801Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 254 Earbuds (ID: 22)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.813Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 247 Headphones (ID: 21)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.823Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 268 Headphones (ID: 24)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.830Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 261 Speaker (ID: 23)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.840Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 275 Earbuds (ID: 25)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.848Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 282 Speaker (ID: 26)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.858Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 289 Headphones (ID: 27)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.866Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 296 Earbuds (ID: 28)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.877Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 303 Speaker (ID: 29)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.887Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 317 Earbuds (ID: 31)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.896Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 310 Headphones (ID: 30)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.905Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 331 Headphones (ID: 33)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.915Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 324 Speaker (ID: 32)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.925Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 338 Earbuds (ID: 34)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.937Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 345 Speaker (ID: 35)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.947Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 352 Headphones (ID: 36)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.956Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 359 Earbuds (ID: 37)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.967Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 366 Speaker (ID: 38)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.977Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 373 Headphones (ID: 39)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.986Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 380 Earbuds (ID: 40)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:13.995Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 387 Speaker (ID: 41)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.005Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 394 Headphones (ID: 42)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.016Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 401 Earbuds (ID: 43)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.025Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 415 Headphones (ID: 45)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.035Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 408 Speaker (ID: 44)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.043Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 422 Earbuds (ID: 46)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.053Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 429 Speaker (ID: 47)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.062Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 436 Headphones (ID: 48)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.074Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 443 Earbuds (ID: 49)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.084Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 450 Speaker (ID: 50)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.092Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 464 Earbuds (ID: 52)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.101Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 457 Headphones (ID: 51)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.111Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 478 Headphones (ID: 54)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.120Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 471 Speaker (ID: 53)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.131Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 492 Speaker (ID: 56)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.141Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 485 Earbuds (ID: 55)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.150Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 506 Earbuds (ID: 58)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.158Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 499 Headphones (ID: 57)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.167Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 513 Speaker (ID: 59)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.177Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Pro 520 Headphones (ID: 60)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.185Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Ultra 527 Earbuds (ID: 61)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.193Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Studio 534 Speaker (ID: 62)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.203Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Elite 541 Headphones (ID: 63)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.212Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Master 548 Earbuds (ID: 64)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.224Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Wireless 562 Headphones (ID: 66)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.234Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins A.N.C. 555 Speaker (ID: 65)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.245Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Hi-Res 576 Speaker (ID: 68)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.254Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Spatial 569 Earbuds (ID: 67)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.265Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Stage 590 Earbuds (ID: 70)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.277Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Signature Edition 583 Headphones (ID: 69)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.287Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Tour 597 Speaker (ID: 71)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.296Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Classic 604 Headphones (ID: 72)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.305Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sport 611 Earbuds (ID: 73)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.315Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Active 618 Speaker (ID: 74)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.325Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Vibe 632 Earbuds (ID: 76)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.333Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Pure 625 Headphones (ID: 75)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.344Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Pulse 646 Headphones (ID: 78)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.355Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sonic 639 Speaker (ID: 77)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.367Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 660 Speaker (ID: 80)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.377Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Acoustic 653 Earbuds (ID: 79)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.388Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 667 Headphones (ID: 81)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.396Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 681 Speaker (ID: 83)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.404Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 674 Earbuds (ID: 82)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.413Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 688 Headphones (ID: 84)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.420Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 695 Earbuds (ID: 85)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.430Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 702 Speaker (ID: 86)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.439Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 709 Headphones (ID: 87)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.447Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 716 Earbuds (ID: 88)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.457Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 723 Speaker (ID: 89)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.465Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 737 Earbuds (ID: 91)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.473Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 730 Headphones (ID: 90)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.481Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 744 Speaker (ID: 92)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.489Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 751 Headphones (ID: 93)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.500Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 758 Earbuds (ID: 94)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.509Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 765 Speaker (ID: 95)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.518Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 772 Headphones (ID: 96)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.526Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 779 Earbuds (ID: 97)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.536Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 786 Speaker (ID: 98)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.544Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 800 Earbuds (ID: 100)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.553Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 793 Headphones (ID: 99)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.561Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 807 Speaker (ID: 101)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.571Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 821 Earbuds (ID: 103)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.581Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 828 Speaker (ID: 104)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.589Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 814 Headphones (ID: 102)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.598Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 835 Headphones (ID: 105)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.607Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 842 Earbuds (ID: 106)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.617Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 849 Speaker (ID: 107)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.626Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 856 Headphones (ID: 108)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.635Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 863 Earbuds (ID: 109)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.645Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 870 Speaker (ID: 110)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.653Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 877 Headphones (ID: 111)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.662Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 884 Earbuds (ID: 112)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.671Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 891 Speaker (ID: 113)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.680Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 898 Headphones (ID: 114)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.688Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 912 Speaker (ID: 116)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.697Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 905 Earbuds (ID: 115)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.709Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 926 Earbuds (ID: 118)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.719Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 919 Headphones (ID: 117)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:14.728Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 933 Speaker (ID: 119)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:21.450Z",
+      "message": "[SECURITY]: ความพยายามเข้าสู่ระบบล้มเหลว (ผู้ใช้: buyer)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:24.317Z",
+      "message": "[AUTH]: ผู้ใช้เข้าสู่ระบบสำเร็จในบทบาท USER (buyer)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:29.930Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:29.948Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:29.966Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:29.983Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.000Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.017Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.031Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.049Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.064Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.080Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: PROD-784387)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.097Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.112Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.126Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.146Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.177Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.192Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.209Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.231Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.260Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.281Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.298Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 240 Speaker (ID: 20)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.316Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 247 Headphones (ID: 21)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.339Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 254 Earbuds (ID: 22)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.360Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 261 Speaker (ID: 23)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.386Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 268 Headphones (ID: 24)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.411Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 275 Earbuds (ID: 25)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.436Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 282 Speaker (ID: 26)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.455Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 289 Headphones (ID: 27)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.476Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 296 Earbuds (ID: 28)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.496Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 303 Speaker (ID: 29)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.522Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 317 Earbuds (ID: 31)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.537Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 310 Headphones (ID: 30)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.558Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 331 Headphones (ID: 33)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.578Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 324 Speaker (ID: 32)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.603Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 338 Earbuds (ID: 34)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.616Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 345 Speaker (ID: 35)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.632Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 352 Headphones (ID: 36)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.651Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 359 Earbuds (ID: 37)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.669Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 373 Headphones (ID: 39)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.682Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 366 Speaker (ID: 38)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.698Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 380 Earbuds (ID: 40)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.715Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 387 Speaker (ID: 41)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.732Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 394 Headphones (ID: 42)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.752Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 401 Earbuds (ID: 43)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.767Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 408 Speaker (ID: 44)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.781Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 422 Earbuds (ID: 46)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.801Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 415 Headphones (ID: 45)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.815Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 429 Speaker (ID: 47)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.831Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 436 Headphones (ID: 48)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.843Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 450 Speaker (ID: 50)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.854Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 443 Earbuds (ID: 49)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.866Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 464 Earbuds (ID: 52)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.877Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 457 Headphones (ID: 51)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.892Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 471 Speaker (ID: 53)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.905Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 478 Headphones (ID: 54)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.918Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 492 Speaker (ID: 56)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.932Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 485 Earbuds (ID: 55)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.944Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 499 Headphones (ID: 57)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.958Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 506 Earbuds (ID: 58)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.973Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 513 Speaker (ID: 59)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.988Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Pro 520 Headphones (ID: 60)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:30.999Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Ultra 527 Earbuds (ID: 61)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.013Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Studio 534 Speaker (ID: 62)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.027Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Master 548 Earbuds (ID: 64)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.042Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Elite 541 Headphones (ID: 63)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.054Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins A.N.C. 555 Speaker (ID: 65)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.068Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Wireless 562 Headphones (ID: 66)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.080Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Spatial 569 Earbuds (ID: 67)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.093Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Hi-Res 576 Speaker (ID: 68)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.105Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Signature Edition 583 Headphones (ID: 69)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.120Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Stage 590 Earbuds (ID: 70)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.143Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Tour 597 Speaker (ID: 71)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.161Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Classic 604 Headphones (ID: 72)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.176Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sport 611 Earbuds (ID: 73)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.191Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Active 618 Speaker (ID: 74)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.229Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Pure 625 Headphones (ID: 75)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.262Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Vibe 632 Earbuds (ID: 76)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.293Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sonic 639 Speaker (ID: 77)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.313Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Pulse 646 Headphones (ID: 78)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.327Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Acoustic 653 Earbuds (ID: 79)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.349Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 660 Speaker (ID: 80)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.364Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 674 Earbuds (ID: 82)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.380Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 667 Headphones (ID: 81)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.395Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 681 Speaker (ID: 83)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.409Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 688 Headphones (ID: 84)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.421Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 702 Speaker (ID: 86)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.436Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 695 Earbuds (ID: 85)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.451Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 709 Headphones (ID: 87)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.467Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 716 Earbuds (ID: 88)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.479Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 730 Headphones (ID: 90)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.491Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 723 Speaker (ID: 89)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.504Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 737 Earbuds (ID: 91)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.516Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 751 Headphones (ID: 93)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.530Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 744 Speaker (ID: 92)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.542Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 758 Earbuds (ID: 94)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.551Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 765 Speaker (ID: 95)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.565Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 772 Headphones (ID: 96)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.577Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 779 Earbuds (ID: 97)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.589Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 793 Headphones (ID: 99)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.604Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 786 Speaker (ID: 98)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.619Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 807 Speaker (ID: 101)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.633Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 800 Earbuds (ID: 100)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.646Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 814 Headphones (ID: 102)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.658Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 821 Earbuds (ID: 103)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.672Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 828 Speaker (ID: 104)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.684Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 835 Headphones (ID: 105)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.697Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 842 Earbuds (ID: 106)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.708Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 849 Speaker (ID: 107)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.720Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 856 Headphones (ID: 108)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.732Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 863 Earbuds (ID: 109)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.744Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 877 Headphones (ID: 111)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.757Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 870 Speaker (ID: 110)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.770Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 884 Earbuds (ID: 112)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.786Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 891 Speaker (ID: 113)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.798Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 898 Headphones (ID: 114)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.812Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 905 Earbuds (ID: 115)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.824Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 912 Speaker (ID: 116)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.836Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 919 Headphones (ID: 117)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.848Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 926 Earbuds (ID: 118)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.859Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 933 Speaker (ID: 119)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:31.865Z",
+      "message": "[AUTH]: ผู้ใช้ buyer ออกจากระบบ"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:43.891Z",
+      "message": "[AUTH]: ผู้ใช้เข้าสู่ระบบสำเร็จในบทบาท USER (buyer)"
+    },
+    {
+      "timestamp": "2026-07-30T17:10:49.148Z",
+      "message": "[AUTH]: ผู้ใช้ buyer ออกจากระบบ"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.656Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.667Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.676Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.686Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.696Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.707Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.717Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.728Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.739Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.751Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.764Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.776Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.787Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.798Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.809Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.845Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.854Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.866Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.875Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.886Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 240 Speaker (ID: 20)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.899Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 254 Earbuds (ID: 22)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.909Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 247 Headphones (ID: 21)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.920Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 261 Speaker (ID: 23)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.932Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 268 Headphones (ID: 24)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.943Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 275 Earbuds (ID: 25)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.955Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 289 Headphones (ID: 27)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.965Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 282 Speaker (ID: 26)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.978Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 303 Speaker (ID: 29)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:51.989Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 296 Earbuds (ID: 28)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.000Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 317 Earbuds (ID: 31)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.012Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 310 Headphones (ID: 30)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.023Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 324 Speaker (ID: 32)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.036Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 331 Headphones (ID: 33)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.047Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 345 Speaker (ID: 35)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.058Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 338 Earbuds (ID: 34)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.067Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 352 Headphones (ID: 36)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.078Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 359 Earbuds (ID: 37)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.091Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 366 Speaker (ID: 38)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.102Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 373 Headphones (ID: 39)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.114Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 380 Earbuds (ID: 40)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.124Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 387 Speaker (ID: 41)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.133Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 394 Headphones (ID: 42)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.143Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 408 Speaker (ID: 44)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.155Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 401 Earbuds (ID: 43)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.166Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 415 Headphones (ID: 45)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.177Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 422 Earbuds (ID: 46)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.187Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 429 Speaker (ID: 47)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.198Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 436 Headphones (ID: 48)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.208Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 443 Earbuds (ID: 49)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.218Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 450 Speaker (ID: 50)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.229Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 457 Headphones (ID: 51)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.240Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 464 Earbuds (ID: 52)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.249Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 478 Headphones (ID: 54)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.260Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 471 Speaker (ID: 53)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.271Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 492 Speaker (ID: 56)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.280Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 485 Earbuds (ID: 55)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.290Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 499 Headphones (ID: 57)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.302Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 506 Earbuds (ID: 58)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.312Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Pro 520 Headphones (ID: 60)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.322Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 513 Speaker (ID: 59)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.334Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Ultra 527 Earbuds (ID: 61)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.344Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Studio 534 Speaker (ID: 62)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.355Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Master 548 Earbuds (ID: 64)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.366Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Elite 541 Headphones (ID: 63)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.377Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins A.N.C. 555 Speaker (ID: 65)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.387Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Wireless 562 Headphones (ID: 66)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.396Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Spatial 569 Earbuds (ID: 67)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.409Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Hi-Res 576 Speaker (ID: 68)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.420Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Stage 590 Earbuds (ID: 70)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.432Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Signature Edition 583 Headphones (ID: 69)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.446Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Classic 604 Headphones (ID: 72)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.459Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Tour 597 Speaker (ID: 71)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.473Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Active 618 Speaker (ID: 74)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.484Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sport 611 Earbuds (ID: 73)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.497Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Vibe 632 Earbuds (ID: 76)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.511Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Pure 625 Headphones (ID: 75)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.523Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sonic 639 Speaker (ID: 77)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.539Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Pulse 646 Headphones (ID: 78)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.557Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Acoustic 653 Earbuds (ID: 79)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.573Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 660 Speaker (ID: 80)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.592Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 667 Headphones (ID: 81)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.607Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 674 Earbuds (ID: 82)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.621Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 688 Headphones (ID: 84)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.638Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 681 Speaker (ID: 83)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.654Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 702 Speaker (ID: 86)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.671Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 695 Earbuds (ID: 85)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.683Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 709 Headphones (ID: 87)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.700Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 716 Earbuds (ID: 88)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.716Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 723 Speaker (ID: 89)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.728Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 730 Headphones (ID: 90)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.742Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 737 Earbuds (ID: 91)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.755Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 744 Speaker (ID: 92)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.767Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 751 Headphones (ID: 93)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.778Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 758 Earbuds (ID: 94)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.794Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 772 Headphones (ID: 96)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.807Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 765 Speaker (ID: 95)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.820Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 779 Earbuds (ID: 97)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.834Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 786 Speaker (ID: 98)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.846Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 793 Headphones (ID: 99)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.857Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 807 Speaker (ID: 101)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.868Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 800 Earbuds (ID: 100)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.881Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 814 Headphones (ID: 102)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.891Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 821 Earbuds (ID: 103)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.902Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 828 Speaker (ID: 104)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.913Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 842 Earbuds (ID: 106)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.924Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 835 Headphones (ID: 105)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.936Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 849 Speaker (ID: 107)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.951Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 856 Headphones (ID: 108)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.966Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 870 Speaker (ID: 110)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.978Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 863 Earbuds (ID: 109)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:52.992Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 877 Headphones (ID: 111)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.003Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 884 Earbuds (ID: 112)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.017Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 891 Speaker (ID: 113)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.030Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 905 Earbuds (ID: 115)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.043Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 898 Headphones (ID: 114)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.055Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 912 Speaker (ID: 116)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.066Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 919 Headphones (ID: 117)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.078Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 926 Earbuds (ID: 118)"
+    },
+    {
+      "timestamp": "2026-07-30T17:11:53.089Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 933 Speaker (ID: 119)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.885Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.897Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.906Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.916Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.926Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.936Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.947Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.957Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.968Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.978Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.988Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:11.998Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.008Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.018Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.029Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.042Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.052Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.063Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.072Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.081Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 240 Speaker (ID: 20)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.091Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 254 Earbuds (ID: 22)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.100Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 247 Headphones (ID: 21)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.114Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 730 Headphones (ID: 90)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.126Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 261 Speaker (ID: 23)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.136Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 268 Headphones (ID: 24)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.145Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 275 Earbuds (ID: 25)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.155Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 282 Speaker (ID: 26)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.166Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 289 Headphones (ID: 27)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.175Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 296 Earbuds (ID: 28)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.187Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 310 Headphones (ID: 30)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.198Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 303 Speaker (ID: 29)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.209Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 324 Speaker (ID: 32)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.220Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 317 Earbuds (ID: 31)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.231Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 331 Headphones (ID: 33)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.242Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 338 Earbuds (ID: 34)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.251Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 345 Speaker (ID: 35)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.265Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 359 Earbuds (ID: 37)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.277Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 352 Headphones (ID: 36)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.288Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 366 Speaker (ID: 38)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.300Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 373 Headphones (ID: 39)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.310Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 387 Speaker (ID: 41)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.320Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 380 Earbuds (ID: 40)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.333Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 394 Headphones (ID: 42)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.342Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 401 Earbuds (ID: 43)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.353Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 408 Speaker (ID: 44)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.366Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 415 Headphones (ID: 45)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.378Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 422 Earbuds (ID: 46)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.415Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 429 Speaker (ID: 47)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.428Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 436 Headphones (ID: 48)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.439Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 443 Earbuds (ID: 49)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.451Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 450 Speaker (ID: 50)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.465Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 464 Earbuds (ID: 52)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.479Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 457 Headphones (ID: 51)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.493Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 471 Speaker (ID: 53)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.508Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 485 Earbuds (ID: 55)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.521Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 478 Headphones (ID: 54)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.532Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 492 Speaker (ID: 56)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.544Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 499 Headphones (ID: 57)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.557Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 506 Earbuds (ID: 58)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.570Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Pro 520 Headphones (ID: 60)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.583Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 513 Speaker (ID: 59)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.594Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Ultra 527 Earbuds (ID: 61)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.604Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Studio 534 Speaker (ID: 62)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.617Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Elite 541 Headphones (ID: 63)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.627Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins A.N.C. 555 Speaker (ID: 65)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.638Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Master 548 Earbuds (ID: 64)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.648Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Wireless 562 Headphones (ID: 66)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.658Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Spatial 569 Earbuds (ID: 67)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.667Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Hi-Res 576 Speaker (ID: 68)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.678Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Signature Edition 583 Headphones (ID: 69)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.689Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Stage 590 Earbuds (ID: 70)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.700Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Tour 597 Speaker (ID: 71)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.712Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Classic 604 Headphones (ID: 72)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.721Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sport 611 Earbuds (ID: 73)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.732Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Active 618 Speaker (ID: 74)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.743Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Vibe 632 Earbuds (ID: 76)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.753Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Pure 625 Headphones (ID: 75)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.763Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sonic 639 Speaker (ID: 77)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.774Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Pulse 646 Headphones (ID: 78)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.785Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Acoustic 653 Earbuds (ID: 79)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.797Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 660 Speaker (ID: 80)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.811Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 667 Headphones (ID: 81)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.823Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 674 Earbuds (ID: 82)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.834Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 681 Speaker (ID: 83)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.848Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 688 Headphones (ID: 84)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.860Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 695 Earbuds (ID: 85)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.873Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 702 Speaker (ID: 86)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.887Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 709 Headphones (ID: 87)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.901Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 723 Speaker (ID: 89)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.914Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 716 Earbuds (ID: 88)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.928Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 737 Earbuds (ID: 91)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.951Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 744 Speaker (ID: 92)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.978Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 758 Earbuds (ID: 94)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:12.995Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 751 Headphones (ID: 93)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.023Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 765 Speaker (ID: 95)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.040Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 772 Headphones (ID: 96)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.054Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 779 Earbuds (ID: 97)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.066Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 786 Speaker (ID: 98)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.081Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 800 Earbuds (ID: 100)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.093Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 793 Headphones (ID: 99)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.106Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 807 Speaker (ID: 101)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.121Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 814 Headphones (ID: 102)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.131Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 821 Earbuds (ID: 103)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.142Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 828 Speaker (ID: 104)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.153Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 835 Headphones (ID: 105)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.164Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 842 Earbuds (ID: 106)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.175Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 856 Headphones (ID: 108)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.188Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 849 Speaker (ID: 107)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.200Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 863 Earbuds (ID: 109)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.214Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 870 Speaker (ID: 110)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.225Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 877 Headphones (ID: 111)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.237Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 891 Speaker (ID: 113)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.249Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 884 Earbuds (ID: 112)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.259Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 898 Headphones (ID: 114)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.273Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 905 Earbuds (ID: 115)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.285Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 912 Speaker (ID: 116)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.297Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 919 Headphones (ID: 117)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.307Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 933 Speaker (ID: 119)"
+    },
+    {
+      "timestamp": "2026-07-30T17:13:13.316Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 926 Earbuds (ID: 118)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:51.989Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.001Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.012Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.024Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.037Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.049Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.064Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.078Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.090Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.102Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.113Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.124Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.134Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.145Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.159Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.171Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.183Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.198Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.209Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.223Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 247 Headphones (ID: 21)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.236Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 240 Speaker (ID: 20)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.253Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 254 Earbuds (ID: 22)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.265Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 261 Speaker (ID: 23)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.277Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 268 Headphones (ID: 24)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.291Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 275 Earbuds (ID: 25)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.304Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 289 Headphones (ID: 27)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.316Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 282 Speaker (ID: 26)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.328Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 296 Earbuds (ID: 28)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.342Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 303 Speaker (ID: 29)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.356Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 310 Headphones (ID: 30)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.369Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 317 Earbuds (ID: 31)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.381Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 324 Speaker (ID: 32)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.394Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 331 Headphones (ID: 33)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.406Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 338 Earbuds (ID: 34)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.418Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 345 Speaker (ID: 35)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.432Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 352 Headphones (ID: 36)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.445Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 359 Earbuds (ID: 37)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.458Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 366 Speaker (ID: 38)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.471Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 373 Headphones (ID: 39)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.483Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 380 Earbuds (ID: 40)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.497Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 387 Speaker (ID: 41)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.509Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 401 Earbuds (ID: 43)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.521Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 394 Headphones (ID: 42)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.537Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 408 Speaker (ID: 44)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.553Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 415 Headphones (ID: 45)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.565Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 422 Earbuds (ID: 46)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.581Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 429 Speaker (ID: 47)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.591Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 436 Headphones (ID: 48)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.603Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 443 Earbuds (ID: 49)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.615Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 450 Speaker (ID: 50)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.626Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 464 Earbuds (ID: 52)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.637Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 457 Headphones (ID: 51)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.649Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 471 Speaker (ID: 53)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.660Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 478 Headphones (ID: 54)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.671Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 492 Speaker (ID: 56)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.682Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 485 Earbuds (ID: 55)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.694Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 499 Headphones (ID: 57)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.708Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 506 Earbuds (ID: 58)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.719Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Pro 520 Headphones (ID: 60)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.730Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 513 Speaker (ID: 59)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.743Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Studio 534 Speaker (ID: 62)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.753Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Ultra 527 Earbuds (ID: 61)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.767Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Master 548 Earbuds (ID: 64)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.779Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Elite 541 Headphones (ID: 63)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.792Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins A.N.C. 555 Speaker (ID: 65)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.804Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Spatial 569 Earbuds (ID: 67)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.817Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Wireless 562 Headphones (ID: 66)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.832Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Hi-Res 576 Speaker (ID: 68)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.844Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Signature Edition 583 Headphones (ID: 69)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.856Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Stage 590 Earbuds (ID: 70)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.872Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Tour 597 Speaker (ID: 71)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.884Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sport 611 Earbuds (ID: 73)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.898Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Classic 604 Headphones (ID: 72)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.913Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Pure 625 Headphones (ID: 75)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.928Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Active 618 Speaker (ID: 74)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.942Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sonic 639 Speaker (ID: 77)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.955Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Vibe 632 Earbuds (ID: 76)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.974Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Acoustic 653 Earbuds (ID: 79)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:52.988Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Pulse 646 Headphones (ID: 78)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.002Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 667 Headphones (ID: 81)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.016Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 660 Speaker (ID: 80)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.028Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 674 Earbuds (ID: 82)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.039Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 681 Speaker (ID: 83)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.051Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 688 Headphones (ID: 84)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.070Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 695 Earbuds (ID: 85)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.088Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 702 Speaker (ID: 86)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.103Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 709 Headphones (ID: 87)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.115Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 716 Earbuds (ID: 88)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.127Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 723 Speaker (ID: 89)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.139Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 730 Headphones (ID: 90)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.152Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 737 Earbuds (ID: 91)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.165Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 744 Speaker (ID: 92)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.178Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 751 Headphones (ID: 93)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.192Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 758 Earbuds (ID: 94)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.204Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 765 Speaker (ID: 95)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.216Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 772 Headphones (ID: 96)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.231Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 786 Speaker (ID: 98)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.245Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 779 Earbuds (ID: 97)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.258Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 793 Headphones (ID: 99)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.270Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 800 Earbuds (ID: 100)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.282Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 807 Speaker (ID: 101)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.295Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 814 Headphones (ID: 102)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.307Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 821 Earbuds (ID: 103)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.319Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 828 Speaker (ID: 104)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.332Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 835 Headphones (ID: 105)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.344Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 849 Speaker (ID: 107)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.355Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 842 Earbuds (ID: 106)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.367Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 863 Earbuds (ID: 109)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.379Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 856 Headphones (ID: 108)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.392Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 877 Headphones (ID: 111)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.403Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 870 Speaker (ID: 110)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.414Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 884 Earbuds (ID: 112)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.426Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 891 Speaker (ID: 113)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.439Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 898 Headphones (ID: 114)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.451Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 905 Earbuds (ID: 115)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.462Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 919 Headphones (ID: 117)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.476Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 912 Speaker (ID: 116)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.491Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 926 Earbuds (ID: 118)"
+    },
+    {
+      "timestamp": "2026-07-30T17:14:53.504Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 933 Speaker (ID: 119)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.106Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.116Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Stanmore III Bluetooth Speaker (ID: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.125Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WH-1000XM5 Wireless Noise Cancelling Headphones (ID: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.136Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose QuietComfort Ultra Headphones (ID: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.145Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Max (USB-C) (ID: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.155Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Charge 5 Portable Waterproof Speaker (ID: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.165Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beosound A1 2nd Gen (ID: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.174Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony WF-1000XM5 True Wireless Earbuds (ID: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.185Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Emberton II Compact Speaker (ID: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.197Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.212Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.225Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.236Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.246Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Middleton Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.259Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony LinkBuds S Noise Cancelling (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.271Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Waterproof Speaker (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.284Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Ultra Open Earbuds (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.295Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.309Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum TW 4 (ID: 19)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.323Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 247 Headphones (ID: 21)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.335Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 240 Speaker (ID: 20)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.344Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 254 Earbuds (ID: 22)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.355Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 261 Speaker (ID: 23)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.366Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 268 Headphones (ID: 24)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.376Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 275 Earbuds (ID: 25)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.385Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 289 Headphones (ID: 27)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.393Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 282 Speaker (ID: 26)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.405Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 296 Earbuds (ID: 28)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.414Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 303 Speaker (ID: 29)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.425Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 310 Headphones (ID: 30)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.435Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 317 Earbuds (ID: 31)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.447Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 331 Headphones (ID: 33)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.458Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 324 Speaker (ID: 32)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.469Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 338 Earbuds (ID: 34)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.480Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 345 Speaker (ID: 35)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.489Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 352 Headphones (ID: 36)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.500Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 359 Earbuds (ID: 37)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.509Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 366 Speaker (ID: 38)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.519Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 380 Earbuds (ID: 40)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.530Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 373 Headphones (ID: 39)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.540Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 387 Speaker (ID: 41)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.551Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 394 Headphones (ID: 42)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.564Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 401 Earbuds (ID: 43)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.577Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 408 Speaker (ID: 44)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.589Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 415 Headphones (ID: 45)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.601Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 422 Earbuds (ID: 46)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.613Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 429 Speaker (ID: 47)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.623Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 443 Earbuds (ID: 49)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.635Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 436 Headphones (ID: 48)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.646Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 450 Speaker (ID: 50)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.656Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 457 Headphones (ID: 51)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.667Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 464 Earbuds (ID: 52)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.677Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 471 Speaker (ID: 53)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.690Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 485 Earbuds (ID: 55)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.700Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 478 Headphones (ID: 54)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.709Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 492 Speaker (ID: 56)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.719Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 506 Earbuds (ID: 58)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.730Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 499 Headphones (ID: 57)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.743Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 513 Speaker (ID: 59)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.753Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Ultra 527 Earbuds (ID: 61)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.764Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Pro 520 Headphones (ID: 60)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.775Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Studio 534 Speaker (ID: 62)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.786Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Master 548 Earbuds (ID: 64)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.798Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Elite 541 Headphones (ID: 63)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.809Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins A.N.C. 555 Speaker (ID: 65)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.822Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Wireless 562 Headphones (ID: 66)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.834Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Spatial 569 Earbuds (ID: 67)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.844Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Signature Edition 583 Headphones (ID: 69)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.858Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Hi-Res 576 Speaker (ID: 68)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.870Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Tour 597 Speaker (ID: 71)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.880Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Stage 590 Earbuds (ID: 70)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.889Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Classic 604 Headphones (ID: 72)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.898Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sport 611 Earbuds (ID: 73)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.908Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Active 618 Speaker (ID: 74)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.916Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Pure 625 Headphones (ID: 75)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.928Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Vibe 632 Earbuds (ID: 76)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.953Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sonic 639 Speaker (ID: 77)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.979Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Pulse 646 Headphones (ID: 78)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:27.990Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Pro 660 Speaker (ID: 80)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.001Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Acoustic 653 Earbuds (ID: 79)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.013Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Studio 674 Earbuds (ID: 82)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.024Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Ultra 667 Headphones (ID: 81)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.037Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Master 688 Headphones (ID: 84)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.050Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Elite 681 Speaker (ID: 83)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.066Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O A.N.C. 695 Earbuds (ID: 85)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.077Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Wireless 702 Speaker (ID: 86)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.088Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Spatial 709 Headphones (ID: 87)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.101Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Hi-Res 716 Earbuds (ID: 88)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.113Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Stage 730 Headphones (ID: 90)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.125Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Signature Edition 723 Speaker (ID: 89)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.136Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Classic 744 Speaker (ID: 92)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.148Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Tour 737 Earbuds (ID: 91)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.160Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sport 751 Headphones (ID: 93)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.170Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Active 758 Earbuds (ID: 94)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.182Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Pure 765 Speaker (ID: 95)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.193Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Vibe 772 Headphones (ID: 96)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.206Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Sonic 779 Earbuds (ID: 97)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.220Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Pulse 786 Speaker (ID: 98)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.232Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Acoustic 793 Headphones (ID: 99)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.245Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Pro 800 Earbuds (ID: 100)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.259Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Ultra 807 Speaker (ID: 101)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.273Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Studio 814 Headphones (ID: 102)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.286Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Elite 821 Earbuds (ID: 103)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.299Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Master 828 Speaker (ID: 104)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.312Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony A.N.C. 835 Headphones (ID: 105)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.326Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Spatial 849 Speaker (ID: 107)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.339Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Wireless 842 Earbuds (ID: 106)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.351Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Hi-Res 856 Headphones (ID: 108)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.366Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: B&O Signature Edition 863 Earbuds (ID: 109)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.379Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica Tour 877 Headphones (ID: 111)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.392Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Stage 870 Speaker (ID: 110)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.402Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure Classic 884 Earbuds (ID: 112)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.415Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bowers & Wilkins Sport 891 Speaker (ID: 113)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.426Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Active 898 Headphones (ID: 114)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.450Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Anker Soundcore Pure 905 Earbuds (ID: 115)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.463Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Vibe 912 Speaker (ID: 116)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.476Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony Sonic 919 Headphones (ID: 117)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.486Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple Acoustic 933 Speaker (ID: 119)"
+    },
+    {
+      "timestamp": "2026-07-30T17:16:28.496Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose Pulse 926 Earbuds (ID: 118)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.378Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 1)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.387Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 2)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.396Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 3)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.406Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 4)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.415Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 5)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.423Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 6)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.432Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 7)"
+    },
+    {
+      "timestamp": "2026-07-30T17:25:48.441Z",
+      "message": "[INVENTORY]: ผู้จัดการลบสินค้าออกจากระบบ (รหัสสินค้า: 8)"
+    },
+    {
+      "timestamp": "2026-07-30T17:27:36.802Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sennheiser Momentum 4 Wireless (ID: 9)"
+    },
+    {
+      "timestamp": "2026-07-30T17:27:36.819Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Marshall Motif II A.N.C. Earbuds (ID: 10)"
+    },
+    {
+      "timestamp": "2026-07-30T17:27:36.836Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Sony ULT Field 7 Party Speaker (ID: 11)"
+    },
+    {
+      "timestamp": "2026-07-30T17:27:36.854Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bose SoundLink Max Speaker (ID: 12)"
+    },
+    {
+      "timestamp": "2026-07-30T17:27:36.868Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Apple AirPods Pro (2nd Gen) (ID: 13)"
+    },
+    {
+      "timestamp": "2026-07-30T17:28:50.259Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 ANC Headphones (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:28:50.272Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Portable Bluetooth Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:28:50.285Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica ATH-M50xBT2 Studio Headphones (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:28:50.298Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure AONIC 50 Gen 2 Wireless Headphones (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:28:50.312Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Mania Portable Smart Speaker (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:39:04.929Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Portable Bluetooth Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:39:04.940Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 ANC Headphones (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:39:04.949Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica ATH-M50xBT2 Studio Headphones (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:39:04.963Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure AONIC 50 Gen 2 Wireless Headphones (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:39:04.974Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Mania Portable Smart Speaker (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:42:08.595Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 ANC Headphones (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:42:08.607Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Portable Bluetooth Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:42:08.620Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica ATH-M50xBT2 Studio Headphones (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:42:08.634Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure AONIC 50 Gen 2 Wireless Headphones (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:42:08.648Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Mania Portable Smart Speaker (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:44:54.155Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Portable Bluetooth Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:44:54.165Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Audio-Technica ATH-M50xBT2 Studio Headphones (ID: 16)"
+    },
+    {
+      "timestamp": "2026-07-30T17:44:54.177Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 ANC Headphones (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T17:44:54.190Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Shure AONIC 50 Gen 2 Wireless Headphones (ID: 17)"
+    },
+    {
+      "timestamp": "2026-07-30T17:44:54.201Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Mania Portable Smart Speaker (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:46:51.764Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Devialet Mania Portable Smart Speaker (ID: 18)"
+    },
+    {
+      "timestamp": "2026-07-30T17:46:51.776Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: JBL Flip 6 Portable Bluetooth Speaker (ID: 14)"
+    },
+    {
+      "timestamp": "2026-07-30T17:48:33.495Z",
+      "message": "[INVENTORY]: อัปเดตสินค้า: Bang & Olufsen Beoplay H95 ANC Headphones (ID: 15)"
+    },
+    {
+      "timestamp": "2026-07-30T18:06:01.532Z",
+      "message": "[AUTH]: User admin logged out."
+    }
+  ],
+  "reviews": []
+}

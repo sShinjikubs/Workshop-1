@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradDev" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1029" />
+      <stop offset="100%" stop-color="#09030d" />
+    </linearGradient>
+    <radialGradient id="spotDev" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#1e1029" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bgGradDev)" />
+  <circle cx="300" cy="225" r="180" fill="url(#spotDev)" />
+
+  <!-- Devialet Spherical Speaker -->
+  <g transform="translate(200, 130)">
+    <circle cx="100" cy="100" r="90" fill="#301b40" stroke="#ec4899" stroke-width="4" />
+    <!-- Side Woofer Domes -->
+    <ellipse cx="20" cy="100" rx="14" ry="45" fill="#ec4899" />
+    <ellipse cx="180" cy="100" rx="14" ry="45" fill="#ec4899" />
+    <!-- Handle -->
+    <path d="M 40 25 Q 100 -20 160 25" fill="none" stroke="#f472b6" stroke-width="12" stroke-linecap="round" />
+    <text x="100" y="106" font-family="'Inter', sans-serif" font-size="11" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">DEVIALET</text>
+  </g>
+
+  <rect x="25" y="25" width="150" height="32" rx="16" fill="#432659" stroke="#ec4899" stroke-width="1.5" />
+  <text x="100" y="46" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#f472b6" text-anchor="middle">DEVIALET MANIA</text>
+  <text x="300" y="390" font-family="'Inter', sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">Devialet Mania Portable Smart Speaker</text>
+  <text x="300" y="415" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#f472b6" text-anchor="middle">฿38,900 • 360° Stereo • 10 Hours Battery</text>
+</svg>

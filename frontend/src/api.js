@@ -13,8 +13,8 @@ async function request(method, path, body) {
 
 export const api = {
   // Auth
-  login: (role, username, password) =>
-    request('POST', '/api/auth/login', { role, username, password }),
+  login: (username, password) =>
+    request('POST', '/api/auth/login', { username, password }),
   register: (data) => request('POST', '/api/auth/register', data),
   getProfile: (username) => request('GET', `/api/auth/profile/${username}`),
   saveProfile: (username, data) =>
@@ -32,7 +32,7 @@ export const api = {
   // Orders
   getOrders: () => request('GET', '/api/orders'),
   createOrder: (data) => request('POST', '/api/orders', data),
-  cancelOrder: (id) => request('POST', `/api/orders/${id}/cancel`),
+  cancelOrder: (id, reason) => request('POST', `/api/orders/${id}/cancel`, reason ? { reason } : undefined),
   shipOrder: (id) => request('POST', `/api/orders/${id}/ship`),
   managerApproveOrder: (id) => request('POST', `/api/orders/${id}/manager-approve`),
   managerRejectOrder: (id, note) => request('POST', `/api/orders/${id}/manager-reject`, { note }),
@@ -44,7 +44,7 @@ export const api = {
   getPendingWatches: () => request('GET', '/api/pending-watches'),
   registerSeller: (data) =>
     request('POST', '/api/pending-watches/register-seller', data),
-  proposWatch: (data) => request('POST', '/api/pending-watches', data),
+  proposeWatch: (data) => request('POST', '/api/pending-watches', data),
   inspectWatch: (id, result) =>
     request('POST', '/api/pending-watches/inspect', { id, result }),
   importWatch: (id) =>

@@ -11,24 +11,24 @@ function drawBarChart(canvas, products, orders) {
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const brands = { luminox: 0, seiko: 0, 'tag heuer': 0 };
+  const brandTotals = {};
   orders.filter(o => o.status !== 'cancelled').forEach((ord) => {
-    ord.items?.forEach((i) => {
-      const match = products.find((p) => p.name === i.name);
-      if (match) {
-        const brandKey = match.brand.toLowerCase();
-        if (brandKey in brands) {
-          brands[brandKey] += match.price * i.quantity;
-        }
-      }
+    (ord.items || []).forEach((i) => {
+      const match = products.find((p) => p.id === i.id || p.name === i.name);
+      const brand = match && match.brand ? match.brand.trim() : 'Audio';
+      brandTotals[brand] = (brandTotals[brand] || 0) + ((i.price || match?.price || 0) * (i.quantity || 1));
     });
   });
 
-  const data = [
-    { label: 'LUMINOX', val: brands.luminox, color: '#ff6b6b' },
-    { label: 'SEIKO', val: brands.seiko, color: 'var(--accent-gold)' },
-    { label: 'TAG HEUER', val: brands['tag heuer'], color: '#4dabf7' }
-  ];
+  const colors = ['#c5a880', '#ff6b6b', '#4dabf7', '#a855f7', '#51cf66', '#ff922b'];
+  const data = Object.keys(brandTotals).length > 0 
+    ? Object.entries(brandTotals).slice(0, 6).map(([label, val], idx) => ({ label: label.toUpperCase(), val, color: colors[idx % colors.length] }))
+    : [
+        { label: 'MARSHALL', val: 0, color: '#c5a880' },
+        { label: 'SONY', val: 0, color: '#ff6b6b' },
+        { label: 'BOSE', val: 0, color: '#4dabf7' },
+        { label: 'APPLE', val: 0, color: '#a855f7' }
+      ];
 
   const maxVal = Math.max(...data.map(d => d.val), 10000);
   const chartHeight = 160;
@@ -72,7 +72,8 @@ function drawTrendChart(canvas, orders) {
   }
 
   orders.filter(o => o.status !== 'cancelled').forEach((o) => {
-    const match = days.find((d) => d.day === o.date);
+    const dateStr = new Date(o.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const match = days.find((d) => d.day === dateStr);
     if (match) match.val += o.total;
   });
 
@@ -335,7 +336,21 @@ export default function Admin() {
   const passed = pendingWatches.filter((w) => w.inspectionStatus === 'passed').length;
   const imported = pendingWatches.filter((w) => w.importStatus === 'imported').length;
 
-  const setProductFormValue = (f) => (e) => setProductForm((prev) => ({ ...prev, [f]: e.target.value }));
+  const setProductFormValue = (key) => (e) => setProductForm((prev) => ({ ...prev, [key]: e.target.value }));
+
+  const handleImageUpload = (e, field) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      showNotif('ขนาดไฟล์รูปภาพต้องไม่เกิน 5MB', false);
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      setProductForm((prev) => ({ ...prev, [field]: evt.target.result }));
+    };
+    reader.readAsDataURL(file);
+  };
 
   return (
     <div className="page-wrapper">
@@ -447,11 +462,35 @@ export default function Admin() {
                 </div>
                 <div className="form-group">
                   <label className="form-label">{t('frontImageLabel')}</label>
-                  <input className="form-input" value={productForm.image} onChange={setProductFormValue('image')} />
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                    <input className="form-input" value={productForm.image} onChange={setProductFormValue('image')} placeholder="URL หรือ อัปโหลดรูปภาพ..." style={{ flexGrow: 1 }} />
+                    <label className="btn btn-secondary" style={{ cursor: 'pointer', flexShrink: 0, padding: '0.45rem 0.8rem', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                      📷 อัปโหลดรูป
+                      <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleImageUpload(e, 'image')} />
+                    </label>
+                  </div>
+                  {productForm.image && (
+                    <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                      <img src={productForm.image} alt="Front Preview" style={{ width: '55px', height: '55px', objectFit: 'contain', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', border: '1px solid var(--glass-border)' }} />
+                      <button type="button" onClick={() => setProductForm(p => ({ ...p, image: '' }))} style={{ background: 'none', border: 'none', color: '#ff6b6b', cursor: 'pointer', fontSize: '0.8rem' }}>❌ ลบรูป</button>
+                    </div>
+                  )}
                 </div>
                 <div className="form-group">
                   <label className="form-label">{t('backImageLabel')}</label>
-                  <input className="form-input" value={productForm.imageBack} onChange={setProductFormValue('imageBack')} />
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                    <input className="form-input" value={productForm.imageBack} onChange={setProductFormValue('imageBack')} placeholder="URL หรือ อัปโหลดรูปภาพ..." style={{ flexGrow: 1 }} />
+                    <label className="btn btn-secondary" style={{ cursor: 'pointer', flexShrink: 0, padding: '0.45rem 0.8rem', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                      📷 อัปโหลดรูป
+                      <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleImageUpload(e, 'imageBack')} />
+                    </label>
+                  </div>
+                  {productForm.imageBack && (
+                    <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                      <img src={productForm.imageBack} alt="Back Preview" style={{ width: '55px', height: '55px', objectFit: 'contain', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', border: '1px solid var(--glass-border)' }} />
+                      <button type="button" onClick={() => setProductForm(p => ({ ...p, imageBack: '' }))} style={{ background: 'none', border: 'none', color: '#ff6b6b', cursor: 'pointer', fontSize: '0.8rem' }}>❌ ลบรูป</button>
+                    </div>
+                  )}
                 </div>
                 <div className="btn-group">
                   <button type="submit" className="btn btn-primary">

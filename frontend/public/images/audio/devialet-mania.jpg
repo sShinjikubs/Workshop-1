@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0d0d0d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sphere" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="40%" stop-color="#c0c0c0"/>
+      <stop offset="100%" stop-color="#888888"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="38%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </radialGradient>
+    <filter id="shadow2">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#000" flood-opacity="0.85"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="500" fill="url(#bg2)"/>
+  <ellipse cx="300" cy="280" rx="220" ry="180" fill="url(#glow2)"/>
+
+  <g filter="url(#shadow2)">
+    <!-- Top handle - arched leather strap -->
+    <path d="M 195 185 C 195 80 405 80 405 185" fill="none" stroke="#2a2a2a" stroke-width="32" stroke-linecap="round"/>
+    <path d="M 195 185 C 195 80 405 80 405 185" fill="none" stroke="#3d3d3d" stroke-width="24" stroke-linecap="round"/>
+    <!-- Strap center highlight -->
+    <path d="M 215 180 C 215 100 385 100 385 180" fill="none" stroke="#555555" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Main sphere -->
+    <circle cx="300" cy="290" r="155" fill="url(#sphere)"/>
+
+    <!-- Outer gold rim -->
+    <circle cx="300" cy="290" r="155" fill="none" stroke="url(#gold)" stroke-width="12"/>
+
+    <!-- Inner dark ring -->
+    <circle cx="300" cy="290" r="130" fill="#1a1a1a" stroke="url(#gold)" stroke-width="6"/>
+
+    <!-- Second gold ring (woofer) -->
+    <circle cx="300" cy="290" r="105" fill="#111" stroke="url(#gold)" stroke-width="4"/>
+
+    <!-- Woofer cone center -->
+    <circle cx="300" cy="290" r="75" fill="#1a1a1a" stroke="#444" stroke-width="2"/>
+    <circle cx="300" cy="290" r="50" fill="url(#gold)"/>
+    <circle cx="300" cy="290" r="30" fill="#1a1a1a"/>
+    <circle cx="300" cy="290" r="14" fill="#666"/>
+
+    <!-- Devialet brand text -->
+    <text x="300" y="288" font-family="'Arial', sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="4">DEVIALET</text>
+
+    <!-- Handle attachment circles -->
+    <circle cx="195" cy="185" r="14" fill="#1a1a1a" stroke="url(#gold)" stroke-width="3"/>
+    <circle cx="405" cy="185" r="14" fill="#1a1a1a" stroke="url(#gold)" stroke-width="3"/>
+  </g>
+
+  <!-- Label -->
+  <rect x="0" y="440" width="600" height="60" fill="#050505" opacity="0.95"/>
+  <text x="30" y="462" font-family="Arial" font-size="13" font-weight="700" fill="#d97706" letter-spacing="3">DEVIALET</text>
+  <text x="30" y="482" font-family="Arial" font-size="15" font-weight="800" fill="#ffffff">Mania Portable Smart Speaker</text>
+  <text x="570" y="482" font-family="Arial" font-size="18" font-weight="900" fill="#d97706" text-anchor="end">฿38,900</text>
+</svg>

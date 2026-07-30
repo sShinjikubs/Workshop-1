@@ -82,10 +82,9 @@ export const Icons = {
   ),
   Watch: (props) => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle' }} {...props}>
-      <circle cx="12" cy="12" r="6"/>
-      <path d="M12 2v4"/>
-      <path d="M12 18v4"/>
-      <path d="M16 12h-4v-3"/>
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+      <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
     </svg>
   ),
   Star: (props) => (

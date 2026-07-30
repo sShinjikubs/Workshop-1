@@ -59,6 +59,9 @@ app.post('/api/auth/register', async (req, res) => {
   if (!username || !password || !email) {
     return res.status(400).json({ error: 'Username, password, and email are required.' });
   }
+  if (password.length < 6) {
+    return res.status(400).json({ error: 'รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร' });
+  }
 
   const users = await db.getUsers();
   const isUsernameExists = users.some(
@@ -142,23 +145,29 @@ app.post('/api/products', async (req, res) => {
   await db.addProduct(newProduct);
 
   await db.addLog(`[INVENTORY]: ผู้จัดการเพิ่มนาฬิการุ่นใหม่เข้าคลังสินค้า: ${name} (รหัส: ${newProduct.id})`);
-  return res.status(211).json(newProduct); // Support status code or standard 201
+  return res.status(201).json(newProduct);
 });
 
 app.put('/api/products/:id', async (req, res) => {
   const prodId = req.params.id;
-  const { name, brand, category, price, stock, color, strokeColor, image, imageBack } = req.body;
 
   const products = await db.getProducts();
-  const exists = products.some(p => p.id === prodId);
+  const existing = products.find(p => p.id === prodId);
 
-  if (!exists) {
+  if (!existing) {
     return res.status(404).json({ error: 'Product not found.' });
   }
 
-  await db.updateProduct(prodId, { name, brand, category, price, stock, color, strokeColor, image, imageBack });
-  await db.addLog(`[INVENTORY]: ผู้จัดการทำการอัปเดตข้อมูลนาฬิกา: ${name} (ID: ${prodId})`);
-  return res.json({ id: prodId, name, brand, category, price, stock, color, strokeColor, image, imageBack });
+  // Merge: only overwrite fields that are explicitly provided in request body
+  const updated: any = { ...existing };
+  const fields = ['name', 'nameEn', 'brand', 'category', 'price', 'stock', 'color', 'strokeColor', 'image', 'imageBack', 'connectivity', 'batteryLife'];
+  for (const f of fields) {
+    if (req.body[f] !== undefined) updated[f] = req.body[f];
+  }
+
+  await db.updateProduct(prodId, updated);
+  await db.addLog(`[INVENTORY]: อัปเดตสินค้า: ${updated.name} (ID: ${prodId})`);
+  return res.json(updated);
 });
 
 app.delete('/api/products/:id', async (req, res) => {
@@ -317,6 +326,9 @@ app.post('/api/orders/:id/cancel', async (req, res) => {
 
   if (orders[idx].status === 'cancelled') {
     return res.status(400).json({ error: 'Order is already cancelled.' });
+  }
+  if (orders[idx].status === 'confirmed' || orders[idx].status === 'shipped') {
+    return res.status(400).json({ error: 'ไม่สามารถยกเลิกออเดอร์ที่ยืนยันหรือจัดส่งแล้วได้' });
   }
 
   const reasonText = reason || 'ลูกค้ายกเลิกคำสั่งซื้อผ่านระบบ';
