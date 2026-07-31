@@ -228,10 +228,18 @@ export default function Header({ showCart, cartCount: cartCountProp, onCartClick
   const handleScrollTo = (id) => (e) => {
     e.preventDefault();
     if (location.pathname === '/') {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (searchParams.get('search')) {
+        setSearchParams({}, { replace: true });
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     } else {
-      navigate(`/#${id}`);
+      navigate(`/?#${id}`);
     }
   };
 
@@ -645,7 +653,27 @@ export default function Header({ showCart, cartCount: cartCountProp, onCartClick
           {/* Navigation Links */}
           <nav>
             <ul style={{ display: 'flex', listStyle: 'none', gap: '1.2rem', margin: 0, padding: 0 }}>
-              <li><Link to="/" className={isActive('/')} style={{ fontSize: '0.88rem', textDecoration: 'none', color: location.pathname === '/' ? 'var(--accent-gold)' : 'var(--text-light)' }}>{t('home')}</Link></li>
+              <li>
+                <Link 
+                  to="/" 
+                  onClick={(e) => {
+                    if (location.pathname === '/') {
+                      if (searchParams.get('search')) {
+                        setSearchParams({}, { replace: true });
+                      }
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                  className={isActive('/')} 
+                  style={{ 
+                    fontSize: '0.88rem', 
+                    textDecoration: 'none', 
+                    color: (location.pathname === '/' && !searchParams.get('search')) ? 'var(--accent-gold)' : 'var(--text-light)' 
+                  }}
+                >
+                  {t('home')}
+                </Link>
+              </li>
               <li><a href="#recommended" onClick={handleScrollTo('recommended')} style={{ fontSize: '0.88rem', textDecoration: 'none', color: 'var(--text-light)', transition: 'color 0.2s' }} className="hover-gold-text">{t('recommended')}</a></li>
               <li><a href="#new-arrivals" onClick={handleScrollTo('new-arrivals')} style={{ fontSize: '0.88rem', textDecoration: 'none', color: 'var(--text-light)', transition: 'color 0.2s' }} className="hover-gold-text">{t('newArrivals')}</a></li>
               <li><a href="#promotions" onClick={handleScrollTo('promotions')} style={{ fontSize: '0.88rem', textDecoration: 'none', color: 'var(--text-light)', transition: 'color 0.2s' }} className="hover-gold-text">{t('promotions')}</a></li>

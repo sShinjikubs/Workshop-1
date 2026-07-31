@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { useAuth, useLanguage } from '../App';
 import { useCart } from '../CartContext';
 import { useWishlist } from '../WishlistContext';
@@ -126,7 +126,18 @@ export default function Storefront() {
     } catch (_) {}
   };
 
+  const location = useLocation();
   useEffect(() => { refreshData(); }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  }, [location.hash, search]);
 
   const filteredProducts = products.filter((p) => {
     if (!p) return false;

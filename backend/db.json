@@ -3928,6 +3928,10 @@
     {
       "timestamp": "2026-07-30T18:06:01.532Z",
       "message": "[AUTH]: User admin logged out."
+    },
+    {
+      "timestamp": "2026-07-31T08:52:02.597Z",
+      "message": "[AUTH]: ผู้ใช้เข้าสู่ระบบสำเร็จในบทบาท ADMIN (admin)"
     }
   ],
   "reviews": []
